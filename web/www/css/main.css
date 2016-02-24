@@ -1,0 +1,1160 @@
+@charset "UTF-8";
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/css/main.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+html {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+q, blockquote {
+  quotes: none;
+}
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+a img {
+  border: none;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
+  display: block;
+}
+
+/* Hey, this is not from me, not my code, not my responsibility */
+/* If you have to override a section of any vendor, I recommend you have an 8th folder called vendors-extensions/  */
+/**
+ * fullPage 2.6.0
+ * https://github.com/alvarotrigo/fullPage.js
+ * MIT licensed
+ *
+ * Copyright (C) 2013 alvarotrigo.com - A project by Alvaro Trigo
+ * Contribution by Jhony0311
+ */
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  /*Avoid flicker on slides transitions for mobile phones #336 */
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+#superContainer {
+  height: 100%;
+  position: relative;
+  /* Touch detection for Windows 8 */
+  -ms-touch-action: none;
+  /* IE 11 on Windows Phone 8.1*/
+  touch-action: none;
+}
+
+.fp-section {
+  position: relative;
+  -webkit-box-sizing: border-box;
+  /* Safari<=5 Android<=3 */
+  -moz-box-sizing: border-box;
+  /* <=28 */
+  box-sizing: border-box;
+}
+
+.fp-slide {
+  float: left;
+}
+
+.fp-slide, .fp-slidesContainer {
+  height: 100%;
+  display: block;
+}
+
+.fp-slides {
+  z-index: 1;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  -webkit-transition: all 0.3s ease-out;
+  /* Safari<=6 Android<=4.3 */
+  transition: all 0.3s ease-out;
+}
+
+.fp-section.fp-table, .fp-slide.fp-table {
+  display: table;
+  table-layout: fixed;
+  width: 100%;
+}
+
+.fp-tableCell {
+  display: table-cell;
+  vertical-align: middle;
+  width: 100%;
+  height: 100%;
+}
+
+.fp-slidesContainer {
+  float: left;
+  position: relative;
+}
+
+.fp-controlArrow {
+  position: absolute;
+  z-index: 4;
+  top: 50%;
+  cursor: pointer;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  margin-top: -38px;
+  -webkit-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+.fp-controlArrow.fp-prev {
+  left: 15px;
+  width: 0;
+  border-width: 38.5px 34px 38.5px 0;
+  border-color: transparent #fff transparent transparent;
+}
+.fp-controlArrow.fp-next {
+  right: 15px;
+  border-width: 38.5px 0 38.5px 34px;
+  border-color: transparent transparent transparent #fff;
+}
+
+.fp-scrollable {
+  overflow: scroll;
+}
+
+.fp-notransition {
+  -webkit-transition: none !important;
+  transition: none !important;
+}
+
+.fp-slidesNav {
+  position: absolute;
+  z-index: 4;
+  left: 50%;
+  opacity: 1;
+}
+.fp-slidesNav.bottom {
+  bottom: 17px;
+}
+.fp-slidesNav.top {
+  top: 17px;
+}
+
+#fp-nav ul,
+.fp-slidesNav ul {
+  margin: 0;
+  padding: 0;
+}
+#fp-nav ul li,
+.fp-slidesNav ul li {
+  display: block;
+  width: 14px;
+  height: 13px;
+  margin: 7px;
+  position: relative;
+}
+#fp-nav ul li a,
+.fp-slidesNav ul li a {
+  display: block;
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  text-decoration: none;
+}
+#fp-nav ul li a.active span,
+.fp-slidesNav ul li a.active span {
+  height: 12px;
+  width: 12px;
+  margin: -6px 0 0 -6px;
+  border-radius: 100%;
+}
+#fp-nav ul li:hover #fp-nav ul li a.active span, #fp-slidesNav ul li:hover #fp-nav ul li a.active span, #fp-nav ul li:hover
+.fp-slidesNav ul li a.active span, #fp-slidesNav ul li:hover
+.fp-slidesNav ul li a.active span {
+  height: 12px;
+  width: 12px;
+  margin: -6px 0 0 -6px;
+  border-radius: 100%;
+}
+#fp-nav ul li a span,
+.fp-slidesNav ul li a span {
+  border-radius: 50%;
+  position: absolute;
+  z-index: 1;
+  height: 4px;
+  width: 4px;
+  border: 0;
+  background: #333;
+  left: 50%;
+  top: 50%;
+  margin: -2px 0 0 -2px;
+  -webkit-transition: all 0.1s ease-in-out;
+  -moz-transition: all 0.1s ease-in-out;
+  -o-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
+}
+#fp-nav ul li:hover a span,
+.fp-slidesNav ul li:hover a span {
+  width: 10px;
+  height: 10px;
+  margin: -5px 0px 0px -5px;
+}
+
+#fp-nav {
+  position: fixed;
+  z-index: 100;
+  margin-top: -32px;
+  top: 50%;
+  opacity: 1;
+  -webkit-transform: translate3d(0, 0, 0);
+}
+#fp-nav.right {
+  right: 17px;
+}
+#fp-nav.left {
+  left: 17px;
+}
+#fp-nav ul li .fp-tooltip {
+  position: absolute;
+  top: -2px;
+  color: #fff;
+  font-size: 14px;
+  font-family: arial, helvetica, sans-serif;
+  white-space: nowrap;
+  max-width: 220px;
+  overflow: hidden;
+  display: block;
+  opacity: 0;
+  width: 0;
+}
+#fp-nav ul li .fp-tooltip.right {
+  right: 20px;
+}
+#fp-nav ul li:hover .fp-tooltip {
+  -webkit-transition: opacity 0.2s ease-in;
+  transition: opacity 0.2s ease-in;
+  width: auto;
+  opacity: 1;
+}
+#fp-nav.fp-show-active a.active + .fp-tooltip {
+  -webkit-transition: opacity 0.2s ease-in;
+  transition: opacity 0.2s ease-in;
+  width: auto;
+  opacity: 1;
+}
+
+.fp-slidesNav ul li {
+  display: inline-block;
+}
+
+/* Plugin to compose a page of multiple sections window full-height size & scrollable*/
+/* The rule of thumb for this folder is that it should not output a single line of CSS when compiled on its own. */
+/* ------------------------------------------------------ */
+/* TYPO
+/* ------------------------------------------------------ */
+/* ------------------------------------------------------ */
+/* COLORS
+/* ------------------------------------------------------ */
+/* Text colors */
+/* Defaults neutral colors for borders & background*/
+/* Forms */
+/* Theme */
+/* BREAK POINTS, may have to adapt at the beginning, depending of the application */
+/* ------------------------------------------------------ */
+/* CSS EASING ANIMATION
+/* ------------------------------------------------------ */
+/* ------------------------------------------------------ */
+/* MIXIN
+/* ------------------------------------------------------ */
+/* Responsive
+/* ------------------------------------------------------ */
+/* standard styles for commonly used HTML, Base styles: projects defaults html elements, class-one-rule helpers for flexible html edition, fontfaces configuration */
+/*@import "base/reset";*/
+/* ------------------------------------------------------ */
+/* Base styles: projects defaults
+/* ------------------------------------------------------ */
+html, body {
+  font-size: 16px;
+  font-size: 1rem;
+  /* Indiquer la font-size du body par défaut*/
+  overflow: auto;
+  width: 100%;
+  padding: 0;
+  margin: 0 auto;
+  outline: none;
+  font-family: "gillsansstd", Arial, Helvetica, sans-serif;
+  color: #000;
+  background: white;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-tap-highlight-color: transparent;
+  /* For some Androids */
+  -webkit-font-smoothing: antialiased;
+}
+@media screen and (max-width: 1247px) {
+  html, body {
+    font-size: 14px;
+  }
+}
+@media screen and (max-width: 1023px) {
+  html, body {
+    font-size: 14px;
+  }
+}
+@media screen and (max-width: 479px) {
+  html, body {
+    font-size: 11px;
+  }
+}
+
+h2 {
+  font-size: 36px;
+  font-size: 2.25rem;
+  /* Indiquer la font-size du body par défaut*/
+  margin: 0 0 25px;
+  font-family: "gillsansstd-light";
+  line-height: 1.2em;
+  text-transform: uppercase;
+}
+@media screen and (max-width: 567px) {
+  h2 {
+    margin-bottom: 10px;
+  }
+}
+
+h3 {
+  font-size: 22px;
+  font-size: 1.375rem;
+  /* Indiquer la font-size du body par défaut*/
+  margin: 0 0 15px;
+  font-family: "gillsansstd-light";
+  line-height: 1.2em;
+  text-transform: uppercase;
+}
+@media screen and (max-width: 567px) {
+  h3 {
+    margin-bottom: 5px;
+  }
+}
+
+p {
+  margin-bottom: 15px;
+  color: black;
+}
+@media screen and (max-width: 567px) {
+  p {
+    margin-bottom: 10px;
+  }
+}
+p.small {
+  font-size: 14px;
+  font-size: 0.875rem;
+  /* Indiquer la font-size du body par défaut*/
+}
+
+span.small {
+  font-size: 14px;
+  font-size: 0.875rem;
+  /* Indiquer la font-size du body par défaut*/
+}
+
+br {
+  color: white;
+  /* IE8 fix */
+}
+
+/* ------------------------------------------------------ */
+/* POSITION
+/* ------------------------------------------------------ */
+.floatL {
+  float: left;
+}
+
+.floatR {
+  float: right;
+}
+
+/* ------------------------------------------------------ */
+/* Box-Model
+/* ------------------------------------------------------ */
+.clear {
+  clear: both;
+}
+
+.nomargin {
+  margin: 0;
+}
+
+/* ------------------------------------------------------ */
+/* Typography
+/* ------------------------------------------------------ */
+.cap {
+  text-transform: uppercase;
+}
+
+.std {
+  font-family: "gillsansstd";
+}
+
+.light {
+  font-family: "gillsansstd-light";
+}
+
+.bold {
+  font-family: "gillsansstd-bold";
+}
+
+.white {
+  color: white;
+}
+
+.error {
+  color: red;
+}
+
+.main {
+  color: #7f8fa3;
+}
+
+.main-lighter {
+  color: #19afe4;
+}
+
+.main-darker {
+  color: #003c82;
+}
+
+.sec {
+  color: #144492;
+}
+
+.sec-lighter {
+  color: #e2e2e2;
+}
+
+.sec-darker {
+  color: #b8b7b7;
+}
+
+/* ------------------------------------------------------ */
+/* Visual
+/* ------------------------------------------------------ */
+.hide {
+  display: none;
+}
+
+.border-bottom {
+  border-bottom: 1px solid grey;
+}
+
+.bgmain {
+  background-color: #7f8fa3;
+}
+
+.bgsec {
+  background-color: #144492;
+}
+
+.bgwhite {
+  background-color: white;
+}
+
+.bgGrey {
+  background-color: grey;
+}
+
+/* ------------------------------------------------------ */
+/* STANDARD
+/* ------------------------------------------------------ */
+/* ------------------------------------------------------ */
+/* Light
+/* ------------------------------------------------------ */
+/* ------------------------------------------------------ */
+/* Bold
+/* ------------------------------------------------------ */
+/* contains everything that takes part in laying out the site or application, defining the global wireframe*/
+#header {
+  padding: 2em;
+  background-color: yellow;
+  color: black;
+}
+
+#footer {
+  padding: 2em;
+  background-color: blue;
+  color: white;
+  clear: both;
+}
+
+.l-nav {
+  padding: 5%;
+  width: 20%;
+  min-height: 15em;
+  background-color: grey;
+  color: white;
+  float: left;
+}
+.l-nav ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+/* more focused on widgets. It contains all kind of specific modules. There are usually a lot of files in components/ since the whole site/application should be mostly composed of tiny modules. */
+.btn, input[type="submit"] {
+  font-size: 18px;
+  font-size: 1.125rem;
+  /* Indiquer la font-size du body par défaut*/
+  display: inline-block;
+  padding: 15px 40px;
+  margin: 0 20px 20px 0;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+}
+@media screen and (max-width: 639px) {
+  .btn, input[type="submit"] {
+    padding: 10px 18px;
+    margin: 0 10px 20px 0;
+  }
+}
+.btn.btn-is-small, input.btn-is-small[type="submit"] {
+  padding: 10px 24px;
+}
+.btn.btn-is-large, input.btn-is-large[type="submit"] {
+  padding: 10px 40px;
+}
+.btn.btn-is-xlarge, input.btn-is-xlarge[type="submit"] {
+  padding: 10px 80px;
+}
+
+.link {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+form div.halfL, form input.halfL {
+  width: 49%;
+  float: left;
+}
+@media screen and (max-width: 479px) {
+  form div.halfL, form input.halfL {
+    width: 100%;
+    float: none;
+  }
+}
+form div.halfR, form input.halfR {
+  width: 49%;
+  float: right;
+}
+@media screen and (max-width: 479px) {
+  form div.halfR, form input.halfR {
+    width: 100%;
+    float: none;
+  }
+}
+
+fieldset {
+  margin-bottom: 40px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  text-transform: uppercase;
+  color: #003c82;
+}
+
+input[type="text"],
+input[type="tel"],
+input[type="email"],
+input[type="password"] {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 50%;
+  height: 40px;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid grey;
+}
+input[type="text"].placeholderfbk,
+input[type="tel"].placeholderfbk,
+input[type="email"].placeholderfbk,
+input[type="password"].placeholderfbk {
+  color: black;
+  font-style: italic;
+}
+input[type="text"]:-moz-placeholder,
+input[type="tel"]:-moz-placeholder,
+input[type="email"]:-moz-placeholder,
+input[type="password"]:-moz-placeholder {
+  color: black;
+  font-style: italic;
+}
+input[type="text"]::-moz-placeholder,
+input[type="tel"]::-moz-placeholder,
+input[type="email"]::-moz-placeholder,
+input[type="password"]::-moz-placeholder {
+  color: black;
+  font-style: italic;
+}
+input[type="text"]::-webkit-input-placeholder,
+input[type="tel"]::-webkit-input-placeholder,
+input[type="email"]::-webkit-input-placeholder,
+input[type="password"]::-webkit-input-placeholder {
+  color: black;
+  font-style: italic;
+}
+input[type="text"]:-ms-input-placeholder,
+input[type="tel"]:-ms-input-placeholder,
+input[type="email"]:-ms-input-placeholder,
+input[type="password"]:-ms-input-placeholder {
+  color: black;
+  font-style: italic;
+}
+@media screen and (max-width: 479px) {
+  input[type="text"],
+  input[type="tel"],
+  input[type="email"],
+  input[type="password"] {
+    width: 100%;
+  }
+}
+input[type="text"].large,
+input[type="tel"].large,
+input[type="email"].large,
+input[type="password"].large {
+  width: 100%;
+}
+input[type="text"].halfL,
+input[type="tel"].halfL,
+input[type="email"].halfL,
+input[type="password"].halfL {
+  float: left;
+  width: 49%;
+}
+@media screen and (max-width: 479px) {
+  input[type="text"].halfL,
+  input[type="tel"].halfL,
+  input[type="email"].halfL,
+  input[type="password"].halfL {
+    width: 100%;
+    float: none;
+  }
+}
+input[type="text"].halfR,
+input[type="tel"].halfR,
+input[type="email"].halfR,
+input[type="password"].halfR {
+  float: right;
+  width: 49%;
+}
+@media screen and (max-width: 479px) {
+  input[type="text"].halfR,
+  input[type="tel"].halfR,
+  input[type="email"].halfR,
+  input[type="password"].halfR {
+    float: none;
+    width: 100%;
+  }
+}
+input[type="text"].error,
+input[type="tel"].error,
+input[type="email"].error,
+input[type="password"].error {
+  border: 1px solid red;
+}
+
+input[type="submit"] {
+  color: white;
+  background: #003c82;
+  border: none;
+}
+
+input.placeholder {
+  color: black;
+  font-style: italic;
+}
+
+textarea {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 100%;
+  height: 150px;
+  padding: 10px;
+  margin-bottom: 5px;
+  font-family: "gillsansstd";
+  font-size: 14px;
+  font-size: 0.875rem;
+  /* Indiquer la font-size du body par défaut*/
+}
+textarea.placeholderfbk {
+  color: black;
+  font-style: italic;
+}
+textarea:-moz-placeholder {
+  color: black;
+  font-style: italic;
+}
+textarea::-moz-placeholder {
+  color: black;
+  font-style: italic;
+}
+textarea::-webkit-input-placeholder {
+  color: black;
+  font-style: italic;
+}
+textarea:-ms-input-placeholder {
+  color: black;
+  font-style: italic;
+}
+textarea.big {
+  height: 200px;
+}
+textarea.error {
+  border: 1px solid red;
+}
+
+.select-style {
+  overflow: hidden;
+  width: 50%;
+  padding: 0;
+  margin-bottom: 15px;
+  background: white url("http://www.scottgood.com/jsg/blog.nsf/images/arrowdown.gif") no-repeat 99% 50%;
+  border: 1px solid grey;
+}
+.select-style.large {
+  width: 100%;
+}
+.select-style.small {
+  width: 150px;
+}
+.select-style.error {
+  border: 1px solid red;
+}
+.select-style select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  height: 30px;
+  width: 100%;
+  padding: 0 10px;
+  border: none;
+  box-shadow: none;
+  background-color: transparent;
+  background-image: none;
+  @-moz-document url-prefix() {
+    /* If you use a background image */
+    width: 110%;
+}
+
+}
+.select-style select:focus {
+  outline: none;
+}
+
+.lt-ie10 .select-style, .lt-ie9 .select-style {
+  background: none;
+  border: none;
+}
+.lt-ie10 select, .lt-ie9 select {
+  width: 100%;
+  border: 1px solid grey;
+  padding: 0 0 0 10px;
+}
+
+.counter-module {
+  float: right;
+  color: #7f8fa3;
+}
+.counter-module.exceeded {
+  color: red;
+}
+
+.msg-error {
+  display: none;
+}
+
+/* à développer, /form/... */
+.custom-file-upload-hidden {
+  display: none;
+  visibility: hidden;
+  position: absolute;
+  left: -9999px;
+  width: 100%;
+}
+
+.custom-file-upload {
+  display: inline-block;
+  width: auto;
+  margin-top: 0px;
+  width: 40%;
+  margin-bottom: 15px;
+  margin-right: 15px;
+  float: left;
+}
+.custom-file-upload label {
+  display: block;
+  margin-bottom: 5px;
+  text-align: left;
+}
+
+.file-upload-wrapper {
+  position: relative;
+  margin-bottom: 5px;
+  width: 100%;
+}
+
+.file-upload-input {
+  width: 100% !important;
+  color: black;
+  font-size: 16px;
+  padding: 11px 17px;
+  border: none;
+  background-color: white;
+  display: none;
+  width: 100%;
+  -webkit-transition: all 0.2s ease-in;
+  -moz-transition: all 0.2s ease-in;
+  -o-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+  float: left;
+  /* IE 9 Fix */
+}
+.file-upload-input:hover, .file-upload-input:focus {
+  outline: none;
+}
+
+.file-upload-button {
+  width: 100%;
+  cursor: pointer;
+  display: inline-block;
+  color: #7f8fa3;
+  font-family: "gillsansstd";
+  font-size: 14px;
+  font-size: 0.875rem;
+  /* Indiquer la font-size du body par défaut*/
+  text-decoration: underline;
+  text-transform: uppercase;
+  padding: 90px 20px 14px 20px;
+  border: none;
+  margin-left: -1px;
+  background: url(../img/coordonnees/upload.png) no-repeat 50% 10px;
+  float: left;
+  /* IE 9 Fix */
+  border: 1px dashed grey;
+  -webkit-transition: all 0.2s ease-in;
+  -moz-transition: all 0.2s ease-in;
+  -o-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+}
+.file-upload-button:hover {
+  background: url(../img/coordonnees/upload.png) no-repeat 50% 20px;
+}
+
+.wrapper-photo-upload {
+  position: relative;
+  width: 100px;
+  float: left;
+  color: black;
+}
+.wrapper-photo-upload a {
+  color: #7f8fa3;
+}
+.wrapper-photo-upload img {
+  max-width: 100%;
+}
+.wrapper-photo-upload .close {
+  display: block;
+  position: absolute;
+  right: -45px;
+  top: 0px;
+  width: 35px;
+  height: 35px;
+  background: url(../img/close.png) no-repeat 0 0;
+  cursor: pointer;
+}
+
+.checkbox-photo {
+  display: none;
+}
+
+.lt-ie9 .custom-file-upload-hidden {
+  display: block;
+  visibility: visible;
+  position: static !important;
+  left: 0 !important;
+  width: 94px;
+}
+.lt-ie9 .file-upload-button {
+  display: none;
+}
+
+.c-popin {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  z-index: 2;
+}
+.c-popin .overlay {
+  background-color: rgba(255, 255, 255, 0.5);
+  width: 100%;
+  height: 100%;
+}
+.c-popin .box {
+  display: block;
+  width: 15em;
+  height: 7em;
+  padding: 2em;
+  background: white;
+  position: relative;
+  border-radius: .5em;
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+  -moz-box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+  color: black;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -9.5em;
+  margin-top: -5.5em;
+}
+.c-popin .box .close {
+  position: absolute;
+  right: .5em;
+  top: .5em;
+  text-decoration: none;
+  color: black;
+}
+
+.c-video {
+  position: relative;
+  padding-bottom: 56.25%;
+  /* 16:9 */
+  padding-top: 25px;
+  height: 0;
+}
+.c-video iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.c-loader {
+  text-align: center;
+}
+.c-loader .bar-container {
+  margin-top: 15em;
+  display: inline-block;
+  width: 15em;
+  height: .5em;
+  border: 2px solid black;
+  position: relative;
+}
+.c-loader .bar-container .bar {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 0;
+  height: 100%;
+  background: black;
+  -webkit-transition: width 0.25s ease-out;
+  -moz-transition: width 0.25s ease-out;
+  -o-transition: width 0.25s ease-out;
+  transition: width 0.25s ease-out;
+}
+.c-loader .counter {
+  color: black;
+}
+
+.CookieAcceptPanel {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: #3b3b3b;
+  background: rgba(59, 59, 59, 0.9);
+  filter: alpha(opacity=90);
+  font-size: 13px;
+  font-size: 0.8125rem;
+  /* Indiquer la font-size du body par défaut*/
+  z-index: 2000;
+  color: #fff;
+  display: none;
+}
+
+.CookieAcceptPanel .inner {
+  margin: 0 auto;
+  max-width: 1024px;
+  padding: 10px 20px;
+  position: relative;
+  text-align: center;
+}
+
+.CookieAcceptClosePanel {
+  cursor: pointer;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+
+a.CookieAcceptReadMore,
+a:link.CookieAcceptReadMore,
+a:visited.CookieAcceptReadMore,
+a:hover.CookieAcceptReadMore,
+a:active.CookieAcceptReadMore {
+  color: #fff !important;
+  text-decoration: underline !important;
+}
+
+a.CookieAcceptCloseLink,
+a:link.CookieAcceptCloseLink,
+a:visited.CookieAcceptCloseLink,
+a:hover.CookieAcceptCloseLink,
+a:active.CookieAcceptCloseLink {
+  color: #fff !important;
+  text-decoration: none !important;
+}
+
+/* page-specific styles */
+#home {
+  /* passer à p- */
+  padding: 5%;
+  width: 60%;
+  min-height: 15em;
+  background: black;
+  color: white;
+  float: left;
+  -webkit-transform-origin: 100% 50%;
+  -moz-transform-origin: 100% 50%;
+  -ms-transform-origin: 100% 50%;
+  -o-transform-origin: 100% 50%;
+  transform-origin: 100% 50%;
+  -webkit-transform: rotateY(-130deg);
+  -moz-transform: rotateY(-130deg);
+  -ms-transform: rotateY(-130deg);
+  -o-transform: rotateY(-130deg);
+  transform: rotateY(-130deg);
+  -webkit-transition: -webkit-transform 0.5s ease-out;
+  -moz-transition: -moz-transform 0.5s ease-out;
+  -o-transition: -o-transform 0.5s ease-out;
+  transition: transform 0.5s ease-out;
+  position: absolute;
+  right: 0;
+}
+#home.active {
+  -webkit-transform: rotateY(0deg);
+  -moz-transform: rotateY(0deg);
+  -ms-transform: rotateY(0deg);
+  -o-transform: rotateY(0deg);
+  transform: rotateY(0deg);
+}
+#home a {
+  color: white;
+}
+
+#sectionEquipe {
+  /* passer à p- */
+  padding: 5%;
+  width: 60%;
+  min-height: 15em;
+  background: pink;
+  color: white;
+  float: left;
+}
+
+#sectionContact {
+  /* passer à p- */
+  padding: 5%;
+  width: 60%;
+  min-height: 15em;
+  background: green;
+  color: white;
+  float: left;
+  -webkit-transform: translateZ(-5000px);
+  -moz-transform: translateZ(-5000px);
+  -ms-transform: translateZ(-5000px);
+  -o-transform: translateZ(-5000px);
+  transform: translateZ(-5000px);
+  -webkit-transition: all 0.5s ease-out;
+  -moz-transition: all 0.5s ease-out;
+  -o-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+  opacity: 0;
+  position: absolute;
+  right: 0;
+}
+#sectionContact.active {
+  -webkit-transform: translateZ(0);
+  -moz-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  -o-transform: translateZ(0);
+  transform: translateZ(0);
+  opacity: 1;
+}
+#sectionContact a {
+  color: white;
+}
+
+#p404 {
+  /* passer à p- */
+  padding: 5%;
+  background: black;
+  color: white;
+}
+
+[class^="socialicons-"],
+[class*=" socialicons-"] {
+  background-repeat: no-repeat;
+  background-image: url('../img/socialicons/16.png');
+}
+@media (-webkit-min-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 3 / 2), (min-device-pixel-ratio: 1.5) {
+  [class^="socialicons-"],
+  [class*=" socialicons-"] {
+    background-image: url('../img/socialicons/32.png');
+  }
+}

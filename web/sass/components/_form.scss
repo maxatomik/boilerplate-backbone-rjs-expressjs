@@ -1,0 +1,163 @@
+form{
+    div.halfL, input.halfL{
+        width:49%;
+        float:left;
+        @include bp($rickon){
+            width:100%;
+            float:none;
+        }
+    }
+    div.halfR, input.halfR{
+        width:49%;
+        float:right;
+        @include bp($rickon){
+            width:100%;
+            float:none;
+        }
+    }
+}
+
+fieldset{ margin-bottom:40px; }
+
+label{
+    display:block;
+    margin-bottom:5px;
+    text-transform:uppercase;
+    color:$main-darker;
+}
+
+input[type="text"],
+input[type="tel"],
+input[type="email"],
+input[type="password"]
+{
+    @include box-sizing("border-box");
+    @include input-placeholder {
+        color: $txt-lighter;
+        font-style: italic;
+    }
+    @include bp($rickon){
+        width:100%;
+    }
+    width:50%;
+    height:40px;
+    padding: 10px;
+    margin-bottom:15px;
+    border:1px solid $border;
+    &.large{
+        width:100%;
+    }
+    &.halfL{
+        float:left;
+        width:49%;
+        @include bp($rickon){
+            width:100%;
+            float:none;
+        }
+    }
+    &.halfR{
+        float:right;
+        width:49%;
+        @include bp($rickon){
+            float:none;
+            width:100%;
+        }
+    }
+    &.error{
+        border:1px solid $error;
+    }
+}
+
+input[type="submit"]{
+    @extend .btn;
+    color:white;
+    background:$main-darker;
+    border:none;
+}
+
+input.placeholder {
+    color: $txt-lighter;
+    font-style: italic;
+}
+
+textarea{
+    @include box-sizing("border-box");
+    @include input-placeholder {
+        color: $txt-lighter;
+        font-style: italic;
+    }
+    width:100%;
+    height:150px;
+    padding:10px;
+    margin-bottom:5px;
+    font-family: $std;
+    @include font-size(14);
+    &.big{
+        height:200px;
+    }
+    &.error{
+        border:1px solid $error;
+    }
+}
+
+.select-style {
+    overflow: hidden;
+    width:50%;
+    padding: 0;
+    margin-bottom:15px;
+    background: #fff url("http://www.scottgood.com/jsg/blog.nsf/images/arrowdown.gif") no-repeat 99% 50%;
+    border: 1px solid $border;
+    &.large{
+        width: 100%;
+    }
+    &.small{
+        width: 150px;
+    }
+    &.error{
+        border:1px solid $error;
+    }
+    select {
+        @include appearance("none");
+        height:30px;
+        width:100%;
+        padding:0 10px;
+        border: none;
+        box-shadow: none;
+        background-color: transparent;
+        background-image: none;
+        &:focus{
+            outline: none;
+        }
+        @-moz-document url-prefix() {
+           /* If you use a background image */
+           width:110%;
+        }
+    }
+}
+
+.lt-ie10, .lt-ie9{
+    .select-style{
+        background: none;
+        border:none;
+    }
+    select{
+        width:100%;
+        border: 1px solid $border;
+        padding:0 0 0 10px;
+    }
+}
+
+.counter-module{
+    float:right;
+    color: $main;
+    &.exceeded{
+        color:$error;
+    }
+}
+
+.msg-error{
+    display:none;
+}
+
+
+

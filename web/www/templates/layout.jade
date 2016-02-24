@@ -1,0 +1,35 @@
+if layout != 'false'
+  doctype html
+  //if lt IE 7
+    html.no-js.lt-ie9.lt-ie8.lt-ie7  
+  //if IE 7
+    html.no-js.lt-ie9.lt-ie8  
+  //if IE 8
+    html.no-js.lt-ie9  
+  // [if gt IE 8] <!
+  html.no-js
+    // <![endif]
+    head
+      meta(charset='utf-8')
+      meta(http-equiv='X-UA-Compatible', content='IE=edge')
+      title= title
+      meta(name='description', content='#{content}')
+      meta(name='viewport', content='width=device-width, initial-scale=1')
+      link(href='/css/main.css', rel='stylesheet', type='text/css')
+      //if lt IE 9
+        script(src='//html5shiv.googlecode.com/svn/trunk/html5.js')
+    body
+      #wrapper
+        #main
+          block mainContent
+        // JS file setting environment variable
+        script(src='/js/env-config.js')
+        if env != local
+          script(src='/js/app/libs/requirejs/require.js', data-main='/js/app/main.js')
+        else
+          script(src='/js/app/libs/requirejs/require.js', data-main='/js/dist/app-built.js')
+
+else
+ block mainContent
+
+include ./oauth.jade

@@ -1,0 +1,21 @@
+#home { /* passer à p- */
+    padding: 5%;
+    width: 60%;
+    min-height: 15em;
+    background: black;
+    color: white;
+    float: left;
+    @include transform-origin(100%, 50%);
+    @include rotateY(-130deg);
+    @include transition(transform .5s ease-out);
+    position: absolute;
+    right: 0;
+
+    &.active {
+        @include rotateY(0deg);
+    }
+
+    a {
+        color: white;
+    }
+}

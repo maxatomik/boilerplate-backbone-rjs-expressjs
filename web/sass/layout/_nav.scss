@@ -1,0 +1,17 @@
+.l-nav {
+    padding: 5%;
+    width: 20%;
+    min-height: 15em;
+    background-color: grey;
+    color: white;
+    float: left;
+
+    ul {
+        li {
+            a {
+                color: white;
+                text-decoration: none;
+            }
+        }
+    }
+}

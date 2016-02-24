@@ -1,0 +1,8 @@
+node_modules
+bower_components
+.sass-cache
+.DS_Store
+ecosystem.json
+logs
+server.json
+/web/config/server.json

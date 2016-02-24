@@ -1,0 +1,26 @@
+.c-loader {
+	text-align: center;
+
+	.bar-container {
+		margin-top: 15em;
+		display: inline-block;
+		width: 15em;
+		height: .5em;
+		border: 2px solid black;
+		position: relative;
+
+		.bar {
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 0;
+			height: 100%;
+			background: black;
+			@include transition(width .25s ease-out);
+		}
+	}
+
+	.counter {
+		color: black;
+	}
+}

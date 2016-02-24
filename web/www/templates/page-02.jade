@@ -1,0 +1,17 @@
+extends layout
+block mainContent
+    include ./header.jade
+
+    section(id="page-02")
+        h1= title
+        p= content
+        br
+        a(href='/') Page 1
+        br
+        a(href='/page-02') Page 2
+        br
+        a(href='/page-03/1') Page 3
+        br
+        a(href='/page-04') Page 4
+
+    include ./footer.jade

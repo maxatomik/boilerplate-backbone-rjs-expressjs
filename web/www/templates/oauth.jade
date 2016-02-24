@@ -1,0 +1,7 @@
+section(id="oauth")
+ a(href='', class='facebook-oauth') Facebook oAuth
+ br
+ a(href='', class='twitter-oauth') Twitter oAuth
+ br
+ if session.passport !== undefined
+  p= session.passport.user.username

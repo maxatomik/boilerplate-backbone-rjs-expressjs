@@ -1,0 +1,47 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/css/main.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+@import "compass/reset";
+@import "compass/css3";
+
+/* Hey, this is not from me, not my code, not my responsibility */
+/* If you have to override a section of any vendor, I recommend you have an 8th folder called vendors-extensions/  */
+@import "vendors/jquery.fullPage"; /* Plugin to compose a page of multiple sections window full-height size & scrollable*/
+
+/* The rule of thumb for this folder is that it should not output a single line of CSS when compiled on its own. */
+@import "utils/variables";
+@import "utils/mixins";
+@import "utils/placeholders";
+
+/* standard styles for commonly used HTML, Base styles: projects defaults html elements, class-one-rule helpers for flexible html edition, fontfaces configuration */
+/*@import "base/reset";*/
+@import "base/base";
+@import "base/class-helpers";
+@import "base/fontfaces";
+
+/* contains everything that takes part in laying out the site or application, defining the global wireframe*/
+@import "layout/grid";
+@import "layout/header";
+@import "layout/footer";
+@import "layout/nav";
+
+/* more focused on widgets. It contains all kind of specific modules. There are usually a lot of files in components/ since the whole site/application should be mostly composed of tiny modules. */
+@import "components/buttons";
+@import "components/form"; /* à développer, /form/... */
+@import "components/custom-file-upload";
+@import "components/popin";
+@import "components/video";
+@import "components/loader";
+@import "components/cookies";
+
+
+/* page-specific styles */
+@import "pages/home";
+@import "pages/equipe";
+@import "pages/login";
+@import "pages/contact";
+@import "pages/404";
+@import "pages/_xx_example";
+

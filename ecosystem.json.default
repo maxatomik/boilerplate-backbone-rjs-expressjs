@@ -1,0 +1,74 @@
+{
+  "apps" : [{
+      "name"        : "web",
+      "script"      : "web.js",
+      "watch": true,
+      "ignore_watch" : ["node_modules", "logs", ".DS_Store"],
+      "cwd"         : "src/NodeJS",
+      "env_local": {
+        "ENV":"local",
+        "PORT": $PORTWEB,
+        "BACKBONE" : "web/www",
+        "DOMAIN" : "http://$DOMAIN",
+        "ME_CONFIG_MONGODB_PORT" : "27017",
+        "ME_CONFIG_MONGODB_SERVER" : "localhost",
+        "MONGODB_SESSION_STORE" : "social_sessions"
+      },
+      "env_marceldev": {
+        "ENV":"marceldev",
+        "PORT": $PORTWEB,
+        "BACKBONE" : "web/www",
+        "DOMAIN" : "http://$DOMAIN",
+        "ME_CONFIG_MONGODB_PORT" : "27017",
+        "ME_CONFIG_MONGODB_SERVER" : "localhost",
+        "MONGODB_SESSION_STORE" : "social_sessions"
+      }
+    },
+    {
+      "name"        : "app",
+      "script"      : "app.js",
+      "cwd"         : "src/NodeJS",
+      "env_local": {
+        "PORT" : $PORTAPP,
+        "ME_CONFIG_MONGODB_PORT" : "27017",
+        "ME_CONFIG_MONGODB_DATABASE" : "$DATABASE",
+        "ME_CONFIG_MONGODB_SERVER" : "localhost",
+        "MONGODB_SESSION_STORE" : "social_sessions"
+      },
+      "env_marceldev": {
+        "PORT" : $PORTAPP,
+        "ME_CONFIG_MONGODB_PORT" : "27017",
+        "ME_CONFIG_MONGODB_SERVER" : "localhost",
+        "MONGODB_SESSION_STORE" : "social_sessions"
+      }
+    },
+    {
+      "name"        : "social",
+      "script"      : "social.js",
+        "watch": true,
+      "ignore_watch" : ["node_modules", "logs", ".DS_Store"],
+      "cwd"         : "src/NodeJS",
+      "env_local": {
+        "PORT" : $PORTSOCIAL,
+        "DOMAIN" : "http://$DOMAIN",
+        "ME_CONFIG_MONGODB_PORT" : "27017",
+        "ME_CONFIG_MONGODB_SERVER" : "localhost",
+        "MONGODB_SESSION_STORE" : "social_sessions",
+        "TWITTER_CONSUMER_KEY" : "QIzRE1WpzlF8iNc5j7nMCFbUE",
+        "TWITTER_CONSUMER_SECRET" : "kl2mcXwllmDhO07C1rPBZCohVidc6jOH9Ht90wQC2SJyn8Ne91",
+        "FACEBOOK_APP_ID" : "1013775561987535",
+        "FACEBOOK_APP_SECRET" : "84bcd72b4ea57b8a3e6ebbc1721b346d"
+      },
+      "env_marceldev": {
+        "PORT" :  $PORTSOCIAL,
+        "DOMAIN" : "http://$DOMAIN",
+        "ME_CONFIG_MONGODB_PORT" : "27017",
+        "ME_CONFIG_MONGODB_SERVER" : "localhost",
+        "MONGODB_SESSION_STORE" : "social_sessions",
+        "TWITTER_CONSUMER_KEY" : "8GtGqLZSCLf66B4oZvpY44gWM",
+        "TWITTER_CONSUMER_SECRET" : "9Ua1p05CT0ZaMpSBqBT0cszFqXlYuVHJHe7snNXrl6FADRaWBd",
+        "FACEBOOK_APP_ID" : "1013775561987535",
+        "FACEBOOK_APP_SECRET" : "84bcd72b4ea57b8a3e6ebbc1721b346d"
+      }
+    }]
+}
