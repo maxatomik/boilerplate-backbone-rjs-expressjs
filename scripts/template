@@ -1,7 +1,0 @@
-<VirtualHost template.url:80>
-ServerName template.url
-DocumentRoot "template.docroot/web/www/"
-ProxyPass / http://localhost:template.port/
-ProxyPassReverse / http://localhost:template.port/
-ProxyPreserveHost On
-</VirtualHost>
