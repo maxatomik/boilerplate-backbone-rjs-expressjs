@@ -18,6 +18,7 @@ $ git clone git@gitlab.marceldev.fr:website/boilerplate-backbone-rjs-expressjs.g
 
 ```sh
 $ cd monprojet
+$ git remote set-url origin git://new.url.here
 $ backbone init
 $ backbone grunt serve
 ```
