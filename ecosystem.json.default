@@ -3,7 +3,6 @@
       "name"        : "web",
       "script"      : "web.js",
       "watch": true,
-      "autorestart"      : false,
       "ignore_watch" : ["node_modules", "logs", ".DS_Store"],
       "cwd"         : "src/NodeJS",
       "env_local": {
@@ -20,7 +19,6 @@
       "name"        : "app",
       "script"      : "app.js",
       "cwd"         : "src/NodeJS",
-      "autorestart" : false,
       "env_local": {
         "PORT" : $PORTAPP,
         "ME_CONFIG_MONGODB_PORT" : "27017",
@@ -33,7 +31,6 @@
       "name"        : "social",
       "script"      : "social.js",
       "watch": true,
-      "autorestart"      : false,
       "ignore_watch" : ["node_modules", "logs", ".DS_Store"],
       "cwd"         : "src/NodeJS",
       "env_local": {
