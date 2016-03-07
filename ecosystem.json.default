@@ -3,6 +3,10 @@
       "name"        : "web",
       "script"      : "web.js",
       "watch": true,
+      "watch_options": {
+        "followSymlinks": true,
+        "usePolling": true,
+      },
       "ignore_watch" : ["node_modules", "logs", ".DS_Store"],
       "cwd"         : "src/NodeJS",
       "env_local": {
@@ -31,6 +35,10 @@
       "name"        : "social",
       "script"      : "social.js",
       "watch": true,
+      "watch_options": {
+        "followSymlinks": true,
+        "usePolling": true,
+      },
       "ignore_watch" : ["node_modules", "logs", ".DS_Store"],
       "cwd"         : "src/NodeJS",
       "env_local": {
