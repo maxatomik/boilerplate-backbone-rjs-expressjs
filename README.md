@@ -1,6 +1,8 @@
 ## Boilerplate BackBone/ExpressJS
 1.0
 
+## UTILISATION DE GITBASH OBLIGATOIRE SUR WINDOWS
+
 ### 1. initialisation d'une machine virtuelle
 
 Instruction ici : [Installation de Machine Virtuelle](http://gitlab.marceldev.fr/website/vagrant-nodejs-nginx-mongodb)
