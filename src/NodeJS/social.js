@@ -18,7 +18,7 @@ var MongoStore = require('connect-mongo/es5')(session);
 app.use(session({
     store: new MongoStore({
       url: 'mongodb://'+process.env.ME_CONFIG_MONGODB_SERVER+':'+process.env.ME_CONFIG_MONGODB_PORT+'/'+process.env.MONGODB_SESSION_STORE,
-      ttl: 14 * 24 * 60 * 60 // = 14 days. Default
+      ttl: 14 * 24 * 60 * 60
     }),
     resave: true, saveUninitialized: true,
 	secret:'marcel'}));
@@ -30,8 +30,6 @@ var Users = db.get('social_users');
 
 app.use(passport.initialize());
 app.use(passport.session());
-
-
 
 app.get('/in', function(req, res){
   res.send('<!DOCTYPE html><html><body><script> window.close(); </script></body></html>');

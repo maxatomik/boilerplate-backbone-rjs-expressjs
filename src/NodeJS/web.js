@@ -40,7 +40,7 @@ app.get('*', function (req, res, next) {
     next();
 });
 
-require('./router')(app, pageContent);
+require('./router/routes')(app, pageContent);
 
 Server = require('http').createServer(app);
 Server.listen(process.env.PORT, function(){ 

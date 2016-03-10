@@ -1,5 +1,4 @@
 module.exports = function(app, pageContent){
-
 	app.get('/', function (req, res) {
 	    console.log('page 1');
 	    pageContent.title = "Page 1";
