@@ -10,15 +10,34 @@ Instruction ici : [Installation de Machine Virtuelle](http://gitlab.marceldev.fr
 
 #### 2.1 clonage du repository 
 
+cloner le projet dans le workspace node défini lors de l'installation de la VM (par default: ~/nodejs_workspace)
+
 ```sh
 $ git clone git@gitlab.marceldev.fr:website/boilerplate-backbone-rjs-expressjs.git monprojet
 ```
 
-#### 2.2 installation des modules et création du server
+#### 2.2 installation du projet
+
+##### 2.2.1 New Command Line
+
+```sh
+Usage:backbone [OPTIONS] <name>
+	-h, --help        		show this help screen
+	setup     	  			installation 
+	--express start     	start or restart express applications 
+	pm2    					pm2 command
+	grunt (command) 		grunt command
+	vagrant-update
+	vagrant			
+
+Examples:
+	backbone foo
+	backbone foo action
+```
+
+##### 2.2.2 installation 
 
 ```sh
 $ cd monprojet
-$ git remote set-url origin git://new.url.here
-$ backbone init
-$ backbone grunt serve
+$ backbone setup
 ```
