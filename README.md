@@ -1,6 +1,8 @@
 ## Boilerplate BackBone/ExpressJS
 1.0
 
+## UTILISATION DE GITBASH OBLIGATOIRE SUR WINDOWS
+
 ### 1. initialisation d'une machine virtuelle
 
 Instruction ici : [Installation de Machine Virtuelle](http://gitlab.marceldev.fr/website/vagrant-nodejs-nginx-mongodb)
@@ -24,15 +26,13 @@ $ git clone git@gitlab.marceldev.fr:website/boilerplate-backbone-rjs-expressjs.g
 Usage:backbone [OPTIONS] <name>
 	-h, --help        		show this help screen
 	setup     	  			installation 
-	--express start     	start or restart express applications 
-	pm2    					pm2 command
 	grunt (command) 		grunt command
-	vagrant-update
-	vagrant			
+	vagrant-update          update vm
+	--cmd "(command)"  execute shell command to the virtual machine
 
 Examples:
-	backbone foo
-	backbone foo action
+	--cmd "express start"
+	--cmd "pm2 logs"
 ```
 
 ##### 2.2.2 installation 
