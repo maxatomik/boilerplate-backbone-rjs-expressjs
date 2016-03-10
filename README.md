@@ -26,10 +26,9 @@ $ git clone git@gitlab.marceldev.fr:website/boilerplate-backbone-rjs-expressjs.g
 Usage:backbone [OPTIONS] <name>
 	-h, --help        		show this help screen
 	setup     	  			installation 
-	--cmd "<shellcommand>"  execute shell command to the virtual machine
-	pm2    					pm2 command
 	grunt (command) 		grunt command
-	vagrant-update
+	vagrant-update          update vm
+	--cmd "(command)"  execute shell command to the virtual machine
 
 Examples:
 	--cmd "express start"
