@@ -23,21 +23,23 @@ $ git clone git@gitlab.marceldev.fr:website/boilerplate-backbone-rjs-expressjs.g
 ##### 2.2.1 New Command Line
 
 ```sh
-Usage:backbone [OPTIONS] <name>
+Usage:marcelb [OPTIONS] <name>
 	-h, --help        		show this help screen
 	setup     	  			installation 
+	front     	  			start with front environnement( front logs )
+	back     	  			start with back environnement( express logs )
 	grunt (command) 		grunt command
-	vagrant-update          update vm
-	--cmd "(command)"  execute shell command to the virtual machine
+	vagrant-update          update vagrant 
+	--cmd "(command)"  		execute shell command to the virtual machine
 
 Examples:
-	--cmd "express start"
-	--cmd "pm2 logs"
+	marcelb front
+	marcelb back
 ```
 
 ##### 2.2.2 installation 
 
 ```sh
 $ cd monprojet
-$ backbone setup
+$ marcelb setup
 ```
