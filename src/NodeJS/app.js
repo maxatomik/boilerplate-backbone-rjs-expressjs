@@ -6,7 +6,7 @@ app.use(cors({
     origin : '*'
 }));
 mongo_express = require('mongo-express/middleware');
- 
+
 mongo_express_config = require(__dirname+'/db/config.js')
 
 app.use('/app/admin', mongo_express(mongo_express_config))
