@@ -22,22 +22,24 @@ define([
 			});
         },
 	    onFacebook: function (e) {
+	    	var oauth_url = $(e.toElement).attr('href');
 	        var width = 600,
 	            height = 300,
 	            left = window.screen.width / 2 - width / 2,
 	            top = window.screen.height / 2 - height / 2,
-	            oauth = 'http://' + window.location.host + ':3300/auth/facebook';
+	            oauth = oauth_url;
 	        this.onConnectionProcess = true;
 	        this.w = window.open(oauth, 'popup_facebook', 'toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=no, copyhistory=no, width=' + width + ', height=' + height + ', top=' + top + ', left=' + left);
 	        e.preventDefault();
 	    },
 	   	
 	    onTwitter: function (e) {
+	    	var oauth_url = $(e.toElement).attr('href');
 	        var width = 600,
 	            height = 300,
 	            left = window.screen.width / 2 - width / 2,
 	            top = window.screen.height / 2 - height / 2,
-	            oauth = 'http://' + window.location.host + ':3300/auth/twitter';
+	            oauth = oauth_url;
 	        this.onConnectionProcess = true;	
 	        this.w = window.open(oauth, 'popup_twitter', 'toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=no, copyhistory=no, width=' + width + ', height=' + height + ', top=' + top + ', left=' + left);
 	        e.preventDefault();
