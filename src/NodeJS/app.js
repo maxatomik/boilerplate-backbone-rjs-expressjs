@@ -18,7 +18,7 @@ var MongoStore = require('connect-mongo')(session);
 var mongodbRest = require('mongodb-rest/server.js');
 
 mongoose = require('mongoose');
-mongoose.connect('mongodb://'+process.env.ME_CONFIG_MONGODB_SERVER+':'+process.env.ME_CONFIG_MONGODB_PORT+'/mybdd')
+mongoose.connect('mongodb://'+process.env.ME_CONFIG_MONGODB_SERVER+':'+process.env.ME_CONFIG_MONGODB_PORT+'/'+process.env.ME_CONFIG_MONGODB_DATABASE)
 
 /* SESSIONS STORE */
 app.use(session({

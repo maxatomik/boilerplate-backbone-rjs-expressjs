@@ -25,7 +25,7 @@ app.use(session({
 
 var mongoose = require('mongoose');
 
-mongoose.connect('mongodb://'+process.env.ME_CONFIG_MONGODB_SERVER+':'+process.env.ME_CONFIG_MONGODB_PORT+'/mybdd')
+mongoose.connect('mongodb://'+process.env.ME_CONFIG_MONGODB_SERVER+':'+process.env.ME_CONFIG_MONGODB_PORT+'/'+process.env.ME_CONFIG_MONGODB_DATABASE)
 
 var User   = require('./models/user'); // get our mongoose model
    

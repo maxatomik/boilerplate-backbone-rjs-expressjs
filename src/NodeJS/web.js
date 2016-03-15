@@ -23,7 +23,7 @@ app.use(cors({
 
 
 mongoose = require('mongoose');
-mongoose.connect('mongodb://'+process.env.ME_CONFIG_MONGODB_SERVER+':'+process.env.ME_CONFIG_MONGODB_PORT+'/mybdd')
+mongoose.connect('mongodb://'+process.env.ME_CONFIG_MONGODB_SERVER+':'+process.env.ME_CONFIG_MONGODB_PORT+'/'+process.env.ME_CONFIG_MONGODB_DATABASE)
 
 /* SESSIONS STORE */
 app.use(session({
