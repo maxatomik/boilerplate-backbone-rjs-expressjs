@@ -6,3 +6,11 @@ ecosystem.json
 logs
 server.json
 /web/config/server.json
+
+/ecosystem.json.backup
+/postman.json
+/postman.json.backup
+/web/www/templates/oauth.jade
+/web/www/templates/oauth.jade.backup
+/web/www/templates/tools.jade
+/web/www/templates/tools.jade.backup
