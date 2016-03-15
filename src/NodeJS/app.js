@@ -5,24 +5,46 @@ var cors = require('cors');
 app.use(cors({
     origin : '*'
 }));
+
 mongo_express = require('mongo-express/middleware');
 
 mongo_express_config = require(__dirname+'/db/config.js')
+rest_config = require(__dirname+'/db/rest.js')
 
 app.use('/app/admin', mongo_express(mongo_express_config))
 
-app.use('/api/v1', require('express-mongo-rest')('mongodb://'+process.env.ME_CONFIG_MONGODB_SERVER+':'+process.env.ME_CONFIG_MONGODB_PORT+'/'+process.env.ME_CONFIG_MONGODB_DATABASE))
+var session = require('express-session');
+var MongoStore = require('connect-mongo')(session);
+var mongodbRest = require('mongodb-rest/server.js');
 
-var monk = require('monk');
-var db = require('monk')('mongodb://'+process.env.ME_CONFIG_MONGODB_SERVER+':'+process.env.ME_CONFIG_MONGODB_PORT+'/mybdd');
+mongoose = require('mongoose');
+mongoose.connect('mongodb://'+process.env.ME_CONFIG_MONGODB_SERVER+':'+process.env.ME_CONFIG_MONGODB_PORT+'/mybdd')
+
+/* SESSIONS STORE */
+app.use(session({
+    store: new MongoStore({ mongooseConnection: mongoose.connection }),
+    resave: true, 
+    saveUninitialized: true,
+    secret:'marcel'
+}));
+
+/* REST API */
+mongodbRest.startServer(rest_config.withAuth);
+
+/*New User*/
+var User   = require('./models/user'); //User Model
+var nick = new User({ 
+    name: 'Nick Cerminara', 
+    password: 'password',
+    admin: true 
+});
+nick.save(function(err) {
+	if (err) throw err;
+	console.log('User saved successfully');
+});
 
 
-/*Custom Models*/
-var Posts = db.get('s_posts');
-var Users = db.get('s_users');
-var Errors = db.get('s_errors');
-
-
+/*Express Server*/
 Server = require('http').createServer(app);
 Server.listen(process.env.PORT, function(){ 
     console.log("Application & services on port : " + process.env.PORT);

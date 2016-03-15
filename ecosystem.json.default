@@ -23,6 +23,12 @@
       "name"        : "app",
       "script"      : "app.js",
       "cwd"         : "src/NodeJS",
+      "watch": true,
+      "watch_options": {
+        "followSymlinks": true,
+        "usePolling": true,
+      },
+      "ignore_watch" : ["node_modules", "logs", ".DS_Store"],
       "env_local": {
         "PORT" : $PORTAPP,
         "ME_CONFIG_MONGODB_PORT" : "27017",

@@ -23,11 +23,12 @@ app.use(session({
     resave: true, saveUninitialized: true,
 	secret:'marcel'}));
 
-var monk = require('monk');
-var db = require('monk')('mongodb://'+process.env.ME_CONFIG_MONGODB_SERVER+':'+process.env.ME_CONFIG_MONGODB_PORT+'/mybdd');
+var mongoose = require('mongoose');
 
-var Users = db.get('social_users');
+mongoose.connect('mongodb://'+process.env.ME_CONFIG_MONGODB_SERVER+':'+process.env.ME_CONFIG_MONGODB_PORT+'/mybdd')
 
+var User   = require('./models/user'); // get our mongoose model
+   
 app.use(passport.initialize());
 app.use(passport.session());
 
@@ -43,9 +44,9 @@ passport.use(new TwitterStrategy({
     callbackURL: process.env.DOMAIN+":"+process.env.PORT+"/auth/twitter/callback"
   },
   function(token, tokenSecret, profile, done) {
-  	Users.insert(profile, function (err, resp) {
+  	/*Users.insert(profile, function (err, resp) {
      return done(err, resp);
-	});
+	});*/
   }
 ));
 
@@ -77,9 +78,9 @@ passport.use(new FacebookStrategy({
     enableProof: false
   },
   function(accessToken, refreshToken, profile, done) {
-    Users.insert(profile, function (err, resp) {
+    /*Users.insert(profile, function (err, resp) {
      return done(err, resp);
-	});
+	});*/
   }
 ));
 app.get('/auth/facebook',
@@ -95,6 +96,6 @@ app.get('/auth/facebook/callback',
 Server = require('http').createServer(app);
 Server.listen(process.env.PORT, function(){ 
     console.log("Social oAuth on port : " + process.env.PORT);
-    console.log("DO NOT FORGET to CREATE APPLICATIONS")
+    console.log("DO NOT FORGET TO CREATE FACEBOOK, TWITTER APPLICATIONS")
 });
 

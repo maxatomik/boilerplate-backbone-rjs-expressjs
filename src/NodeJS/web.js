@@ -5,6 +5,9 @@ var express = require('express');
 var fs = require('fs');
 var cors = require('cors');
 var exec = require('child_process').exec;
+var session = require('express-session');
+var MongoStore = require('connect-mongo')(session);
+
 app = express();
 app.use(express.static(BACKBONE_PATH));
 app.set('view engine', 'jade');
@@ -17,31 +20,31 @@ app.use(require('body-parser').urlencoded({ extended: true }));
 app.use(cors({
     origin : '*'
 }));
-var session = require('express-session');
-var MongoStore = require('connect-mongo/es5')(session);
-var pageContent = { layout : true };
+
+
+mongoose = require('mongoose');
+mongoose.connect('mongodb://'+process.env.ME_CONFIG_MONGODB_SERVER+':'+process.env.ME_CONFIG_MONGODB_PORT+'/mybdd')
 
 /* SESSIONS STORE */
 app.use(session({
-    store: new MongoStore({
-      url: MONGODB_SESSIONS_PATH,
-      ttl: 14 * 24 * 60 * 60
-    }),
+    store: new MongoStore({ mongooseConnection: mongoose.connection }),
     resave: true, 
     saveUninitialized: true,
-	secret:'marcel'
+    secret:'marcel'
 }));
 
-app.locals.env = process.env.ENV;
 
+/*Express Routes*/
+var pageContent = { layout : true };
+app.locals.env = process.env.ENV;
 app.get('*', function (req, res, next) {
     pageContent.session = req.session;
     pageContent.layout = req.query.layout;
     next();
 });
-
 require('./router/routes')(app, pageContent);
 
+/*Express Server*/
 Server = require('http').createServer(app);
 Server.listen(process.env.PORT, function(){ 
     console.log("Web App on port : " + process.env.PORT);
