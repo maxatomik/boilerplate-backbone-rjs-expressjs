@@ -7,7 +7,7 @@ var cors = require('cors');
 var exec = require('child_process').exec;
 var session = require('express-session');
 var MongoStore = require('connect-mongo')(session);
-
+var expressControllers = require('express-controller');
 app = express();
 app.use(express.static(BACKBONE_PATH));
 app.set('view engine', 'jade');
@@ -21,7 +21,6 @@ app.use(cors({
     origin : '*'
 }));
 
-
 mongoose = require('mongoose');
 mongoose.connect('mongodb://'+process.env.ME_CONFIG_MONGODB_SERVER+':'+process.env.ME_CONFIG_MONGODB_PORT+'/'+process.env.ME_CONFIG_MONGODB_DATABASE)
 
@@ -33,16 +32,14 @@ app.use(session({
     secret:'marcel'
 }));
 
-
 /*Express Routes*/
-var pageContent = { layout : true };
+var router = express.Router();
+
 app.locals.env = process.env.ENV;
-app.get('*', function (req, res, next) {
-    pageContent.session = req.session;
-    pageContent.layout = req.query.layout;
-    next();
-});
-require('./router/routes')(app, pageContent);
+app.use(router);
+expressControllers
+            .setDirectory( __dirname + '/controllers')
+            .bind(router);
 
 /*Express Server*/
 Server = require('http').createServer(app);

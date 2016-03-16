@@ -33,12 +33,13 @@ mongodbRest.startServer(rest_config.withAuth);
 
 /*New User*/
 var User   = require('./models/user'); //User Model
-var nick = new User({ 
+
+var newUser = new User({ 
     name: 'Nick Cerminara', 
     password: 'password',
     admin: true 
 });
-nick.save(function(err) {
+newUser.save(function(err) {
 	if (err) throw err;
 	console.log('User saved successfully');
 });

@@ -14,18 +14,18 @@ app.use(cors({
 }));
 
 var session = require('express-session');
-var MongoStore = require('connect-mongo/es5')(session);
-app.use(session({
-    store: new MongoStore({
-      url: 'mongodb://'+process.env.ME_CONFIG_MONGODB_SERVER+':'+process.env.ME_CONFIG_MONGODB_PORT+'/'+process.env.MONGODB_SESSION_STORE,
-      ttl: 14 * 24 * 60 * 60
-    }),
-    resave: true, saveUninitialized: true,
-	secret:'marcel'}));
+var MongoStore = require('connect-mongo')(session);
 
-var mongoose = require('mongoose');
-
+mongoose = require('mongoose');
 mongoose.connect('mongodb://'+process.env.ME_CONFIG_MONGODB_SERVER+':'+process.env.ME_CONFIG_MONGODB_PORT+'/'+process.env.ME_CONFIG_MONGODB_DATABASE)
+
+/* SESSIONS STORE */
+app.use(session({
+    store: new MongoStore({ mongooseConnection: mongoose.connection }),
+    resave: true, 
+    saveUninitialized: true,
+    secret:'marcel'
+}));
 
 var User   = require('./models/user'); // get our mongoose model
    
@@ -44,6 +44,18 @@ passport.use(new TwitterStrategy({
     callbackURL: process.env.DOMAIN+":"+process.env.PORT+"/auth/twitter/callback"
   },
   function(token, tokenSecret, profile, done) {
+    /*New User*/
+    /*var User   = require('./models/user'); //User Model
+
+    var newUser = new User({ 
+        name: 'Nick Cerminara', 
+        password: 'password',
+        admin: true 
+    });
+    newUser.save(function(err) {
+      if (err) throw err;
+      console.log('User saved successfully');
+    });*/
   	/*Users.insert(profile, function (err, resp) {
      return done(err, resp);
 	});*/
@@ -78,6 +90,20 @@ passport.use(new FacebookStrategy({
     enableProof: false
   },
   function(accessToken, refreshToken, profile, done) {
+    /*New User*/
+    /*var User   = require('./models/user'); //User Model
+
+    var newUser = new User({ 
+        name: 'Nick Cerminara', 
+        password: 'password',
+        admin: true 
+    });
+    newUser.save(function(err) {
+      if (err) throw err;
+      console.log('User saved successfully');
+    });*/
+
+
     /*Users.insert(profile, function (err, resp) {
      return done(err, resp);
 	});*/

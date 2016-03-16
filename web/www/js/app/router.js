@@ -8,10 +8,8 @@ define([
     , 'views/header'
     , 'views/footer'
     , 'views/oauth'
-    , 'views/page01'
-    , 'views/page02'
-	, 'views/page03'
-    , 'views/page04'
+    , 'views/home'
+    , 'views/page'
 
 ], function(
         Backbone,
@@ -22,18 +20,14 @@ define([
         HeaderView,
         FooterView,
         OauthView,
-        Page01View,
-        Page02View,
-        Page03View,
-		Page04View
+        HomeView,
+        PageView
     ) {
 
     var Router = Backbone.Router.extend({
         routes: {
-            '': 'onPage01',
-            'page-02': 'onPage02',
-            'page-03/:id': 'onPage03',
-            'page-04': 'onPage04'
+            '': 'onHome',
+            'page/:id': 'onPageById'
         },
 
         initialize: function() {
@@ -54,49 +48,25 @@ define([
             $(document).on('click', 'a', _.bind(this.onClick, this));
         },
 
-        onPage01: function(html) {
-            
+         onHome: function(html) {
             this.headerView = this.headerView || new HeaderView();
-            this.page01View = this.page01View || new Page01View();
+            this.homeView = new HomeView();
+            this.footerView = this.footerView || new FooterView();
+
+            var views = [this.headerView, this.homeView, this.footerView];
+
+            viewsHandler.getTransition(html, views, 'home');
+        },
+
+        onPageById: function(html, id) {
+            this.headerView = this.headerView || new HeaderView();
+            this.pageView = new PageView();
             this.footerView = this.footerView || new FooterView();
             this.oauthView = this.oauthView || new OauthView();
 
-            var views = [this.headerView, this.page01View, this.footerView, this.oauthView];
+            var views = [this.headerView, this.pageView, this.footerView, this.oauthView];
 
-            viewsHandler.getTransition(html, views, 'page-01');
-        },
-
-        onPage02: function(html) {
-            
-            this.headerView = this.headerView || new HeaderView();
-            this.page02View = this.page02View || new Page02View();
-            this.footerView = this.footerView || new FooterView();
-
-            var views = [this.headerView, this.page02View, this.footerView];
-
-            viewsHandler.getTransition(html, views, 'page-02');
-        },
-
-        onPage03: function(html, id) {
-            
-            this.headerView = this.headerView || new HeaderView();
-            this.page03View = this.page03View || new Page03View();
-            this.footerView = this.footerView || new FooterView();
-
-            var views = [this.headerView, this.page03View, this.footerView];
-
-            viewsHandler.getTransition(html, views, 'page-03');
-        },
-
-        onPage04: function(html) {
-            
-            this.headerView = this.headerView || new HeaderView();
-            this.page04View = this.page04View || new Page04View();
-            this.footerView = this.footerView || new FooterView();
-
-            var views = [this.headerView, this.page04View, this.footerView];
-
-            viewsHandler.getTransition(html, views, 'page-04');
+            viewsHandler.getTransition(html, views, 'page');
         },
 
         onClick : function(e) {
