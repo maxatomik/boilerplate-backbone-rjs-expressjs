@@ -31,11 +31,10 @@ app.use(session({
     saveUninitialized: true,
     secret:'marcel'
 }));
+app.locals.env = process.env.ENV;
 
 /*Express Routes*/
 var router = express.Router();
-
-app.locals.env = process.env.ENV;
 app.use(router);
 expressControllers
             .setDirectory( __dirname + '/controllers')

@@ -28,7 +28,7 @@ withAuth:{
 		"host": "localhost"
 	},
 	"logger": {
-		verbose : function(e){ console.log(e) },
+		verbose : function(e){  },
 		warning : function(e){ console.log(e) }
 	},
 	"server": {

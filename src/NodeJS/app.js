@@ -31,19 +31,6 @@ app.use(session({
 /* REST API */
 mongodbRest.startServer(rest_config.withAuth);
 
-/*New User*/
-var User   = require('./models/user'); //User Model
-
-var newUser = new User({ 
-    name: 'Nick Cerminara', 
-    password: 'password',
-    admin: true 
-});
-newUser.save(function(err) {
-	if (err) throw err;
-	console.log('User saved successfully');
-});
-
 
 /*Express Server*/
 Server = require('http').createServer(app);
@@ -51,6 +38,6 @@ Server.listen(process.env.PORT, function(){
     console.log("Application & services on port : " + process.env.PORT);
 });
 
-	
+    
 
 
