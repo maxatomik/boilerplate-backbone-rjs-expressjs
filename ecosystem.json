@@ -1,0 +1,108 @@
+{
+  "apps" : [{
+      "name"        : "bot1",
+      "script"      : "bot1.js",
+      "watch": true,
+      "watch_options": {
+        "followSymlinks": true,
+        "usePolling": true,
+      },
+      "ignore_watch" : ["node_modules", "logs", ".DS_Store"],
+      "cwd"         : "src/NodeJS",
+      "env_local": {
+        "ENV":"local",
+        "PORT": 9315,
+        "BACKBONE" : "web/www",
+        "DOMAIN" : "http://botnova.dev",
+        "ME_CONFIG_MONGODB_PORT" : "27017",
+        "ME_CONFIG_MONGODB_DATABASE" : "botnova",
+        "ME_CONFIG_MONGODB_SERVER" : "localhost",
+        "TWITTER_CONSUMER_KEY" : "Wr5lR2vyrx0vN0kITsclVNqcL",
+        "TWITTER_CONSUMER_SECRET" : "zzfXWjZGIEgYz7OpBByiY7iE0JSBNR4sQmBmHbhqZ98IPldYZN",
+        "TWITTER_ACCESS_TOKEN" : "465697461-NeDrz0VDqBjPryRa8n0Z3ZAUvKiNUtBXcghtCx5o",
+        "TWITTER_ACCESS_TOKEN_SECRET" : "dwKSPPCAdA3ZN3XumtHqk7eps4qeQhFmH1kHQJdZI79y2",
+        "MONGODB_SESSION_STORE" : "social_sessions",
+        "hashtag" : "#UneHeureDeMoinsPour"
+      }
+    },
+    {
+      "name"        : "bot2",
+      "script"      : "bot2.js",
+      "watch": true,
+      "watch_options": {
+        "followSymlinks": true,
+        "usePolling": true,
+      },
+      "ignore_watch" : ["node_modules", "logs", ".DS_Store"],
+      "cwd"         : "src/NodeJS",
+      "env_local": {
+        "ENV":"local",
+        "PORT": 9316,
+        "BACKBONE" : "web/www",
+        "DOMAIN" : "http://botnova.dev",
+        "ME_CONFIG_MONGODB_PORT" : "27017",
+        "ME_CONFIG_MONGODB_DATABASE" : "botnova",
+        "ME_CONFIG_MONGODB_SERVER" : "localhost",
+        "TWITTER_CONSUMER_KEY" : "m9eKk48xISrXiY1YD0aDPOuCC",
+        "TWITTER_CONSUMER_SECRET" : "Y0IZtkXBnRMZLeqO8gnJNsiEkeCRFu0e5kvpBEvFWz51O5XoO0",
+        "TWITTER_ACCESS_TOKEN" : "2340696720-LMZCqhs1aiDkgiQ6wS5U7rshVySOXuzUuzH159e",
+        "TWITTER_ACCESS_TOKEN_SECRET" : "RzFUpuXQXtJRaS0wWP3tpiLgFkNYAmdYOjpbSCU56axxD",
+        "MONGODB_SESSION_STORE" : "social_sessions",
+        "hashtag" : "#UneHeureDeMoinsPour"
+      }
+    },
+    {
+      "name"        : "web",
+      "script"      : "web.js",
+      "watch": true,
+      "watch_options": {
+        "followSymlinks": true,
+        "usePolling": true,
+      },
+      "ignore_watch" : ["node_modules", "logs", ".DS_Store"],
+      "cwd"         : "src/NodeJS",
+      "env_local": {
+        "ENV":"local",
+        "PORT": 1024,
+        "BACKBONE" : "web/www",
+        "DOMAIN" : "http://bot-nonavuit.dev",
+        "ME_CONFIG_MONGODB_PORT" : "27017",
+        "ME_CONFIG_MONGODB_SERVER" : "localhost",
+        "MONGODB_SESSION_STORE" : "social_sessions"
+      }
+    },
+    {
+      "name"        : "app",
+      "script"      : "app.js",
+      "cwd"         : "src/NodeJS",
+      "env_local": {
+        "PORT" : 3940,
+        "ME_CONFIG_MONGODB_PORT" : "27017",
+        "ME_CONFIG_MONGODB_DATABASE" : "bot-nonavuit",
+        "ME_CONFIG_MONGODB_SERVER" : "localhost",
+        "MONGODB_SESSION_STORE" : "social_sessions"
+      }
+    },
+    {
+      "name"        : "social",
+      "script"      : "social.js",
+      "watch": true,
+      "watch_options": {
+        "followSymlinks": true,
+        "usePolling": true,
+      },
+      "ignore_watch" : ["node_modules", "logs", ".DS_Store"],
+      "cwd"         : "src/NodeJS",
+      "env_local": {
+        "PORT" : 5442,
+        "DOMAIN" : "http://bot-nonavuit.dev",
+        "ME_CONFIG_MONGODB_PORT" : "27017",
+        "ME_CONFIG_MONGODB_SERVER" : "localhost",
+        "MONGODB_SESSION_STORE" : "social_sessions",
+        "TWITTER_CONSUMER_KEY" : "QIzRE1WpzlF8iNc5j7nMCFbUE",
+        "TWITTER_CONSUMER_SECRET" : "kl2mcXwllmDhO07C1rPBZCohVidc6jOH9Ht90wQC2SJyn8Ne91",
+        "FACEBOOK_APP_ID" : "1013775561987535",
+        "FACEBOOK_APP_SECRET" : "84bcd72b4ea57b8a3e6ebbc1721b346d"
+      }
+    }]
+}
