@@ -1,7 +1,0 @@
-section(id="oauth")
- a(target='_blank', href='http://$FBOAUTH', class='facebook-oauth') Facebook oAuth
- br
- a(target='_blank', href='http://$TWOAUTH', class='twitter-oauth') Twitter oAuth
- br
- if session.passport !== undefined
-  p= session.passport.user.username

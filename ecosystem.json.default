@@ -13,7 +13,7 @@
         "ENV":"local",
         "PORT": $PORTWEB,
         "BACKBONE" : "web/www",
-        "DOMAIN" : "http://$DOMAIN",
+        "DOMAIN" : "http://$DOMAIN.dev",
         "ME_CONFIG_MONGODB_PORT" : "27017",
         "ME_CONFIG_MONGODB_SERVER" : "localhost",
         "MONGODB_SESSION_STORE" : "social_sessions"
@@ -49,7 +49,7 @@
       "cwd"         : "src/NodeJS",
       "env_local": {
         "PORT" : $PORTSOCIAL,
-        "DOMAIN" : "http://$DOMAIN",
+        "DOMAIN" : "http://$DOMAIN.dev",
         "ME_CONFIG_MONGODB_PORT" : "27017",
         "ME_CONFIG_MONGODB_SERVER" : "localhost",
         "MONGODB_SESSION_STORE" : "social_sessions",
