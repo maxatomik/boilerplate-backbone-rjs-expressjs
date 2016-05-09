@@ -1,0 +1,52 @@
+extends ../layout
+block pageContent
+ section(data-section='1' data-url=locals.url)
+  #pillier1section1banner1.c-section-banner
+    h3
+      | Une box qui parle
+      br
+      |         votre langue
+  #pillier1section1element1.c-section-content(data-element='1')
+    .txt
+      h4
+        | Installer votre box
+        br
+        |             devient un jeu d'enfant
+      p
+        | Vous bénéficiez d'une installation guidée depuis votre mobile via l'application ma Livebox.*
+      p *Avec mobile compatible. En France métropolitaine, hors coûts de connexion
+
+    .meta.abs(data-meta='1')
+      img(src='/img/pillier1/section1-a.png', alt='')
+    .meta.abs(data-meta='2')
+      img(src='/img/pillier1/section1-b.jpg', alt='')
+  #pillier1section1element2.c-section-content(data-element='2')
+    .txt
+      h4
+        | Une box qui vous
+        br
+        |             accompagne pas à pas
+      p
+        | Quand la Nouvelle Livebox détecte un problème, elle met en oeuvre un mécanisme d'auto dépannage. Si une action de votre part est nécessaire, vous en êtes informés sur son écran ou sur votre télévision.
+    .col
+      .meta(data-meta='1')
+        img(src='/img/pillier1/section1-c.png', alt='')
+        .animate
+          img(src='/img/pillier1/animation.png', alt='')
+      .meta(data-meta='2')
+        img(src='/img/pillier1/section1-d.jpg', alt='')
+  #pillier1section1element3.c-section-content(data-element='3')
+    .txt
+      h4
+        | Personnalisez
+        br
+        |             votre Livebox
+      p
+        | Choisissez le nom de votre Wi-Fi et les heures auxquelles vous souhaitez qu'il soit activé. En cas de changement de box, vos paramètres seront automatiquement réinstallés, et vos équipements reconnaîtront leur Wi-Fi.
+    .meta.abs(data-meta='1')
+      p.active livebox_de_Marie
+      p.active
+        | livebox_des_Duponts
+        img(src='/img/icons/lock.png', alt='')
+      p.active livebox_salle_de_sport
+      p.active livebox_des_Durand

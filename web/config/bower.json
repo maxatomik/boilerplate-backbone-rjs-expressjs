@@ -18,7 +18,9 @@
     "requirejs": "~2.1.14",
     "backbone": "~1.1.2",
     "requirejs-text": "~2.0.12",
-    "mobile-detect": "hgoebl/mobile-detect.js#~0.4.3"
+    "mobile-detect": "hgoebl/mobile-detect.js#~0.4.3",
+    "jquery-mousewheel": "~3.1.13",
+    "gsap": "GreenSock-JS#~1.18.3"
   },
   "authors": [
     "Lucia Barroso <lucia.barroso@marcelww.com>"

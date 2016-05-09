@@ -1,23 +1,23 @@
 define([
 
     'backbone'
-    
+
 ], function(Backbone) {
 
         'use strict';
 
         var transitionHandler = _.extend({}, Backbone.Events, {
-            
+
             initialize: function(options) {
 				this.options = options;
                 this.toDisplay = [];
 				this.toRemove = [];
 				this.$main = this.options.$el;
 				this.queue = [];
-				this.transDeferred;
+				this.transDeferred = null;
 				this.init = true;
             },
-			
+
 			/**
 			 * @param {object} viewsArray -> views's array to display
 			 * @param {string} mainClass -> class to set to the main $el
@@ -29,34 +29,34 @@ define([
 
 				skipManualTransition = skipManualTransition || false;
 				synchro = synchro || false;
-				
+
 				// On copie les vues en cours d'affichage dans l'array contenant les vues à supprimer
 				this.toRemove = this.toDisplay.slice(0);
-				
+
 				// On vide l'array des vues en cours d'affichage et le remplit avec celles instanciées ci-dessus
 				this.toDisplay = viewsArray;
 
 				// On vide l'array des vues en cours d'affichage et le remplit avec celles instanciées ci-dessus
 				this.queue.push([this.toRemove, this.toDisplay, mainClass, skipManualTransition, synchro]);
-				
+
 				if(this.queue.length === 1) {
 					this.makeTransition(this.queue[0], this.$html);
 				}
 			},
-			
+
 			makeTransition: function(paramArr, $html) {
 
-				var r = paramArr[0], 
+				var r = paramArr[0],
 					d = paramArr[1],
-					m = paramArr[2], 
-					skip = paramArr[3], 
+					m = paramArr[2],
+					skip = paramArr[3],
 					sync = paramArr[4];
-			
+
 				var d1 = new $.Deferred();
-				
+
 				// Lorqu'une transition est terminée...
 				$.when(d1).done(_.bind(function() {
-					
+
 					if(this.queue.length > 1) {
 						// On récupère le tableau de vues de la dernière transition effective
 						this.toRemove = this.queue[0][1].slice(0);
@@ -71,7 +71,7 @@ define([
 						this.queue = [];
 					}
 				}, this));
-				
+
 				// -> 1
 				var common = _.intersection(d, r),
 					toDsply = _.difference(d, common),
@@ -81,20 +81,20 @@ define([
 					d1.resolve();
 					return;
 				}
-				
+
 				// -> 3 -> 2
 				var fadeIn = function(v, deferred) {
 					v.$el.fadeIn(250, function() {
 						deferred.resolve();
 					});
 				}
-				
+
 				// -> 3 -> 1
 				var display = _.bind(function() {
-					
+
 					window.scrollTo(0, 0);
 					this.$main.removeClass().addClass(m);
-					
+
 					// Deferreds Array
 					var deferreds = [];
 
@@ -105,25 +105,30 @@ define([
 						// Current HTML fragment to set to this view
 						var $el = $html.find(v.$el.selector);
 						v.setElement($el);
-						
+
+						//console.log(v.$el.selector);
+						//console.log($el.length);
+
 						var $v = v.$el;
 
 						var deferred = new $.Deferred();
 						deferreds.push(deferred);
 
 						if(!v.onShow || skip) $v.css('display', 'none');
-						
+
 						v.delegateEvents();
 						var index = _.indexOf(d, v);
-						
-						if(typeof v.$el.context !== 'object') {
-							if(this.$main.children().length && index !== -1 && index !== 0) {
-								this.$main.children(':nth-child(' + index + ')').after($v);
-							} else {
-								this.$main.prepend($v);
-							}
+
+						if(this.$main.children().length && index !== -1 && index !== 0) {
+							this.$main.children(':nth-child(' + index + ')').after($v);
+						} else {
+							this.$main.prepend($v);
 						}
-						
+
+						if (v.onRendered) {
+							v.onRendered();
+						}
+
 						if(!v.onShow || skip) {
 							fadeIn(v, deferred);
 						} else {
@@ -132,14 +137,14 @@ define([
 							// Launch onShow() after !
 							v.onShow(deferred);
 						}
-						
+
 						$.when.apply($, deferreds).done(function() {
 							d1.resolve();
 						});
 					}
-					
+
 				}, this);
-				
+
 				// -> 2 -> 2
 				var fadeOut = function(v, deferred) {
 					v.$el.fadeOut(250, function() {
@@ -149,7 +154,7 @@ define([
 						deferred.resolve();
 					});
 				}
-				
+
 				// -> 2 -> 1
 				// If no view to remove, skip this step...
 				if(!toRmv.length) {
@@ -157,12 +162,12 @@ define([
 				} else {
 					// Deferreds Array
 					var deferreds = [];
-					
+
 					for(var u = 0; u < toRmv.length; u++) {
 						var v = toRmv[u];
 						var deferred = new $.Deferred();
 						deferreds.push(deferred);
-						
+
 						// Autotransition
 						if(!v.onHide || skip) {
 							fadeOut(v, deferred);
@@ -171,7 +176,7 @@ define([
 							v.onHide(deferred);
 						}
 					}
-					
+
 					if(sync) {
 						if(!toDsply.length) {
 							d1.resolve();
@@ -189,15 +194,15 @@ define([
 					}
 				}
 			},
-			
+
 			getPopin: function(viewsArr) {
 				if(typeof this.options.popins === 'undefined') return;
 				if(Backbone.history.fragment.indexOf('p/') === -1) return;
-				
+
 				var urlParams = String(Backbone.history.fragment).split('/'),
 					i = _.indexOf(urlParams, 'p'),
 					popinId = urlParams[i + 1];
-				
+
 				_.each(this.options.popins, function(popin, key) {
 					if(popinId === key) {
 						var popinView = popinView || new popin();

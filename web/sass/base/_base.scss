@@ -2,76 +2,75 @@
 /* Base styles: projects defaults
 /* ------------------------------------------------------ */
 
-html, body {
-    @include font-size(16);
-    @include bp($jon){
-        font-size:14px;
-    }
-    @include bp($robb){
-        font-size:14px;
-    }
-    @include bp($rickon){
-        font-size:11px;
-    }
-    overflow: auto;
-    width: 100%;
-    padding: 0;
-    margin: 0 auto;
-    outline: none;
-    font-family: $std, Arial, Helvetica, sans-serif;
-    color:#000;
-    background: white;
-    //::selection {
-      //background: transparent;
-    //}
-
-    //::-moz-selection {
-      //background: transparent;
-    //}
-    -webkit-tap-highlight-color: rgba(0,0,0,0);
-    -webkit-tap-highlight-color: transparent; /* For some Androids */
-    -webkit-font-smoothing: antialiased;
-}
-
-h2{
-    @include font-size(36);
-    @include bp($bran){
-        margin-bottom:10px;
-    }
-    margin:0 0 25px;
-    font-family: $light;
-    line-height: 1.2em;
-    text-transform: uppercase;
-}
-
-h3{
-    @include font-size(22);
-    @include bp($bran){
-        margin-bottom:5px;
-    }
-    margin:0 0 15px;
-    font-family: $light;
-    line-height: 1.2em;
-    text-transform: uppercase;
-}
-
-p{
-    margin-bottom:15px;
-    color:$txt;
-    @include bp($bran){
-        margin-bottom:10px;
-    }
-    &.small{
-        @include font-size(14);
+html,
+body {
+    &.no-scroll {
+        overflow: hidden;
     }
 }
 
-span{
-    &.small{
-        @include font-size(14);
-    }
+#main {
+    //display: none;
+    font-family: $txt;
+    color:$black;
 }
 
 br{
     color:white; /* IE8 fix */
+}
+
+canvas {
+	display: block;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    min-height: 100%;
+    display: none;
+}
+
+.desktop{
+    @include bp($arya){
+        display: none;
+    }
+}
+.tablet{
+    @include bp($sansa){
+        display:block;
+    }
+    display:none;
+}
+.mob{
+    @include bp($arya){
+        display:block;
+    }
+    display:none;
+}
+.minmob{
+    @include bp($rickon){
+        display:block;
+    }
+    display:none;
+}
+
+
+.scrollbar-measure {
+    width: 100px;
+    height: 100px;
+    overflow: scroll;
+    position: absolute;
+    top: -9999px;
+}
+
+#meta-info{
+  background: #fff;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  font-family: $txt;
+  left: 0;
+  z-index: 9999;
 }

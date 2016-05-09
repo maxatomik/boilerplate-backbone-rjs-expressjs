@@ -1,21 +1,298 @@
-#home { /* passer à p- */
-    padding: 5%;
-    width: 60%;
-    min-height: 15em;
-    background: black;
-    color: white;
-    float: left;
-    @include transform-origin(100%, 50%);
-    @include rotateY(-130deg);
-    @include transition(transform .5s ease-out);
+#main-banner {
+    width: 100%;
     position: absolute;
-    right: 0;
+    z-index: 5;
+    left: 0;
+    top: 0;
+    overflow: hidden;
+    font-family: Arial, Helvetica, sans-serif;
+    background: black;
+    @include bp($sansa + 1){
+        background: white;
+    }
+    @media only screen and (orientation : portrait) {
+        background: white;
+    }
+    .canvas-container {
+        overflow: hidden;
 
-    &.active {
-        @include rotateY(0deg);
+        #canvas {
+            position: absolute;
+        }
+
+        .category-header {
+            position: absolute;
+            height: 40%;
+            width: 100%;
+            left: 0;
+            bottom: 0;
+            z-index: 2;
+            display: none;
+
+            h2,
+            h3 {
+                color: white;
+                padding: 20px;
+                position: relative;
+                z-index: 2;
+            }
+
+            h2 {
+                font-size: 1.5em;
+            }
+
+            h3 {
+                font-size: 1em;
+                padding-top: 0;
+            }
+
+            .header-link {
+                position: absolute;
+                color: black;
+                padding: 10px;
+                border-radius: 4px;
+                font-size: 1.2em;
+                bottom: 20px;
+                z-index: 2;
+
+                &.more {
+                    right: 20px;
+                    background: white;
+                }
+
+                &.menu {
+                    left: 20px;
+                    background: $orange;
+                }
+            }
+        }
     }
 
-    a {
-        color: white;
+    .content {
+        height: 100%;
+        width: 100%;
+        left: 0;
+        bottom: 0;
+        position: absolute;
+        z-index: 2;
+        display: none;
+        @include box-sizing(border-box);
+
+        @media screen and (max-width: $sansa + 1) and (orientation: portrait),
+        (max-width: $arya) {
+            padding-top: 15px;
+            position: relative;
+        }
+
+        .titles-wrapper {
+            padding: 30px;
+            width: 100%;
+            height: 100%;
+            z-index: 2;
+            position: relative;
+            //box-shadow: rgba(0, 0, 0, 0.6) 0px 0px 300px 150px inset;
+            -moz-box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            display: none;
+            &:after {
+                content: "";
+                background: url("/img/vignette.png") no-repeat;
+                background-size: 100% 100%;
+                opacity: 0.6;
+                top: 0;
+                left: 0;
+                bottom: 0;
+                right: 0;
+                position: absolute;
+                z-index: -1;
+                
+            }
+            @media screen and (min-width: $eddard) {
+                padding: 40px;
+            }
+            @media screen and (max-width: 769px) {
+                &:after {
+                    content: "";
+                    background: none;
+                }
+            }
+        
+            @include bp($rickon){
+                padding: 15px;
+            }
+            .titles{
+                display: none;
+            }
+        }
+        &.last{
+            background-color: rgba(0,0,0,0.7);
+            .titles-wrapper{
+                display: table;
+                &:after {
+                    content: "";
+                    background: none;
+                }
+            }
+            .titles{
+                display: table-cell;
+                vertical-align: middle;
+                text-align: center;
+                h1{
+                    @include font-size(110);
+                }
+                p{
+                    @include font-size(60);
+                }
+                @include bp($jon){
+                    h1{
+                        @include font-size(76);
+                    }
+                    p{
+                        @include font-size(42);
+                    }
+                }
+                @include bp($sansa + 1){
+                    h1{
+                        @include font-size(48);
+                    }
+                    p{
+                        @include font-size(26);
+                    }
+                }
+            }
+        }
+        .video-container {
+            //filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'brightness\'><feColorMatrix type=\'matrix\' values=\'1.2 0 0 0 0 0 1.2 0 0 0 0 0 1.2 0 0 0 0 0 1.2 0\'/></filter></svg>#brightness"); /* Firefox 3.5+ */
+            -webkit-filter: contrast(115%) brightness(100%) saturate(105%); /* Chrome 19+ & Safari 6+ */
+
+            video {
+                position: absolute;
+                display: block;
+                z-index: 1;
+                -webkit-backface-visibility: hidden;
+            }
+        }
+
+        h1 {
+            color: $orange;
+            @include font-size(38);
+            font-family: $bold;
+            position: relative;
+            z-index: 2;
+
+            @media screen and (min-width: $eddard) {
+                @include font-size(48);
+            }
+            @media screen and (min-width: 1920px) {
+                @include font-size(65);
+            }
+            @include bp($sansa + 1){
+                @include font-size(55);
+            }
+            @include bp($arya){
+               @include font-size(38);
+            }
+            @include bp($rickon){
+               @include font-size(23);
+            }
+        }
+
+        p {
+            color: white;
+            font-size: 28px;
+            margin-top: 15px;
+            position: relative;
+            z-index: 2;
+            line-height: 1.3;
+            font-family: $bold;
+            @media screen and (min-width: $eddard) {
+                font-size: 35px;
+            }
+
+            @media screen and (max-width: $sansa + 1) {
+                font-size: 30px; 
+                color: $black;
+                margin-top: 25px;
+            }
+            @include bp($arya){
+                font-size: 20px;
+            }
+            @include bp($rickon){
+                font-size: 15px;
+                margin-top: 10px;
+            }
+        }
+
+        ul {
+            display: table;
+            position: absolute;
+            margin: auto;
+            top:0;
+            bottom:0;
+            right:0;
+            li {
+                a {
+                    color: white;
+                    text-decoration: none;
+                }
+            }
+        }
+
+        .btn-container {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            text-align: center;
+
+            z-index: 2;
+            display: none;
+
+            a {
+                display: inline-block;
+                background: $orange;
+                color: white;
+                text-align: center;
+                padding: 10px 10px;
+                text-decoration: none;
+                margin-bottom: 20px;
+                @media screen and (min-width: $eddard) {
+                    font-size: 1.2em;
+                    padding: 12px;
+                    margin-bottom: 40px;
+                }
+                @media screen and (min-width: 1920px) {
+                    font-size: 1.8em;
+                    padding: 18px;
+                }
+                @include bp($sansa + 1){
+                    font-family: $bold;
+                    font-size: 30px;
+                    padding: 30px;
+                }
+                @include bp($rickon){
+                    font-size: 15px;
+                    padding: 15px;
+                }
+            }
+        }
+        .msg-container{
+            position: absolute;
+            bottom: 50px;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            color: #ff7900;
+            font-family: $bold;
+            display: none;
+            @include font-size(32);
+            @include bp($jon){
+                @include font-size(24);
+            }
+            @include bp($sansa){
+                @include font-size(16);
+            }
+        }
     }
 }

@@ -11,26 +11,34 @@ $legacy-support-for-ie7:false;
 /* TYPO
 /* ------------------------------------------------------ */
 
-$std :'gillsansstd';
-$light : 'gillsansstd-light';
-$bold : 'gillsansstd-bold';
+$helveticaRegular: 'HelveticaNeue', helvetica, Arial, sans-serif;
+$helveticaLightCN: 'HelveticaNeue67LtCn', helvetica, Arial, sans-serif;
+$helveticaMediumCN: 'HelveticaNeue67MdCn', helvetica, Arial, sans-serif;
+$helveticaBoldCN: 'HelveticaNeue67BldCn', helvetica, Arial, sans-serif;
+$HelveticaNeue65MdCn: 'HelveticaNeue65MdCn', helvetica, Arial, sans-serif;
+$helveticaMedium: 'HelveticaNeueMedium', helvetica, Arial, sans-serif;
+$helveticaBold: 'HelvNeueBold', helvetica, Arial, sans-serif;
+$helveticaRomanBold: 'helveticaneuelt_com_55_roman', helvetica, Arial, sans-serif;
+$helveticaNeueLtBold: 'helveticaneuelt_std', helvetica, Arial, sans-serif;
+
+$txt: 'OrangeSans55-Roman', helvetica, Arial, sans-serif;
+$bold: 'OrangeSans75-Bold', helvetica, Arial, sans-serif;
 
 /* ------------------------------------------------------ */
 /* COLORS
 /* ------------------------------------------------------ */
 
 /* Text colors */
-$txt:black;
-$txt-lighter:black;
-$txt-darker:black;
-
-/* Defaults neutral colors for borders & background*/
-$border:grey;
-$border-lighter:grey;
-$border-darker:grey;
-$background:grey;
-$background-lighter:grey;
-$background-darker:grey;
+$black: #333333;
+$orange: #ff7900;
+$gray: #f6f6f6;
+$grayLt: #e7e7e7;
+$grayXLt: #f4f4f4;
+$green: #56bf7d;
+$blue: #34b3e8;
+$cyan: #4BB4E6;
+$violet: #c09ae3;
+$green: #50BE87;
 
 /* Forms */
 $error:red;
@@ -44,13 +52,12 @@ $second-lighter:#e2e2e2;
 $second-darker:#b8b7b7;
 
 /* BREAK POINTS, may have to adapt at the beginning, depending of the application */
-
 $eddard:  1720px;
 $catelyn:  1496px;
 $jon:  1248px;
 $robb:   1024px;
 $sansa:  768px;
-$arya:  640px;
+$arya:  641px;
 $bran:  568px;
 $rickon:  480px;
 

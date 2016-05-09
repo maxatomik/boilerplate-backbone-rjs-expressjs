@@ -1,12 +1,12 @@
 BACKBONE_PATH = __dirname + '/../../' + process.env.BACKBONE;
-BACKBONE_CONFIG_PATH = BACKBONE_PATH + '/../config';
-MONGODB_SESSIONS_PATH = 'mongodb://'+process.env.ME_CONFIG_MONGODB_SERVER+':'+process.env.ME_CONFIG_MONGODB_PORT+'/'+process.env.MONGODB_SESSION_STORE;
 var express = require('express');
 var fs = require('fs');
 var cors = require('cors');
-var exec = require('child_process').exec;
+var auth = require('http-auth');
+
 var session = require('express-session');
 var MongoStore = require('connect-mongo')(session);
+
 var expressControllers = require('express-controller');
 app = express();
 app.use(express.static(BACKBONE_PATH));
@@ -21,16 +21,19 @@ app.use(cors({
     origin : '*'
 }));
 
-mongoose = require('mongoose');
-mongoose.connect('mongodb://'+process.env.ME_CONFIG_MONGODB_SERVER+':'+process.env.ME_CONFIG_MONGODB_PORT+'/'+process.env.ME_CONFIG_MONGODB_DATABASE)
+var basic = auth.basic({
+	realm: "Orange",
+	file: __dirname + "/../../users.htpasswd" 
+});  
 
-/* SESSIONS STORE */
-app.use(session({
-    store: new MongoStore({ mongooseConnection: mongoose.connection }),
-    resave: true, 
-    saveUninitialized: true,
-    secret:'marcel'
-}));
+app.get('*',auth.connect(basic), function(req, res, next) {
+    next();
+});
+
+mongoose = require('mongoose');
+
+app.use('/ressources', express.static(__dirname + '/public'));
+
 app.locals.env = process.env.ENV;
 
 /*Express Routes*/
@@ -40,8 +43,9 @@ expressControllers
             .setDirectory( __dirname + '/controllers')
             .bind(router);
 
+
 /*Express Server*/
 Server = require('http').createServer(app);
-Server.listen(process.env.PORT, function(){ 
+Server.listen(process.env.PORT || 5000, function(){ 
     console.log("Web App on port : " + process.env.PORT);
 });

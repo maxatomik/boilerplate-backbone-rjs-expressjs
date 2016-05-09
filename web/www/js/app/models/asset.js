@@ -6,9 +6,10 @@ define([
     var Asset = Backbone.Model.extend({
         
         defaults: {
-            type: '',
-            path: '',
-            loaded: false
+            type: null,
+            path: null,
+            loaded: false,
+            tag: null
         }
     });
     

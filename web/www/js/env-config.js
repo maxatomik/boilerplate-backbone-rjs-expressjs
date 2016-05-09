@@ -13,7 +13,7 @@
             "dev": true,
             "dev-extern": true,
             "preprod": true,
-            "prod": true
+            "prod": false
         },
         cache: {
             "dev": false,
@@ -25,11 +25,11 @@
             "dev": false,
             "dev-extern": false,
             "preprod": false,
-            "prod": false
+            "prod": true
         }
     };
 
-    Env.set = function(){
+    Env.set = function() {
         for(var index in Env.config.environments) {
             if( document.location.hostname.indexOf( Env.config.environments[index] ) != -1 ) {
                 this.config.env = index;

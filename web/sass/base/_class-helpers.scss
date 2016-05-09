@@ -2,45 +2,20 @@
 /* POSITION
 /* ------------------------------------------------------ */
 
-.floatL{ float:left; }
-.floatR{ float:right; }
-
 /* ------------------------------------------------------ */
 /* Box-Model
 /* ------------------------------------------------------ */
 
 .clear{ clear:both; }
+.clearfix{ @extend %clearfix; }
 .nomargin{ margin:0; }
 
 /* ------------------------------------------------------ */
 /* Typography
 /* ------------------------------------------------------ */
 
-.cap { text-transform: uppercase; }
-
-.std{ font-family: $std; }
-.light{ font-family:$light; }
-.bold{ font-family:$bold; }
-
-.white{ color: white; }
-.error{ color: $error; }
-.main{ color: $main; }
-.main-lighter{ color: $main-lighter; }
-.main-darker{ color: $main-darker; }
-.sec{ color: $second; }
-.sec-lighter{ color: $second-lighter; }
-.sec-darker{ color: $second-darker; }
-
 
 /* ------------------------------------------------------ */
 /* Visual
 /* ------------------------------------------------------ */
 
-.hide{ display:none; }
-
-.border-bottom { border-bottom:1px solid $border; }
-
-.bgmain{ background-color: $main; }
-.bgsec{ background-color: $second; }
-.bgwhite{ background-color: white; }
-.bgGrey{ background-color: $background; }

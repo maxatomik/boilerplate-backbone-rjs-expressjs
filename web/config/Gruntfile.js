@@ -1,4 +1,4 @@
-var pkgjson = require('./package.json');
+var pkgjson = require(__dirname + '/../../package.json');
 
 module.exports = function(grunt) {
 

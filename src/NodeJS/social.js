@@ -17,8 +17,6 @@ var session = require('express-session');
 var MongoStore = require('connect-mongo')(session);
 
 mongoose = require('mongoose');
-mongoose.connect('mongodb://'+process.env.ME_CONFIG_MONGODB_SERVER+':'+process.env.ME_CONFIG_MONGODB_PORT+'/'+process.env.ME_CONFIG_MONGODB_DATABASE)
-
 /* SESSIONS STORE */
 app.use(session({
     store: new MongoStore({ mongooseConnection: mongoose.connection }),
@@ -27,38 +25,27 @@ app.use(session({
     secret:'marcel'
 }));
 
-var User   = require('./models/user'); // get our mongoose model
-   
+var Post =require('./models/post');
+var User =require('./models/user');
+
 app.use(passport.initialize());
 app.use(passport.session());
 
-app.get('/in', function(req, res){
+app.get('/profile', function(req, res){
   res.send('<!DOCTYPE html><html><body><script> window.close(); </script></body></html>');
-    res.end();
+  res.end();
 });
 
 /* Twitter oAUTH */
 passport.use(new TwitterStrategy({
     consumerKey: process.env.TWITTER_CONSUMER_KEY,
     consumerSecret: process.env.TWITTER_CONSUMER_SECRET,
-    callbackURL: process.env.DOMAIN+":"+process.env.PORT+"/auth/twitter/callback"
+    callbackURL: process.env.DOMAIN + ":" + process.env.PORT + "/auth/twitter/callback"
   },
   function(token, tokenSecret, profile, done) {
-    /*New User*/
-    /*var User   = require('./models/user'); //User Model
 
-    var newUser = new User({ 
-        name: 'Nick Cerminara', 
-        password: 'password',
-        admin: true 
-    });
-    newUser.save(function(err) {
-      if (err) throw err;
-      console.log('User saved successfully');
-    });*/
-  	/*Users.insert(profile, function (err, resp) {
-     return done(err, resp);
-	});*/
+    var oUser = new User(profile);
+        oUser.save();
   }
 ));
 
@@ -70,16 +57,14 @@ passport.deserializeUser(function(user, done) {
   done(null, user);
 });
 
-
 app.get('/auth/twitter',
   passport.authenticate('twitter'));
 
 app.get('/auth/twitter/callback', 
   passport.authenticate('twitter', { failureRedirect: '/login' }),
   function(req, res) {
-    res.redirect('/in');
+    res.redirect('/profile');
   });
-
 
 
 /* Facebook oAUTH */
@@ -90,23 +75,8 @@ passport.use(new FacebookStrategy({
     enableProof: false
   },
   function(accessToken, refreshToken, profile, done) {
-    /*New User*/
-    /*var User   = require('./models/user'); //User Model
-
-    var newUser = new User({ 
-        name: 'Nick Cerminara', 
-        password: 'password',
-        admin: true 
-    });
-    newUser.save(function(err) {
-      if (err) throw err;
-      console.log('User saved successfully');
-    });*/
-
-
-    /*Users.insert(profile, function (err, resp) {
-     return done(err, resp);
-	});*/
+    var oUser = new User(profile);
+        oUser.save();
   }
 ));
 app.get('/auth/facebook',
@@ -115,13 +85,11 @@ app.get('/auth/facebook',
 app.get('/auth/facebook/callback',
   passport.authenticate('facebook', { failureRedirect: '/login' }),
   function(req, res) {
-    res.redirect('/in');
+    res.redirect('/profile');
   });
-
 
 Server = require('http').createServer(app);
 Server.listen(process.env.PORT, function(){ 
     console.log("Social oAuth on port : " + process.env.PORT);
-    console.log("DO NOT FORGET TO CREATE FACEBOOK, TWITTER APPLICATIONS")
 });
 
