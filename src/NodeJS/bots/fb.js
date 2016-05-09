@@ -2,6 +2,7 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var app = express();
 var mongoose = require('mongoose');
+var request = require('request');
 mongoose.createConnection(process.env.MONGOLAB_URI);
 
 var Post =require('../models/post');

@@ -1,15 +1,27 @@
 {
-	"page_1" : {
+	"home" : {
+		"title":"Page home",
 		"meta" : {
-			"title":"de"
+			"title":"title meta home",
+			"desc":"desc meta home"
 		},
-		"tmp" : "block-1"
+		"tmp" : "home"
 	},
-	"page_2" : {
+	"sitemap" : {
+		"title":"Page sitemap",
 		"meta" : {
-			"title":"de2"
+			"title":"title meta sitemap",
+			"desc":"desc meta sitemap"
 		},
-		"tmp" : "block-1"
+		"tmp" : "page-layout-1"
+	},
+	"contact" : {
+		"title":"Page contact",
+		"meta" : {
+			"title":"title meta contact",
+			"desc":"desc meta contact"
+		},
+		"tmp" : "page-layout-1"
 	}
 	 	
 }

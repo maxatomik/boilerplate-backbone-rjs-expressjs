@@ -75,6 +75,8 @@
         "PORT": 5200,
         "MONGOLAB_URI" : "mongodb://heroku_sxdvqhz1:odunkccsabjt9schmqcjt8jmo9@ds015760.mlab.com:15760/heroku_sxdvqhz1",
         "MONGODB_SESSION_STORE" : "social_sessions",
+        "TOKEN":"EAAWyeht04qcBAMtRPxtp3XoegX77pLVrVg78zZBHboMn6mb3ddSuZAEwo8vRsVPHPz95TbrikttAnAswwDbtaqZAT9jW2aYJJJdDTzNNV0BobeA7ZC4tvMXW7EtujtTjZBNgijvXRlH3dClnQccIY43HVZA1pOj13DPoPiW8mqNAZDZD",
+        "VERIFY_TOKEN":"tokenfb",
         "STREAMER" : "https://rhubarb-shortcake-70067.herokuapp.com/",
         "TWITTER_CONSUMER_KEY" : "QIzRE1WpzlF8iNc5j7nMCFbUE",
         "TWITTER_CONSUMER_SECRET" : "kl2mcXwllmDhO07C1rPBZCohVidc6jOH9Ht90wQC2SJyn8Ne91",

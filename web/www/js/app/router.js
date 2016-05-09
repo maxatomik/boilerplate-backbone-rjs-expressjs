@@ -20,7 +20,7 @@ define([
         tracker,
         AssetsCollection,
         PagesCollection,
-        FooterView,
+        FooterView
     ) {
 
     'use strict';
