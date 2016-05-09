@@ -1,8 +1,8 @@
 {
   "apps" : [
     {
-      "name"        : "web-mib4",
-      "script"      : "web.js",
+      "name"        : "fb",
+      "script"      : "bots/fb.js",
       "watch": true,
       "watch_options": {
         "followSymlinks": true,
@@ -11,25 +11,21 @@
       "ignore_watch" : ["node_modules", "logs", ".DS_Store"],
       "cwd"         : "src/NodeJS",
       "env": {
-        "BACKBONE" : "web/www",
-        "PORT": 5000,
         "MONGOLAB_URI" : "mongodb://heroku_sxdvqhz1:odunkccsabjt9schmqcjt8jmo9@ds015760.mlab.com:15760/heroku_sxdvqhz1",
-        "DOMAIN" : "http://localhost:5000",
-        "MONGODB_SESSION_STORE" : "social_sessions"
+        "MONGODB_SESSION_STORE" : "social_sessions",
+        "TOKEN":"EAAWyeht04qcBAMtRPxtp3XoegX77pLVrVg78zZBHboMn6mb3ddSuZAEwo8vRsVPHPz95TbrikttAnAswwDbtaqZAT9jW2aYJJJdDTzNNV0BobeA7ZC4tvMXW7EtujtTjZBNgijvXRlH3dClnQccIY43HVZA1pOj13DPoPiW8mqNAZDZD",
+        "VERIFY_TOKEN":"tokenfb"
       }
     }],
     "deploy" : {
-      "preprod" : {
+      "prod" : {
         "user" : "marcel",
-        "host" : "preprod.quialameilleure4g.marcel.typhon.net",
-        "ref"  : "origin/recette",
-        "repo" : "git@gitlab.marceldev.fr:website/orange_1601_mib4.git",
-        "path" : "/home/marcel/public_html/livebox.orange", 
-        "pre-deploy-local" : "echo 'deploying on preprod'",
-        "post-deploy" : "npm install ; npm start",
-        "env"  : {
-          "NODE_ENV": "preprod"
-        }
+        "host" : "78.109.85.111",
+        "ref"  : "origin/master",
+        "repo" : "DEFINE REPO HERE",
+        "path" : "/home/marcel/public_html/myproject", 
+        "pre-deploy-local" : "echo 'deploying on prod'",
+        "post-deploy" : "npm install ; npm start"
       }
     }
 }
