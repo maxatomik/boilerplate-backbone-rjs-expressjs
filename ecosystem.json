@@ -82,9 +82,9 @@
       "prod" : {
         "user" : "marcel",
         "host" : "78.109.85.111",
-        "ref"  : "origin/master",
-        "repo" : "DEFINE REPO HERE",
-        "path" : "/home/marcel/public_html/myproject", 
+        "ref"  : "origin/dev",
+        "repo" : "git@gitlab.marceldev.fr:website/boilerplate-backbone-rjs-expressjs.git",
+        "path" : "/home/marcel/public_html/boilerplate-backbone-rjs-expressjs", 
         "pre-deploy-local" : "echo 'deploying on prod'",
         "post-deploy" : "npm install ; npm start"
       }
