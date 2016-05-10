@@ -1,0 +1,39 @@
+.c-popin {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: 2;
+
+    .overlay {
+        background-color: rgba(255, 255, 255, .5);
+        width: 100%;
+        height: 100%;
+    }
+
+    .box {
+        display: block;
+        width: 15em;
+        height: 7em;
+        padding: 2em;
+        background: white;
+        position: relative;
+        border-radius: .5em;
+        @include box-shadow(0 0 10px rgba(0,0,0,.6));
+        color: black;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        margin-left: -9.5em;
+        margin-top: -5.5em;
+
+        .close {
+            position: absolute;
+            right: .5em;
+            top: .5em;
+            text-decoration: none;
+            color: black;
+        }
+    }
+}

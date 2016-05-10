@@ -1,0 +1,647 @@
+.p-pillier1{
+
+    section[data-section="1"]{
+        .c-section-banner{
+            @include bp($arya){
+                height: 550px;
+                background-size: auto 100%;
+            }
+            @include bp($rickon){
+                height: 275px;
+                background-size: auto 100%;
+            }
+        }
+        .c-section-content[data-element="1"]{
+            .txt{
+                @include bp($arya){
+                    width:100%;
+                    margin-bottom: 0px;
+                }
+                width:70%;
+                float:right;
+                margin-bottom: 140px;
+                position: relative;
+                h4,p{
+                    @include bp($sansa){
+                        width:100%;
+                    }
+                    @include bp($arya){
+                        width:80%;
+                    }
+                    width:80%;
+                }
+                p{
+                    &.abs{
+                        bottom: 0;
+                        left: 0;
+                        margin-bottom: 9px;
+                        margin-left: 14px;
+                        font-size: 0.75em;
+                        @include bp($arya){
+                            font-size: 0.625em;
+                        }
+                    }
+                }
+            }
+            .meta[data-meta="1"]{
+                @include bp($robb){
+                    width:29%;
+                }
+                @include bp($arya){
+                    width:40%;
+                    bottom:initial;
+                    top:80px;
+                }
+                @include bp($rickon){
+                    right:-45px;
+                }
+                right:-85px;
+                top:-50px;
+                width:35%;
+
+            }
+            .meta[data-meta="2"]{
+                @include bp($arya){
+                    position:static;
+                    width:60%;
+                }
+                width:30%;
+                left:0px;
+                bottom:0px;
+            }
+        }
+        .c-section-content[data-element="2"]{
+            .txt{
+                @include bp($arya){
+                    width:86.40625%;
+                    margin-bottom: 0px;
+                    float:none;
+                    padding:70px;
+                }
+                @include bp($rickon){
+                    padding: 27px;
+                }
+                width:60%;
+                margin-bottom: 140px;
+                padding:160px 114px;
+                float:left;
+                h4,p{
+                    @include bp($sansa){
+                        width:100%;
+                    }
+                    @include bp($arya){
+                        //width:80%;
+                    }
+                }
+            }
+            .col{
+                @include bp($arya){
+                    float:none;
+                    width:100%;
+                    padding-bottom: 100px;
+                }
+                @include bp($rickon){
+                    padding-bottom: 50px;
+                }
+                float:right;
+                width:40%;
+                position:relative;
+                @extend %clearfix;
+            }
+            .meta[data-meta="1"]{
+                @include bp($arya){
+                    float:right;
+                    width:65%;
+                }
+                width:100%;
+                background:$orange;
+                text-align:right;
+                padding:60px 0 60px 80px;
+                @include box-sizing(border-box);
+                position:relative;
+                .animate{
+
+                    position:absolute;
+                    left:0;
+                    top:42%;
+                    width:0px;
+                    overflow:hidden;
+                    text-align:left;
+                    img{
+                        @include bp($robb){
+                            width:260px;
+                        }
+                        @include bp($sansa){
+                            width:250px;
+                        }
+                        @include bp($arya){
+                            width:240px;
+                        }
+                        @include bp($rickon){
+                            width:180px;
+                        }
+                        max-width:initial;
+                    }
+                }
+            }
+            .meta[data-meta="2"]{
+                @include bp($arya){
+                    position:absolute;
+                    bottom:0px;
+                    left:0px;
+                    width:35%;
+                }
+            }
+        }
+        .c-section-content[data-element="3"]{
+            .txt{
+                @include bp($arya){
+                    width:84.84375%;
+                    padding-bottom: 120px;
+                    margin-bottom: 364px;
+                }
+                @include bp($rickon){
+                    padding: 31px 28px 23px 39px;
+                    margin-bottom: 201px;
+                }
+                width:60%;
+                float:right;
+                margin-bottom: 50px;
+            }
+            .meta[data-meta="1"]{
+                @include bp($robb){
+                    padding:40px;
+                }
+                @include bp($sansa){
+                    padding:40px;
+                }
+                @include bp($arya){
+                    width:86.40625%;
+                    position:absolute;
+                    bottom:20px;
+                    left:0px;
+                    padding: 60px 20px 120px 60px;
+                }
+                @include bp($rickon){
+                    padding: 30px 10px 60px 30px;
+                }
+                background:$orange;
+                padding:40px 60px;
+                width:40%;
+                @include box-sizing(border-box);
+                p{
+                    @include bp($robb){
+                        @include font-size(18);
+                    }
+                    @include bp($sansa){
+                        @include font-size(16);
+                    }
+                    @include bp($arya){
+                        @include font-size(20);
+                    }
+                    @include bp($rickon){
+                        @include font-size(12);
+                    }
+                    color:white;
+                    font-family:$bold;
+                    @include font-size(22);
+                    line-height:1.8em;
+                    opacity:0.4;
+                    padding-left:25px;
+                    background:url(../img/icons/wifi.png) 0 50% no-repeat;
+                    @include transition(all 0.4s ease-in);
+                    &.active{
+                        opacity:1;
+                        img{
+                            margin-left:5px;
+                        }
+                    }
+                    &.less{
+                        opacity:0.2;
+                    }
+                }
+            }
+            .meta[data-meta="2"]{
+                @include bp($arya){
+
+                }
+
+            }
+        }
+    }
+    section[data-section="2"]{
+        .c-section-banner{
+            @include bp($arya){
+                background:url(../img/pillier1/section2.jpg) no-repeat 30% 40%;
+                height: 550px;
+                background-size: auto 100%;
+            }
+            @include bp($rickon){
+                background:url(../img/pillier1/section2.jpg) no-repeat 15% 50%;
+                background-size: auto 100%;
+                height: 275px;
+            }
+            background:url(../img/pillier1/section2.jpg) no-repeat 50% 50%;
+            h3{
+                @include bp($rickon){
+                    bottom:40px;
+                }
+                background:$violet;
+                right:0px;
+                bottom:-40px;
+            }
+        }
+        .c-section-content[data-element="1"]{
+            .table{
+                @include bp($arya){
+                    margin-bottom:0px;
+                }
+                display:table;
+                margin-bottom:100px;
+            }
+            .txt{
+                @include bp($robb){
+                    width:60%;
+                    padding:240px 114px 120px;
+                }
+                @include bp($sansa){
+                    width:50%;
+                    padding:210px 114px 120px;
+                }
+                @include bp($arya){
+                    width:80%;
+                    margin-bottom: 0px;
+                    padding:190px 40px 40px;
+                }
+                @include bp($bran){
+                    width:100%;
+                    margin-bottom: 0px;
+                    padding:175px 40px 40px;
+                }
+                @include bp($rickon){
+                    width:100%;
+                    margin-bottom: 0px;
+                    padding:120px 40px 40px;
+                }
+                width:80%;
+                padding:280px 114px 120px;
+                display:table-cell;
+                position: relative;
+                h4,p{
+                    @include bp($sansa){
+                        width:100%;
+                    }
+                    @include bp($arya){
+                        //width:80%;
+                    }
+                }
+                p{
+                    opacity:0;
+                    &:last-child{
+                        opacity:1;
+                    }
+                }
+                p{
+                    &.abs{
+                        bottom: 0;
+                        right: 0;
+                        margin-bottom: 9px;
+                        margin-right: 14px;
+                        font-size: 0.75em;
+                        opacity: 1;
+                        @include bp($arya){
+                            font-size: 0.625em;
+                        }
+                    }
+                }
+            }
+            .col{
+                @include bp($arya){
+                    float:none;
+                    width:20%;
+                }
+                width:20%;
+                position:relative;
+                display:table-cell;
+            }
+            .meta[data-meta="1"]{
+                @include bp($arya){
+                    left:-25%;
+                }
+                position:absolute;
+                text-align:center;
+                width:100%;
+                z-index:20;
+                img{
+                    width: 80%;
+                }
+            }
+            .meta[data-meta="2"]{
+                @include bp($arya){
+                    display:none;
+                }
+                position:absolute;
+                bottom:-100px;
+                left:0px;
+                width:100%;
+            }
+        }
+        .c-section-content[data-element="2"]{
+            .txt{
+                @include bp($arya){
+                    width:90%;
+                }
+                width:60%;
+                float:right;
+            }
+            .meta[data-meta="1"]{
+                @include bp($robb){
+
+                }
+                @include bp($sansa){
+
+                }
+                @include bp($arya){
+                    width:90%;
+                    position:static;
+                    float:right;
+                }
+                @include bp($rickon){
+
+                }
+                background:$violet;
+                padding:0;
+                width:40%;
+                @include box-sizing(border-box);
+                text-align:right;
+                overflow:hidden;
+                img:first-child{
+                    max-width:46%;
+                }
+                img:nth-child(2){
+                    left:-10px;
+                    max-width:44.5%;
+                    position:relative;
+                }
+            }
+        }
+        .c-section-content[data-element="3"]{
+            .table{
+                @include bp($arya){
+                    margin-bottom:0px;
+                    display:block;
+                }
+                display:table;
+            }
+            .txt{
+                @include bp($robb){
+
+                }
+                @include bp($sansa){
+                    padding:120px 60px 120px;
+                }
+                @include bp($arya){
+                    display:block;
+                    float:left;
+                    width:70%;
+                    margin-top:245px;
+                }
+                @include bp($bran){
+                    margin-top:225px;
+                }
+                @include bp($rickon){
+                    width:80%;
+                    padding:40px;
+                    margin-top:147px;
+                }
+                width:40%;
+                margin-top:200px;
+                padding:120px 70px 120px;
+                display:table-cell;
+                h4,p{
+                    @include bp($sansa){
+                        width:100%;
+                    }
+                    @include bp($arya){
+                        //width:80%;
+                    }
+                }
+            }
+            .col{
+                @include bp($arya){
+                    float:none;
+                    width:20%;
+                    display:block;
+                    position:static;
+                }
+                width:60%;
+                position:relative;
+                display:table-cell;
+            }
+            .meta[data-meta="1"]{
+                @include bp($arya){
+                    &.number{
+                        position:absolute;
+                        top:0;
+                        left:0;
+                        width: initial;
+                        left: inherit;
+                        bottom: inherit;
+                        padding: 15px 20px 30px;
+                    }
+                }
+                padding: 80px 90px;
+                position:absolute;
+                bottom:0px;
+                left:0px;
+                background:$violet;
+                width:80%;
+                text-align:center;
+            }
+        }
+        .c-section-content[data-element="4"]{
+            .txt{
+                @include bp($arya){
+                    width:90%;
+                }
+                width:60%;
+                float:right;
+            }
+            .meta[data-meta="1"]{
+                @include bp($robb){
+                    padding:40px;
+                }
+                @include bp($sansa){
+                    padding:30px;
+                }
+                @include bp($arya){
+                    width:90%;
+                    position:static;
+                    float:right;
+                }
+                @include bp($rickon){
+
+                }
+                background:$black;
+                padding:0;
+                width:40%;
+                @include box-sizing(border-box);
+            }
+            .meta[data-meta="2"]{
+                @include bp($robb){
+
+                }
+                @include bp($sansa){
+                    //position:absolute;
+                    //left:0;
+                    float:left;
+                    img{
+                        max-width:initial;
+                    }
+                }
+                @include bp($arya){
+
+                }
+                @include bp($rickon){
+
+                }
+                float:right;
+                position:static;
+                @include box-sizing(border-box);
+            }
+        }
+    }
+    section[data-section="3"]{
+        .c-section-banner{
+            @include bp($arya){
+                background:url(../img/pillier1/section3.jpg) no-repeat 50% 100%;
+                background-size: auto 100%;
+                height:550px;
+            }
+            @include bp($rickon){
+                background-size: auto 100%;
+                height:275px;
+            }
+            background:url(../img/pillier1/section3.jpg) no-repeat 50% 50%;
+            h3{
+                @include bp($arya){
+                    @include font-size(38);
+                    padding:40px;
+                }
+                @include bp($rickon){
+                    @include font-size(22);
+                    padding:20px;
+                }
+                @include font-size(52);
+                background:$green;
+                right:0px;
+                bottom:-40px;
+                max-width:80%;
+            }
+        }
+        .c-section-content[data-element="1"]{
+            .table{
+                @include bp($arya){
+                    margin-bottom:0px;
+                    display:block;
+                }
+                display:table;
+            }
+            .txt{
+                @include bp($robb){
+
+                }
+                @include bp($sansa){
+
+                }
+                @include bp($arya){
+                    display:block;
+                    float:left;
+                    width:90%;
+                    padding:40px;
+                }
+                @include bp($bran){
+
+                }
+                @include bp($rickon){
+                    padding:40px 30px 40px 40px ;
+                }
+                width:65%;
+                padding:120px 80px 120px;
+                display:table-cell;
+                position: relative;
+                h4,p{
+                    @include bp($sansa){
+                        width:100%;
+                    }
+
+                }
+                p{
+                    @include bp($arya){
+                        width:90%;
+                    }
+                }
+                h4{
+                    @include bp($arya){
+                        width:85%;
+                    }
+                    @include bp($rickon){
+                        width:85%;
+                    }
+                }
+                p{
+                    &.abs{
+                        bottom: 0;
+                        left: 0;
+                        margin-bottom: 9px;
+                        margin-left: 14px;
+                        font-size: 0.75em;
+                        @include bp($arya){
+                            font-size: 0.625em;
+                        }
+                        a{
+                            color: black;
+                        }
+                        a:visited{
+                            color: black;
+                        }
+                    }
+                }
+            }
+            .col{
+                @include bp($arya){
+                    float:none;
+                    width:15%;
+                    display:none;
+                    position:static;
+                }
+                width:35%;
+                position:relative;
+                display:table-cell;
+            }
+            .meta[data-meta="1"]{
+                @include bp($arya){
+                    &.number{
+                        position:absolute;
+                        top:40%;
+                        right:0;
+                        width: initial;
+                        left: inherit;
+                        bottom: inherit;
+                        z-index: 1;
+                    }
+                }
+                @include bp($rickon){
+                    &.number{
+                        width:40%;
+                    }
+                }
+                position:absolute;
+                top:0px;
+                left:0px;
+                background:$green;
+                width:100%;
+            }
+        }
+    }
+}

@@ -1,0 +1,28 @@
+#main-content {
+    background: black;
+    color: $orange;
+    @include box-sizing(border-box);
+    padding: 20px;
+    position: relative;
+
+    h1 {
+        font-size: 2em;
+        text-transform: uppercase;
+    }
+
+    p {
+        color: white;
+    }
+
+    a {
+        position: absolute;
+        color: black;
+        padding: 10px;
+        border-radius: 4px;
+        font-size: 1.2em;
+        top: 20px;
+        z-index: 2;
+        right: 20px;
+        background: white;
+    }
+}

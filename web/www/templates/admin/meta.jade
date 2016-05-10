@@ -1,0 +1,63 @@
+extends layout
+block mainContent
+    include ./header.jade
+    section(id="meta-info")
+      h3(style='color:red') Metadonnées
+      h4(style='color:green') Parsed URL : #{url}
+      h5 Metas :
+
+      table(class="table table-hover")
+        - var m = meta
+        - for(var index in m)
+            tr
+              td Titre
+              td #{m[index].title}
+            tr
+              td Description
+              td #{m[index].description}
+            tr
+              td Titre OpenGraph
+              td #{m[index].ogtitle}
+            tr
+              td Description OpenGraph
+              td #{m[index].ogdescription}
+            tr
+              td Image OpenGraph(SHARE)
+              td 
+                img(src='#{m[index].ogimage}' width='100px')
+            tr
+              td Keywords
+              td #{m[index].keywords}
+            tr
+              td H1
+              td #{m[index].h.h1}
+            tr
+              td H2
+              td #{m[index].h.h2}
+
+      h5 Founded URLs :
+      table(class="table table-hover")
+        tr
+          th url
+          th title
+        - var l = links
+        - for(var index in l)
+            tr
+              td
+                a(href='#{l[index].url}/?meta=1') #{l[index].url}
+              td #{l[index].title}
+
+      h5 Founded images :
+      table(class="table table-hover")
+        tr
+          th url
+          th preview
+          th alt
+        - var i = images
+        - for(var index in i)
+            tr
+              td 
+               a(href='#{i[index].url}') #{i[index].url}
+              td 
+               img(src='#{i[index].url}' width='100px')
+              td #{i[index].alt}

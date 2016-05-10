@@ -1,0 +1,76 @@
+/* ------------------------------------------------------ */
+/* Base styles: projects defaults
+/* ------------------------------------------------------ */
+
+html,
+body {
+    &.no-scroll {
+        overflow: hidden;
+    }
+}
+
+#main {
+    //display: none;
+    font-family: $txt;
+    color:$black;
+}
+
+br{
+    color:white; /* IE8 fix */
+}
+
+canvas {
+	display: block;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    min-height: 100%;
+    display: none;
+}
+
+.desktop{
+    @include bp($arya){
+        display: none;
+    }
+}
+.tablet{
+    @include bp($sansa){
+        display:block;
+    }
+    display:none;
+}
+.mob{
+    @include bp($arya){
+        display:block;
+    }
+    display:none;
+}
+.minmob{
+    @include bp($rickon){
+        display:block;
+    }
+    display:none;
+}
+
+
+.scrollbar-measure {
+    width: 100px;
+    height: 100px;
+    overflow: scroll;
+    position: absolute;
+    top: -9999px;
+}
+
+#meta-info{
+  background: #fff;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  font-family: $txt;
+  left: 0;
+  z-index: 9999;
+}

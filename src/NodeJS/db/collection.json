@@ -1,0 +1,28 @@
+{
+	"home" : {
+		"title":"Page home",
+		"meta" : {
+			"title":"title meta home",
+			"desc":"desc meta home"
+		},
+		"tmp" : "home"
+	},
+	"sitemap" : {
+		"title":"Page sitemap",
+		"meta" : {
+			"title":"title meta sitemap",
+			"desc":"desc meta sitemap"
+		},
+		"tmp" : "page-layout-1"
+	},
+	"contact" : {
+		"title":"Page contact",
+		"meta" : {
+			"title":"title meta contact",
+			"desc":"desc meta contact"
+		},
+		"tmp" : "page-layout-1"
+	}
+	 	
+}
+

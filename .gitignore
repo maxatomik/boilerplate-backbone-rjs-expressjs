@@ -1,49 +1,5 @@
-# Default #
-#################################
-# OS generated files
+node_modules
+bower_components
+logs
+.sass-cache
 .DS_Store
-.DS_Store?
-._*
-.Spotlight-V100
-.Trashes
-Icon?
-ehthumbs.db
-Thumbs.db
-
-# Logs
-logs/*
-
-# IDE and editor specific files #
-#################################
-/nbproject
-.idea
-
-# CakePhp 2 #
-#################################
-# Tmp files
-/www/app/tmp/cache/models/*
-/www/app/tmp/cache/persistent/*
-/www/app/tmp/cache/views/*
-/www/app/logs/*
-/www/app/plugins
-/www/app/vendors
-/www/app/build
-/www/app/dist
-/www/app/tags
-*.mo
- 
-# Cake library
-/www/lib/*
- 
-# Cake environments
-/www/app/Config/Environments/*
-
-# Versioning of dev, preprod and prod environments
-!/www/app/Config/Environments/dev.php
-!/www/app/Config/Environments/preprod.php
-!/www/app/Config/Environments/prod.php
- 
-# Versioning of empty files to have folders
-!empty
- 
-# Front ##############################################
