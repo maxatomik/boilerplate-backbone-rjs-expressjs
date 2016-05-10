@@ -41,7 +41,7 @@ app.post('/webhook', function (req, res) {
     res.sendStatus(200);
 });
 
-app.listen(process.env.PORT, function () {
+app.listen(process.env.PORT == undefined ? 5200 : process.env.PORT, function () {
     console.log('Facebook Messenger on port ' + process.env.PORT);
 });
     
