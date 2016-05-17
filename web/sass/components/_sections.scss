@@ -1,0 +1,304 @@
+.c-section-titles{
+    @include bp($arya){
+        padding:40px 0 40px 40px;
+
+    }
+    @include bp($rickon){
+        padding:30px 0 30px 30px;
+
+    }
+    padding:40px 0 60px 15%;
+    background: white;
+    h1{
+        @include bp($arya){
+            @include font-size(78);
+        }
+        @include bp($rickon){
+            @include font-size(48);
+        }
+        @include font-size(88);
+        color:$orange;
+        font-family:$bold;
+        margin-bottom:20px;
+    }
+    h2{
+        @include bp($arya){
+            @include font-size(24);
+        }
+        @include bp($rickon){
+            @include font-size(14);
+        }
+        @include font-size(28);
+        font-family:$bold;
+        line-height: 1.3;
+    }
+}
+
+.c-section-banner{
+    @include bp($arya){
+        height:400px;
+    }
+    background:url(../img/pillier1/section1.jpg) no-repeat 50% 50%;
+    height:550px;
+    position:relative;
+    h3{
+        @include bp($arya){
+            @include font-size(38);
+            padding:40px;
+        }
+        @include bp($rickon){
+            @include font-size(28);
+            padding:20px;
+        }
+        padding:50px;
+        @include font-size(58);
+        background:$orange;
+        color:white;
+        font-family:$bold;
+        display:inline-block;
+        position:absolute;
+        bottom:60px;
+    }
+}
+
+.c-section-content{
+    @include bp($robb){
+        overflow:hidden;
+    }
+    @extend %clearfix;
+    background:$gray;
+    position:relative;
+    .txt{
+        @include bp($robb){
+            padding:80px 110px;
+        }
+        @include bp($arya){
+            padding:50px 67px;
+        }
+        @include bp($rickon){
+            padding:40px 40px;
+        }
+        background:white;
+        padding:100px 134px;
+        width:50%;
+        @include box-sizing(border-box);
+        h4{
+            @include bp($robb){
+                @include font-size(30);
+            }
+            @include bp($sansa){
+                @include font-size(24);
+            }
+            @include bp($arya){
+                @include font-size(34);
+            }
+            @include bp($bran){
+                @include font-size(28);
+            }
+            @include bp($rickon){
+                @include font-size(20);
+            }
+            color:$orange;
+            font-family:$bold;
+            @include font-size(28);
+            line-height: 1.2em;
+            margin-bottom:20px;
+        }
+        p{
+            @include bp($robb){
+                @include font-size(17);
+            }
+            @include bp($sansa){
+                @include font-size(16);
+            }
+            @include bp($arya){
+                @include font-size(24);
+            }
+            @include bp($bran){
+                @include font-size(20);
+            }
+            @include bp($rickon){
+                @include font-size(15);
+            }
+            @include font-size(17);
+            line-height: 1.4em;
+            margin-bottom:20px;
+            span{
+                font-family:$bold;
+                color:$orange;
+            }
+        }
+    }
+    .abs{
+        position:absolute;
+    }
+    .meta{
+        img{
+            max-width:100%;
+        }
+        &.number{
+            span{
+                @include font-size(20);
+                font-family:$bold;
+                span{
+                    @include font-size(250);
+                    font-family:$bold;
+                }
+            }
+            p{
+                font-family:$bold;
+                @include font-size(20);
+            }
+            @include bp($robb){
+                padding:30px 60px 50px;
+                span{
+                    @include font-size(20);
+                    span{
+                        @include font-size(210);
+                    }
+                }
+                p{
+                    @include font-size(20);
+                }
+            }
+            @include bp($sansa){
+                padding:20px 40px 35px;
+                span{
+                    @include font-size(16);
+                    span{
+                        @include font-size(170);
+                    }
+                }
+                p{
+                    @include font-size(16);
+                }
+            }
+            @include bp($arya){
+                padding:20px 40px 40px;
+                span{
+                    @include font-size(16);
+                    span{
+                        @include font-size(170);
+                    }
+                }
+                p{
+                    @include font-size(15);
+                }
+            }
+            @include bp($bran){
+                padding:20px 25px 40px;
+                span{
+                    @include font-size(15);
+                    span{
+                        @include font-size(150);
+                    }
+                }
+                p{
+                    @include font-size(15);
+                }
+            }
+            @include bp($rickon){
+                padding:15px 20px 30px;
+                span{
+                    @include font-size(12);
+                    span{
+                        @include font-size(90);
+                    }
+                }
+                p{
+                    @include font-size(12);
+                }
+            }
+            color:white;
+            padding:50px 90px;
+            background:$orange;
+            @include box-sizing(border-box);
+        }
+    }
+    .video{
+        p{
+            color:white;
+        }
+    }
+}
+
+.c-section-links{
+    @extend %clearfix;
+    margin:50px 0 0 0;
+    @include bp($arya){
+        margin:30px;
+    }
+    @include bp($rickon){
+        margin:15px;
+    }
+    .col{
+        float:left;
+        width:55%;
+        img{
+            max-width: 100%;
+            margin-top:35px;
+        }
+    }
+    .col:first-child{
+        @include bp($arya){
+            display:none;
+        }
+    }
+    .col:nth-child(2){
+        width:45%;
+        float:right;
+        background:$orange;
+        padding:30px;
+        @include bp($arya){
+            padding:20px;
+            width: 100%;
+        }
+        @include bp($rickon){
+            padding:10px;
+        }
+        @include box-sizing(border-box);
+        p{
+            @include bp($sansa){
+                @include font-size(26);
+
+            }
+            @include bp($arya){
+                @include font-size(38);
+                width:100%;
+                margin-bottom:20px;
+                br{
+                    display:none;
+                }
+            }
+            @include bp($rickon){
+                @include font-size(19);
+                margin-bottom:10px;
+            }
+            color:white;
+            @include font-size(38);
+            font-family:$bold;
+            margin-bottom:10px;
+            line-height:1.2em;
+        }
+        a{
+            background:white;
+            color:$orange;
+            padding:10px 12px;
+            text-decoration:none;
+            float:right;
+            font-family: $bold;
+            @include bp($arya){
+                float: left;
+                @include font-size(27);
+            }
+            @include bp($rickon){
+                @include font-size(13);
+            }
+            &:hover{
+                color:white;
+                background:$black;
+            }
+        }
+    }
+}
+

@@ -1,0 +1,20 @@
+.l-wrapper-full{
+    width:100%;
+    background:white;
+}
+
+.l-wrapper-1024{
+    @include bp($robb){
+        width:100%;
+    }
+    width:1024px;
+    margin:auto;
+}
+
+.l-main{
+
+}
+
+
+
+

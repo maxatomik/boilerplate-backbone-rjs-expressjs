@@ -1,0 +1,48 @@
+// keyframes
+@-webkit-keyframes moveToTop {
+    from { }
+    to { -webkit-transform: translateY(-100%); }
+}
+@keyframes moveToTop {
+    from { }
+    to { -webkit-transform: translateY(-100%); transform: translateY(-100%); }
+}
+
+@-webkit-keyframes moveFromBottom {
+    from { -webkit-transform: translateY(-100%); }
+}
+@keyframes moveFromBottom {
+    from { -webkit-transform: translateY(-100%); transform: translateY(-100%); }
+}
+
+@-webkit-keyframes scaleUp {
+	from { opacity: 0; -webkit-transform: scale(.8); }
+}
+@keyframes scaleUp {
+	from { opacity: 0; -webkit-transform: scale(.8); transform: scale(.8); }
+}
+
+@-webkit-keyframes scaleDown {
+	from {opacity: 1; -webkit-transform: scale(1.2); }
+	to {opacity: 0; -webkit-transform: scale(1);}
+}
+@keyframes scaleDown {
+	from { opacity: 1; -webkit-transform: scale(1); transform: scale(1); }
+	to { opacity: 0; -webkit-transform: scale(.8); transform: scale(.8); }
+}
+
+.moveToTop {
+    @include animation(moveToTop .6s ease both);
+}
+
+.moveFromBottom {
+    @include animation(moveFromBottom .6s ease both);
+}
+
+.scaleUp {
+	@include animation(scaleUp .7s ease both);
+}
+
+.scaleDown {
+	@include animation(scaleDown .7s ease both);
+}

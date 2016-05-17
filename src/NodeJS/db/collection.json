@@ -1,0 +1,28 @@
+{
+	"/" : {
+		"meta" : {
+			"title":"home"
+		},
+		"tmp" : "block-1"
+	},
+	"/page_1" : {
+		"meta" : {
+			"title":"page_1"
+		},
+		"tmp" : "block-1"
+	},
+	"/page_2" : {
+		"meta" : {
+			"title":"page_2"
+		},
+		"tmp" : "block-1"
+	},
+	"/contact" : {
+		"meta" : {
+			"title":"contact"
+		},
+		"tmp" : "block-1"
+	}
+	 	
+}
+
