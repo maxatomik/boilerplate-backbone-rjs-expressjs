@@ -1,0 +1,10 @@
+{
+    "globals": {
+        "$": false,
+        "require": false,
+        "define": false,
+        "Backbone": false,
+        "_": false,
+        "console": false
+    }
+}

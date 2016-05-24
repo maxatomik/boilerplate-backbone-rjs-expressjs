@@ -1,7 +1,7 @@
+'use strict';
+
 define([
-
     'backbone',
-
     'services/views-handler',
     'services/window-profiler',
     'services/server-handler',
@@ -9,7 +9,7 @@ define([
     'services/tracker',
     'collections/assets',
     'collections/pages',
-    'views/footer',
+    'views/home'
 
 ], function(
         Backbone,
@@ -20,10 +20,8 @@ define([
         tracker,
         AssetsCollection,
         PagesCollection,
-        FooterView
+        HomeView
     ) {
-
-    'use strict';
 
     var Router = Backbone.Router.extend({
 
@@ -47,11 +45,6 @@ define([
             tracker.initialize();
             viewsHandler.initialize({$el: this.$main});
 
-            // Qualities collection
-
-
-            $('body').show();
-
             this.history = [];
             this.on('route', _.bind(function(e) {
                 this.history.push(Backbone.history.fragment);
@@ -59,19 +52,20 @@ define([
                     this.history.shift();
                 }
             }, this));
+
+            Backbone.history.start();
         },
 
         onHomepage: function (html, page) {
+            this.homeView = this.homeView || new HomeView();
 
-
-            viewsHandler.getTransition(html, views, 'homepage', false, true);
+            viewsHandler.getTransition(html, [this.homeView], 'homepage', false, true);
         },
-
-       
 
         on404: function () {
             console.log('404 page not found !');
         },
+
         onClick: function (e) {
 
             var $link = $(e.currentTarget),

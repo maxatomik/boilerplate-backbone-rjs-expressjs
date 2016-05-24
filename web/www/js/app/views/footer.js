@@ -1,7 +1,9 @@
+'use strict';
+
 define([
 
-    'backbone'
-    , 'text!templates/footer.jade'
+    'backbone', 
+    'text!templates/footer.jade'
 
 ], function(Backbone, tmp) {
 
