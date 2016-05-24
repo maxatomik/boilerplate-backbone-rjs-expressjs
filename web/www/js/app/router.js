@@ -104,7 +104,7 @@ define([
             if (this.init && history.pushState) {
 
                 this.init = false;
-                args.unshift(this.html);
+                args.unshift(this.$main.html());
                 callback.apply(this, args);
 
             } else {
