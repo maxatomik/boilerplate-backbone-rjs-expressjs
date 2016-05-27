@@ -9,22 +9,15 @@ block pageContent
           .bar
       .l-wrapper-1024
         .c-section-titles
-          h1(id="article1") #{article1}
-          h2(id="article2") #{article2}
+          h1(data-name="h1") #{h1}
+          h2(data-name="h2") #{h2}
         section(data-section='1')
           .c-section-banner
-            h3
-              | Une box qui parle
-              br
-              |                 votre langue
+            h3(data-name="h3") #{h3}
           .c-section-content(data-element='1')
             .txt
-              h4
-                | Installer votre box
-                br
-                |                     devient un jeu d'enfant
-              p
-                | Vous bénéficiez d'une installation guidée depuis votre mobile via l'application ma Livebox. Souriez, vous êtes accompagnés.
+              h4(data-name="h4") #{h4}
+              p(data-name="text1") #{text1}
             .meta.abs(data-meta='1')
               img(src='/img/pillier1/section1-a.png', alt='')
             .meta.abs(data-meta='2')

@@ -61,8 +61,8 @@ define([
             }, this));
 
              $('body').find('p, span, a, h1, h2, h3, h4').attr('contenteditable','true')
-            $( "h1, p, span" ).blur(function( event ) {
-                serverHandler['edit']({"path":window.location.pathname, "id" : $(this).attr("id"), "value": $(this).text()});
+            $( '[contenteditable="true"]' ).blur(function( event ) {
+                serverHandler['edit']({"path":window.location.pathname, "id" : $(this).data("name"), "value": $(this).text()});
             });
         },
 
