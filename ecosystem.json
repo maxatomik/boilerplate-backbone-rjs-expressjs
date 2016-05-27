@@ -4,7 +4,7 @@
       "name"        : "web-bootstrap",
       "script"      : "src/NodeJS/web.js",
       "watch": true,
-      "autorestart":false,
+      "autorestart":true,
       "instances"  : process.env.NODE_ENV == "prod" ? 16 : 1,
       "exec_mode"  : "cluster",
       "cwd": ".",
