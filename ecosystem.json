@@ -2,89 +2,54 @@
   "apps" : [
     {
       "name"        : "web-bootstrap",
-      "script"      : "web.js",
+      "script"      : "src/NodeJS/web.js",
       "watch": true,
+      "autorestart":false,
+      "instances"  : process.env.NODE_ENV == "prod" ? 16 : 1,
+      "exec_mode"  : "cluster",
+      "cwd": ".",
       "watch_options": {
-        "followSymlinks": true,
-        "usePolling": true,
+        "followSymlinks": true, 
+        "usePolling": true
       },
-      "ignore_watch" : ["node_modules", "logs", ".DS_Store"],
-      "cwd"         : "src/NodeJS",
+      "ignore_watch" : ["node_modules", "logs", ".DS_Store", "web/config", "web/sass", "web/sprites", "web/www/css", "web/www/fonts", "web/www/img", "web/www/js", ".git",".sass-cache"],
       "env": {
         "BACKBONE" : "web/www",
-        "PORT": 5000,
-        "MONGOLAB_URI" : "mongodb://heroku_sxdvqhz1:odunkccsabjt9schmqcjt8jmo9@ds015760.mlab.com:15760/heroku_sxdvqhz1",
-        "DOMAIN" : "http://localhost:5000",
-        "MONGODB_SESSION_STORE" : "social_sessions"
-      }
-    },
-    {
-      "name"        : "oauth",
-      "script"      : "social.js",
-      "watch": true,
-      "watch_options": {
-        "followSymlinks": true,
-        "usePolling": true,
-      },
-      "ignore_watch" : ["node_modules", "logs", ".DS_Store"],
-      "cwd"         : "src/NodeJS",
-      "env": {
-        "PORT": 5100,
-        "MONGOLAB_URI" : "mongodb://heroku_sxdvqhz1:odunkccsabjt9schmqcjt8jmo9@ds015760.mlab.com:15760/heroku_sxdvqhz1",
-        "DOMAIN" : "http://localhost:5000",
+        "MONGOLAB_URI" : "mongodb://127.0.0.1:27017/dezdzdez",
+        "DOMAIN" : "http://127.0.0.1:5000",
+        "MONGODB_SESSION_STORE" : "social_sessions",
         "FACEBOOK_APP_ID" : "1013775561987535",
         "FACEBOOK_APP_SECRET" : "84bcd72b4ea57b8a3e6ebbc1721b346d",
         "MONGODB_SESSION_STORE" : "social_sessions",
-        "TWITTER_CONSUMER_KEY" : "QIzRE1WpzlF8iNc5j7nMCFbUE",
-        "TWITTER_CONSUMER_SECRET" : "kl2mcXwllmDhO07C1rPBZCohVidc6jOH9Ht90wQC2SJyn8Ne91",
-        "TWITTER_ACCESS_TOKEN" :  "149622994-icUU0wLiL44xYarF4EAhIwq2H0EH1JtuDFixJbKF",
-        "TWITTER_ACCESS_TOKEN_SECRET" : "Kov0Rn4sWBK8azZYRc9HN5M9O9DNRxNbQjTdrwUCFC0Jx"
-      }
-    },
-    {
-      "name"        : "tw",
-      "script"      : "bots/tw.js",
-      "watch": true,
-      "watch_options": {
-        "followSymlinks": true,
-        "usePolling": true,
+        "STREAMER" : "http://streamer-twitter.herokuapp.com",
+        "TWITTER_CONSUMER_KEY" : "GshMojw7jwBIuNbRFh3cBayAr",
+        "TWITTER_CONSUMER_SECRET" : "vP2ZEQYPgZY8As4XhbVHp5BTNkvaUZmJl8roEiCR4wXMOT0fHC",
+        "TWITTER_ACCESS_TOKEN" :  "714508416841027584-BayPsjlIbi1CYgi7QYOTfbPR5z0Q6tK",
+        "TWITTER_ACCESS_TOKEN_SECRET" : "3mA2gYpgSp3HC71rtku3l4tAgvrBIMdWAxHDM1JrtfjVV"
       },
-      "ignore_watch" : ["node_modules", "logs", ".DS_Store"],
-      "cwd"         : "src/NodeJS",
-      "env": {
-        "MONGOLAB_URI" : "mongodb://heroku_sxdvqhz1:odunkccsabjt9schmqcjt8jmo9@ds015760.mlab.com:15760/heroku_sxdvqhz1",
+      "env_marceldev": {
+        "PORT" : 5123,
+        "BACKBONE" : "web/www",
+        "MONGOLAB_URI" : "mongodb://127.0.0.1:27017/dezdzdez",
+        "DOMAIN" : "http://127.0.0.1:5000",
         "MONGODB_SESSION_STORE" : "social_sessions",
-        "STREAMER" : "https://rhubarb-shortcake-70067.herokuapp.com/",
-        "TWITTER_CONSUMER_KEY" : "QIzRE1WpzlF8iNc5j7nMCFbUE",
-        "TWITTER_CONSUMER_SECRET" : "kl2mcXwllmDhO07C1rPBZCohVidc6jOH9Ht90wQC2SJyn8Ne91",
-        "TWITTER_ACCESS_TOKEN" :  "149622994-icUU0wLiL44xYarF4EAhIwq2H0EH1JtuDFixJbKF",
-        "TWITTER_ACCESS_TOKEN_SECRET" : "Kov0Rn4sWBK8azZYRc9HN5M9O9DNRxNbQjTdrwUCFC0Jx"
-      }
-    },
-    {
-      "name"        : "fb",
-      "script"      : "bots/fb.js",
-      "watch": true,
-      "watch_options": {
-        "followSymlinks": true,
-        "usePolling": true,
-      },
-      "ignore_watch" : ["node_modules", "logs", ".DS_Store"],
-      "cwd"         : "src/NodeJS",
-      "env": {
-        "MONGOLAB_URI" : "mongodb://heroku_sxdvqhz1:odunkccsabjt9schmqcjt8jmo9@ds015760.mlab.com:15760/heroku_sxdvqhz1",
+        "FACEBOOK_APP_ID" : "1013775561987535",
+        "FACEBOOK_APP_SECRET" : "84bcd72b4ea57b8a3e6ebbc1721b346d",
         "MONGODB_SESSION_STORE" : "social_sessions",
-        "TOKEN":"EAAWyeht04qcBAMtRPxtp3XoegX77pLVrVg78zZBHboMn6mb3ddSuZAEwo8vRsVPHPz95TbrikttAnAswwDbtaqZAT9jW2aYJJJdDTzNNV0BobeA7ZC4tvMXW7EtujtTjZBNgijvXRlH3dClnQccIY43HVZA1pOj13DPoPiW8mqNAZDZD",
-        "VERIFY_TOKEN":"tokenfb"
+        "STREAMER" : "http://streamer-twitter.herokuapp.com",
+        "TWITTER_CONSUMER_KEY" : "GshMojw7jwBIuNbRFh3cBayAr",
+        "TWITTER_CONSUMER_SECRET" : "vP2ZEQYPgZY8As4XhbVHp5BTNkvaUZmJl8roEiCR4wXMOT0fHC",
+        "TWITTER_ACCESS_TOKEN" :  "714508416841027584-BayPsjlIbi1CYgi7QYOTfbPR5z0Q6tK",
+        "TWITTER_ACCESS_TOKEN_SECRET" : "3mA2gYpgSp3HC71rtku3l4tAgvrBIMdWAxHDM1JrtfjVV"
       }
     }],
     "deploy" : {
       "prod" : {
         "user" : "marcel",
         "host" : "78.109.85.111",
-        "ref"  : "origin/master",
+        "ref"  : "origin/dev",
         "repo" : "git@gitlab.marceldev.fr:website/boilerplate-backbone-rjs-expressjs.git",
-        "path" : "/home/marcel/public_html/boilerplate-backbone-rjs-expressjs", 
+        "path" : "/home/marcel/public_html/testnewproject", 
         "pre-deploy-local" : "echo 'deploying on prod'",
         "post-deploy" : "npm install ; npm start"
       }

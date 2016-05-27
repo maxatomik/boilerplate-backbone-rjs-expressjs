@@ -1,7 +1,7 @@
-'use strict';
-
 define([
+
     'backbone',
+
     'services/views-handler',
     'services/window-profiler',
     'services/server-handler',
@@ -9,7 +9,7 @@ define([
     'services/tracker',
     'collections/assets',
     'collections/pages',
-    'views/home'
+    'views/footer'
 
 ], function(
         Backbone,
@@ -20,8 +20,10 @@ define([
         tracker,
         AssetsCollection,
         PagesCollection,
-        HomeView
+        FooterView
     ) {
+
+    'use strict';
 
     var Router = Backbone.Router.extend({
 
@@ -45,6 +47,11 @@ define([
             tracker.initialize();
             viewsHandler.initialize({$el: this.$main});
 
+            // Qualities collection
+
+
+            $('body').show();
+
             this.history = [];
             this.on('route', _.bind(function(e) {
                 this.history.push(Backbone.history.fragment);
@@ -53,19 +60,24 @@ define([
                 }
             }, this));
 
-            Backbone.history.start();
+             $('body').find('p, span, a, h1, h2, h3, h4').attr('contenteditable','true')
+            $( '[contenteditable="true"]' ).blur(function( event ) {
+                serverHandler['edit']({"path":window.location.pathname, "id" : $(this).data("name"), "value": $(this).text()});
+            });
         },
+
 
         onHomepage: function (html, page) {
-            this.homeView = this.homeView || new HomeView();
 
-            viewsHandler.getTransition(html, [this.homeView], 'homepage', false, true);
+
+            viewsHandler.getTransition(html, views, 'homepage', false, true);
         },
+
+       
 
         on404: function () {
             console.log('404 page not found !');
         },
-
         onClick: function (e) {
 
             var $link = $(e.currentTarget),
@@ -104,7 +116,7 @@ define([
             if (this.init && history.pushState) {
 
                 this.init = false;
-                args.unshift(this.$main.html());
+                args.unshift(this.html);
                 callback.apply(this, args);
 
             } else {

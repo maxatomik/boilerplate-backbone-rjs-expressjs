@@ -1,19 +1,18 @@
-if layout != 'false'
-  doctype html
-  //if lt IE 7
-    html.no-js.lt-ie9.lt-ie8.lt-ie7
-  //if IE 7
-    html.no-js.lt-ie9.lt-ie8
-  //if IE 8
-    html.no-js.lt-ie9
-  // [if gt IE 8] <!
-  html.no-js
+doctype html
+//if lt IE 7
+  html.no-js.lt-ie9.lt-ie8.lt-ie7
+//if IE 7
+  html.no-js.lt-ie9.lt-ie8
+//if IE 8
+  html.no-js.lt-ie9
+// [if gt IE 8] <!
+html.no-js
     // <![endif]
     head
       meta(charset='utf-8')
       meta(http-equiv='X-UA-Compatible', content='IE=edge')
-      title= body.meta.title
-      meta(name='description', content='#{body.meta.title}')
+      title= metatitle
+      meta(name='description', content='#{metatitle}')
       meta(name='viewport', content='width=device-width, initial-scale=1')
       link(href='/css/main.css', rel='stylesheet', type='text/css')
       link(rel='shortcut icon', type='image/x-icon', href='/favicon.ico')

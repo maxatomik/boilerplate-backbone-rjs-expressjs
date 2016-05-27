@@ -1,28 +1,26 @@
 {
-	"home" : {
-		"title":"Page home",
-		"meta" : {
-			"title":"title meta home",
-			"desc":"desc meta home"
-		},
-		"tmp" : "home"
-	},
-	"sitemap" : {
-		"title":"Page sitemap",
-		"meta" : {
-			"title":"title meta sitemap",
-			"desc":"desc meta sitemap"
-		},
-		"tmp" : "page-layout-1"
-	},
-	"contact" : {
-		"title":"Page contact",
-		"meta" : {
-			"title":"title meta contact",
-			"desc":"desc meta contact"
-		},
-		"tmp" : "page-layout-1"
-	}
-	 	
+  "/": {
+    "metatitle": "okded22d2 22Ssdezdezddedededezdzdezedddezdezd2ed3lddpkkkBkd22222222LOOOOL",
+    "article1": "texte de l'article 1 home",
+    "article2": "texte de l'article 2 home"
+  },
+  "/page/contact": {
+    "metatitle": "okded22d2 22Ssdezdezddedededezdzdezedddezdezd2ed3lddpkkkBkd22222222LOOOOL",
+    "article1": "texte de l'article 1 contact 3KKKKdezdezdezKdede22",
+    "article2": "texte de l'article 2 homedezdezdLLLLLLLL",
+    "h2": "dezdez",
+    "h1": "dezdezdez",
+    "h4": "dezdzedez dz adaz daz",
+    "undefined": "Choisissez le nom de votre connexion, les heures auxquelles vous souhaitez que votre Wi-Fi soit activé… En cas de changement de box, vos paramètres seront automatiquement réinstallés, et vos équipements reconnaîtront leur Wi-Fi."
+  },
+  "/page/equipe": {
+    "metatitle": "okded22d2 22Ssdezdezddedezdzdezedd2ed3lddpkkkBkd22222222LOOOOL",
+    "article1": "texte ded l'article 1dezdez LOLde dez d equipe",
+    "article2": "texte de l'article 2 equipeLdededeLLL",
+    "undefined": "Installer votre box                    deviendezdezt un jeu d'enfant",
+    "h1": "dzdez2dezddezedez",
+    "h2": "dzdezddzedezezdez",
+    "text1": "Vous bénéficiez d'une installation guidée depuis votre mobile via l'application ma Livebox. Souriez, vous êtes accompagnés.",
+    "h4": "dezdez"
+  }
 }
-

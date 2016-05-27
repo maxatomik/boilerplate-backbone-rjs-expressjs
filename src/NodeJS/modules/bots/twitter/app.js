@@ -1,0 +1,52 @@
+'use strict';
+
+var express = require('express'),
+    router = express.Router(),
+    Twit = require('twit');
+ 
+
+
+var User = require('./models/user');
+var Post = require('./models/post');
+
+module.exports = function(models) {
+	if( process.env.TWITTER_CONSUMER_KEY !== undefined ) {
+		var STREAM = require('socket.io-client')(process.env.STREAMER);
+		var T = new Twit({
+	    "consumer_key": process.env.TWITTER_CONSUMER_KEY,
+	    "consumer_secret": process.env.TWITTER_CONSUMER_SECRET,
+	    "access_token": process.env.TWITTER_ACCESS_TOKEN,
+	    "access_token_secret": process.env.TWITTER_ACCESS_TOKEN_SECRET
+		});
+	   	
+		console.log('Streaming Twitter on #test')
+		STREAM.on('tweet', function(tweet){
+			console.log('found tweet :'+ tweet.id_str);
+			var oPost = new Post(tweet);
+			    oPost.save(function(err, p){
+			    	console.log('post saved.');
+			    });
+			var oUser = new User(tweet.user);
+			        oUser.save(function(err, u){
+			    	console.log('user saved.');
+			    });
+		});
+		/*Specific modules admin routes*/
+		router.get('/admin/bots/twitter/users', function(req, res) {
+			User.find({}, function(err, users) {
+	 			res.render('admin/bots/twitter/users.jade', {body: users}); 
+	 		});
+		});
+
+		
+		router.get('/admin/bots/twitter/posts', function(req, res) {
+			Post.find({}, function(err, posts) {
+	 			res.render('admin/bots/twitter/posts.jade', {body: posts}); 
+	 		});
+		});
+	} else {
+		console.log('twitter bot : twitter credentials missing');
+	}
+  return router;
+};
+

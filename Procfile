@@ -1,1 +1,1 @@
-web: pm2 start ecosystem.heroku.json && pm2 logs
+web: pm2 start ecosystem.json && pm2 logs

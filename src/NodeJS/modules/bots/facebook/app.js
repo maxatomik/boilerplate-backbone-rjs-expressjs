@@ -2,8 +2,6 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var app = express();
 var mongoose = require('mongoose');
-var request = require('request');
-var PORT;
 mongoose.createConnection(process.env.MONGOLAB_URI);
 
 var Post =require('../models/post');
@@ -42,11 +40,8 @@ app.post('/webhook', function (req, res) {
     res.sendStatus(200);
 });
 
-if(process.env.PORT !== undefined ) { PORT = process.env.PORT }
-else { PORT = 5200 }
-
-app.listen(PORT, function () {
-    console.log('Facebook Messenger on port ' + PORT);
+app.listen(process.env.PORT, function () {
+    console.log('Facebook Messenger on port ' + process.env.PORT);
 });
     
 function sendTextMessage(recipient_id, message) {
