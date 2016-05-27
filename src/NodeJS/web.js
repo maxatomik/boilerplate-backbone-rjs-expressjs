@@ -11,7 +11,7 @@ var path = require('path'),
 
 
 var BACKBONE_PATH = path.join(__dirname, '/../../', process.env.BACKBONE),
-    EXPRESS_PORT = process.env.PORT == undefined ? 5000 : process.env.PORT,
+    EXPRESS_PORT = process.env.PORT === undefined ? 5000 : process.env.PORT,
     DATA = JSON.parse(fs.readFileSync(path.join(__dirname, "db/collection.json"), 'utf8'));
 
 mongoose.connect(process.env.MONGOLAB_URI);
