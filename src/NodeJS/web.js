@@ -7,8 +7,7 @@ var path = require('path'),
     session = require('express-session'),
     MongoStore = require('connect-mongo')(session),
     mongoose = require('mongoose'),
-    app = express(),
-    jsonfile = require('jsonfile');
+    app = express();
 
 
 var BACKBONE_PATH = path.join(__dirname, '/../../', process.env.BACKBONE),
@@ -42,16 +41,8 @@ app.use(require('./controllers')(DATA))
 app.use(require('./modules/oauth/twitter/app')(require('./models')));
 app.use(require('./modules/bots/twitter/app')(require('./models')));
 //app.use(require('./modules/oauth/facebook')(require('./models')));
+app.use(require('./modules/liveedit/app')(require('./models')));
 
-app.post('/edit', function(req, res) {
-    var file = path.join(__dirname, 'db/collection.json');
-    jsonfile.readFile(file, function(err, obj) {
-        obj['/page/contact'][req.body.id] = req.body.value
-        jsonfile.writeFile(file, obj, { spaces:2 },function(){
-            res.send('ok');
-        })
-    })
-});
 
 var Server = require('http').createServer(app);
 Server.listen(EXPRESS_PORT, function(){ 

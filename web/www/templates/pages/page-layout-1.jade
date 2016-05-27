@@ -1,5 +1,174 @@
 extends ../layout
 block pageContent
- h1(contenteditable="true" id="metatitle") #{metatitle}
- p(contenteditable="true" id="article1") #{article1}
- p(contenteditable="true" id="article2") #{article2}
+ .p-pillier1
+      .l-wrapper-1024
+        nav.c-section-summary
+          .chapter Une box qui parle votre langue
+          .chapter Un design pensé pour votre confort
+          .chapter Conçue dans le respect de l'environnement
+          .bar
+      .l-wrapper-1024
+        .c-section-titles
+          h1(id="article1") #{article1}
+          h2(id="article2") #{article2}
+        section(data-section='1')
+          .c-section-banner
+            h3
+              | Une box qui parle
+              br
+              |                 votre langue
+          .c-section-content(data-element='1')
+            .txt
+              h4
+                | Installer votre box
+                br
+                |                     devient un jeu d'enfant
+              p
+                | Vous bénéficiez d'une installation guidée depuis votre mobile via l'application ma Livebox. Souriez, vous êtes accompagnés.
+            .meta.abs(data-meta='1')
+              img(src='/img/pillier1/section1-a.png', alt='')
+            .meta.abs(data-meta='2')
+              img(src='/img/pillier1/section1-b.jpg', alt='')
+          .c-section-content(data-element='2')
+            .txt
+              h4
+                | Une box qui vous
+                br
+                |                     accompagne pas à pas
+              p
+                | Quand la nouvelle Livebox détecte un problème, elle se dépanne seule. Si une action de votre part est nécessaire, vous en êtes informés sur son écran ou sur votre télévision.
+            .col
+              .meta(data-meta='1')
+                img(src='/img/pillier1/section1-c.png', alt='')
+              .meta(data-meta='2')
+                img(src='/img/pillier1/section1-d.jpg', alt='')
+          .c-section-content(data-element='3')
+            .txt
+              h4
+                | Personnalisez
+                br
+                |                     la nouvelle Livebox
+              p
+                | Choisissez le nom de votre connexion, les heures auxquelles vous souhaitez que votre Wi-Fi soit activé… En cas de changement de box, vos paramètres seront automatiquement réinstallés, et vos équipements reconnaîtront leur Wi-Fi.
+            .meta.abs(data-meta='1')
+              p livebox_de_Marie
+              p.active
+                | livebox_des_Duponts 
+                img(src='/img/icons/lock.png', alt='')
+              p livebox_salle_de_sport
+              p.less livebox_des_Durand
+        section(data-section='2')
+          .c-section-banner
+            h3
+              | Un design pensé
+              br
+              |                 pour votre confort
+          .c-section-content(data-element='1')
+            .meta.abs(data-meta='1')
+              img(src='/img/pillier1/section2-a.png', alt='')
+            .table
+              .txt
+                h4
+                  | Le plus important a été mis devant
+                p
+                  span Le bouton WPS
+                  |  connecte rapidement tous vos appareils à proximité en un simple appui sur le bouton en façade.
+                p
+                  span Le bouton « i »
+                  |  vous donne toutes les informations sur votre Wi-Fi, y compris votre clé de sécurité. Plus besoin de soulever la box ! Et comme vous pouvez désormais personnaliser vos mots de passe, tout devient simple.
+                p
+                  span Le bouton Wi-Fi
+                  |  vous permet simplement d’allumer et éteindre votre Wi-Fi, par exemple la nuit.
+                p
+                  span Écran à détecteur de présence :
+                  |  une box qui sait se faire discrète, c’est important. La nouvelle Livebox a donc été conçue pour que son écran s’allume seulement quand vous êtes devant.
+              .col
+                .meta.abs(data-meta='2')
+                  img(src='/img/pillier1/section2-b.jpg', alt='')
+          .c-section-content(data-element='2')
+            .meta.abs(data-meta='1')
+              img(src='/img/pillier1/section2-a.png', alt='')
+            .txt
+              h4
+                | Plus besoin de fil entre votre
+                br
+                |                     décodeur et votre box
+              p
+                | Installez votre télé où vous voulez : grâce à la puissance du Wi-Fi ac, votre décodeur se connecte facilement en Wi-Fi à la nouvelle Livebox, sans câble ni adaptateur.
+          .c-section-content(data-element='3')
+            .table
+              .txt
+                h4
+                  | Ventilation ultra
+                  br
+                  |                         silencieuse
+                p
+                  | Peu importe où votre box sera installée, elle ne vous dérangera jamais : la nouvelle Livebox fonctionne silencieusement.
+              .col
+                .meta.abs.number(data-meta='1')
+                  span
+                    span.counter1 0
+                    | dB
+                    br
+                  p loremp ispum sid amet
+          .c-section-content(data-element='4')
+            .clearfix
+              .meta.abs.video(data-meta='1')
+                p video
+              .txt
+                h4
+                  | Une télécommande
+                  br
+                  |                         simple à utiliser
+                p
+                  | Le design de la télécommande a été épuré pour ne garder que l’essentiel.
+            .meta.abs(data-meta='2')
+              img(src='/img/pillier1/section2-e.png', alt='')
+        section(data-section='3')
+          .c-section-banner
+            h3
+              | Conçue dans le respect
+              br
+              |                 de l'environnement
+          .c-section-content(data-element='1')
+            .table
+              .col
+                .meta.abs.number(data-meta='1')
+                  span
+                    span.counter2 3
+                    | watts
+                    br
+                  p loremp ispum sid amet
+              .txt
+                h4
+                  | Un processus d’éco conception
+                p
+                  | La nouvelle Livebox et son décodeur TV ont suivi un processus d’éco conception pour limiter fortement leur impact sur l’environnement.
+                p
+                  | La consommation énergétique a été optimisée, tant en phase active qu’en veille. L’emballage est plus petit et fabriqué avec du carton recyclable et des encres végétales et la conception a été pensée pour faciliter la réparation en SAV et le traitement en fin de vie.
+        section.c-section-links
+          .col
+            p
+              | La Nouvelle
+              br
+              |  Livebox
+            a.btn(href='#') Commander la nouvelle Livebox
+          .col
+            .next
+              p
+                | Une raison de
+                br
+                |                     plus de choisir
+                br
+                |                     la nouvelle
+                br
+                |                     Livebox ?
+              a.btn-plus(href='') d'immersion
+            .faq
+              p
+                | Encore une
+                br
+                |  question ?
+                br
+                |                     La FAQ est là
+              a(href='#') La FAQ
