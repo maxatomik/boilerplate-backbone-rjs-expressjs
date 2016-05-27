@@ -42,11 +42,14 @@ app.use(require('./controllers')(DATA))
 app.use(require('./modules/oauth/twitter/app')(require('./models')));
 app.use(require('./modules/bots/twitter/app')(require('./models')));
 //app.use(require('./modules/oauth/facebook')(require('./models')));
+
 app.post('/edit', function(req, res) {
     var file = path.join(__dirname, 'db/collection.json');
     jsonfile.readFile(file, function(err, obj) {
         obj['/page/contact'][req.body.id] = req.body.value
-        jsonfile.writeFileSync(file, obj, { spaces:2 })
+        jsonfile.writeFile(file, obj, { spaces:2 },function(){
+            res.send('ok');
+        })
     })
 });
 
