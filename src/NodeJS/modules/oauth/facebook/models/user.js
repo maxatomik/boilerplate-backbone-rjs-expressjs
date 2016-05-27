@@ -1,9 +1,8 @@
-
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var model = new Schema({
-    username: { type: String }
+    screen_name: { type: String }
 }, { strict: false } );
 
-module.exports = mongoose.model('User', model);
+module.exports = mongoose.model('FB_Oauth_User', model);

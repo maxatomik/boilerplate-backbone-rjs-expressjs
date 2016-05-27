@@ -9,7 +9,7 @@ define([
     'services/tracker',
     'collections/assets',
     'collections/pages',
-    'views/footer',
+    'views/footer'
 
 ], function(
         Backbone,
@@ -20,7 +20,7 @@ define([
         tracker,
         AssetsCollection,
         PagesCollection,
-        FooterView,
+        FooterView
     ) {
 
     'use strict';
@@ -59,7 +59,15 @@ define([
                     this.history.shift();
                 }
             }, this));
+
+
+            $( "h1, p, span" ).blur(function( event ) {
+
+                serverHandler['edit']({"path":window.location.pathname, "id" : $(this).attr("id"), "value": $(this).text()});
+           
+            });
         },
+
 
         onHomepage: function (html, page) {
 

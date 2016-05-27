@@ -1,0 +1,15 @@
+extends ../../layout
+block mainContent
+    include ../../header.jade
+    br
+    h2 Administration
+    h3 Tweet Bot Posts
+    .panel.panel-default
+      table.table.table-condensed
+       tr
+        th id
+        th text
+       each val in body
+        tr
+          td= val.id_str
+          td= val.text

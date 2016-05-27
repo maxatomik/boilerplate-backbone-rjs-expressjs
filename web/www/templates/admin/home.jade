@@ -1,9 +1,13 @@
 extends layout
 block mainContent
     include ./header.jade
-     li
-      a(target='_blank' href='/services/clear') clear posts
     br
-    h2 Section
+    h2 Adminstration
     .panel.panel-default
-      table.table.table-condensed
+      ul
+        li
+         a(href="./bots/twitter/posts") Twitter Bot Posts
+        li
+         a(href="./bots/twitter/users") Twitter Bot Users
+        li
+         a(href="./oauth/twitter/users") Twitter Oauth Users

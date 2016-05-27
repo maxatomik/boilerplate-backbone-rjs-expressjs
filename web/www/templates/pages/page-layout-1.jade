@@ -1,3 +1,5 @@
 extends ../layout
 block pageContent
- h1= meta.title
+ h1(contenteditable="true" id="metatitle") #{metatitle}
+ p(contenteditable="true" id="article1") #{article1}
+ p(contenteditable="true" id="article2") #{article2}
