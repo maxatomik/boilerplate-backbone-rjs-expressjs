@@ -11,7 +11,7 @@ module.exports = function(models) {
     var file = path.join(__dirname, '/../../db/collection.json');
 	    jsonfile.readFile(file, function(err, obj) {
 	        obj[req.body.path][req.body.id] = req.body.value
-	        jsonfile.writeFile(file, obj, { spaces:2 },function(){
+	        jsonfile.writeFile(file, obj, { spaces:2, mode:0o777 },function(){
 	            res.send('ok');
 	        })
 	    })
