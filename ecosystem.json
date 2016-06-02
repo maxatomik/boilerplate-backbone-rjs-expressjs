@@ -30,7 +30,7 @@
       "env_marceldev": {
         "PORT" : 5123,
         "BACKBONE" : "web/www",
-        "MONGOLAB_URI" : "mongodb://127.0.0.1:27017/dezdzdez",
+        "MONGOLAB_URI" : "mongodb://127.0.0.1:27017/boilerplate-backbone-rjs-expressjs",
         "DOMAIN" : "http://127.0.0.1:5000",
         "MONGODB_SESSION_STORE" : "social_sessions",
         "FACEBOOK_APP_ID" : "1013775561987535",
@@ -45,7 +45,7 @@
       "env_prod": {
         "PORT" : 5000,
         "BACKBONE" : "web/www",
-        "MONGOLAB_URI" : "mongodb://127.0.0.1:27017/dezdzdez",
+        "MONGOLAB_URI" : "mongodb://127.0.0.1:27017/boilerplate-backbone-rjs-expressjs",
         "DOMAIN" : "http://127.0.0.1:5000",
         "MONGODB_SESSION_STORE" : "social_sessions",
         "FACEBOOK_APP_ID" : "1013775561987535",
@@ -64,7 +64,7 @@
         "host" : "78.109.85.111",
         "ref"  : "origin/dev",
         "repo" : "git@gitlab.marceldev.fr:website/boilerplate-backbone-rjs-expressjs.git",
-        "path" : "/home/marcel/public_html/boilerplate-backbone-rjs-expressjs", 
+        "path" : "/home/marcel/public_html/"__dirname, 
         "pre-deploy-local" : "echo 'deploying on prod'",
         "post-deploy" : "npm install ; npm start"
       }
