@@ -64,7 +64,7 @@
         "host" : "78.109.85.111",
         "ref"  : "origin/dev",
         "repo" : "git@gitlab.marceldev.fr:website/boilerplate-backbone-rjs-expressjs.git",
-        "path" : "/home/marcel/public_html/"+__dirname, 
+        "path" : "/home/marcel/public_html/"+process.cwd().split('/')[process.cwd().split('/').length-1], 
         "pre-deploy-local" : "echo 'deploying on prod'",
         "post-deploy" : "npm install ; npm start"
       }
