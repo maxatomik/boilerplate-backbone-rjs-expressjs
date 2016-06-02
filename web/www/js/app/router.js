@@ -60,10 +60,18 @@ define([
                 }
             }, this));
 
-             $('body').find('p, span, a, h1, h2, h3, h4').attr('contenteditable','true')
-            $( '[contenteditable="true"]' ).blur(function( event ) {
-                serverHandler['edit']({"path":window.location.pathname, "id" : $(this).data("name"), "value": $(this).text()});
+            $.getJSON("/edit/is_authorized", function(data) {
+                // Make sure the data contains the username as expected before using it
+                if (data){
+                    if(window.ENV_CONFIG.env.indexOf('dev') > -1 && data._id !== undefined) {
+                        $('body').find('p, span, a, h1, h2, h3, h4').attr('contenteditable','true')
+                         $(document).on('blur','[contenteditable="true"]', function( event ) {
+                            serverHandler['edit']({"path":window.location.pathname, "id" : $(this).data("name"), "value": $(this).text()});
+                        });
+                    }
+                }
             });
+            
         },
 
 

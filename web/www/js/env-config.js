@@ -4,32 +4,45 @@
 
     Env.config = {
         environments: {
-            "dev": "local",
+            "dev": "127.0.0.1",
             "dev-extern": "10.224",
+            "marceldev":"marceldev",
             "preprod": "gitlab.marceldev",
             "prod": ""
         },
         debug: {
             "dev": true,
             "dev-extern": true,
+            "marceldev": true,
             "preprod": true,
             "prod": false
         },
         cache: {
             "dev": false,
             "dev-extern": false,
+            "marceldev": false,
             "preprod": false,
             "prod": true
         },
         minify: {
             "dev": false,
             "dev-extern": false,
+            "marceldev": false,
             "preprod": false,
             "prod": true
         }
     };
 
     Env.set = function() {
+        for(var index in Env.config.environments) {
+            if( document.location.hostname.indexOf( Env.config.environments[index] ) != -1 ) {
+                this.config.env = index;
+                break;
+            }
+        }
+        if(Env.customEnv()) this.config.env = Env.customEnv();
+    }
+     Env.get = function() {
         for(var index in Env.config.environments) {
             if( document.location.hostname.indexOf( Env.config.environments[index] ) != -1 ) {
                 this.config.env = index;
@@ -90,6 +103,7 @@
     Env.load = function(){
         Env.set();
         window.ENV_CONFIG = {
+            env: this.config.env,
             cacheArgs: this.getCacheArgs(),
             minify: this.config.minify[this.config.env],
             debug: this.debug(this.config.debug[this.config.env]),

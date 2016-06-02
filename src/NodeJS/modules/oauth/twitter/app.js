@@ -32,7 +32,7 @@ module.exports = function(options) {
     passport.deserializeUser(function(user, done) {
       done(null, user);
     });
-
+  
     router.get('/auth/twitter',
       passport.authenticate('twitter'));
 
