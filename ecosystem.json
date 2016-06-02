@@ -41,6 +41,21 @@
         "TWITTER_CONSUMER_SECRET" : "vP2ZEQYPgZY8As4XhbVHp5BTNkvaUZmJl8roEiCR4wXMOT0fHC",
         "TWITTER_ACCESS_TOKEN" :  "714508416841027584-BayPsjlIbi1CYgi7QYOTfbPR5z0Q6tK",
         "TWITTER_ACCESS_TOKEN_SECRET" : "3mA2gYpgSp3HC71rtku3l4tAgvrBIMdWAxHDM1JrtfjVV"
+      },
+      "env_prod": {
+        "PORT" : 5000,
+        "BACKBONE" : "web/www",
+        "MONGOLAB_URI" : "mongodb://127.0.0.1:27017/dezdzdez",
+        "DOMAIN" : "http://127.0.0.1:5000",
+        "MONGODB_SESSION_STORE" : "social_sessions",
+        "FACEBOOK_APP_ID" : "1013775561987535",
+        "FACEBOOK_APP_SECRET" : "84bcd72b4ea57b8a3e6ebbc1721b346d",
+        "MONGODB_SESSION_STORE" : "social_sessions",
+        "STREAMER" : "http://streamer-twitter.herokuapp.com",
+        "TWITTER_CONSUMER_KEY" : "GshMojw7jwBIuNbRFh3cBayAr",
+        "TWITTER_CONSUMER_SECRET" : "vP2ZEQYPgZY8As4XhbVHp5BTNkvaUZmJl8roEiCR4wXMOT0fHC",
+        "TWITTER_ACCESS_TOKEN" :  "714508416841027584-BayPsjlIbi1CYgi7QYOTfbPR5z0Q6tK",
+        "TWITTER_ACCESS_TOKEN_SECRET" : "3mA2gYpgSp3HC71rtku3l4tAgvrBIMdWAxHDM1JrtfjVV"
       }
     }],
     "deploy" : {
