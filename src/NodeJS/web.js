@@ -11,7 +11,7 @@ var path = require('path'),
 
 
 var BACKBONE_PATH = path.join(__dirname, '/../../', process.env.BACKBONE),
-    EXPRESS_PORT = process.env.PORT === undefined ? 5000 : process.env.PORT,
+    EXPRESS_PORT = process.env.PORT ===  undefined ? 5000 : process.env.PORT,
     DATA = JSON.parse(fs.readFileSync(path.join(__dirname, "db/collection.json"), 'utf8'));
 
 mongoose.connect(process.env.MONGOLAB_URI);
@@ -37,11 +37,10 @@ app.use(cors({
 app.use('/ressources', express.static(path.join(__dirname, '/public')));
 app.use(require('./controllers')(DATA))
 
-
-app.use(require('./modules/oauth/twitter/app')(require('./models')));
-app.use(require('./modules/bots/twitter/app')(require('./models')));
+app.use(require('./modules/oauth/twitter/app')());
+app.use(require('./modules/bots/twitter/app')());
 //app.use(require('./modules/oauth/facebook')(require('./models')));
-app.use(require('./modules/liveedit/app')(require('./models')));
+app.use(require('./modules/liveedit/app')());
 
 
 var Server = require('http').createServer(app);

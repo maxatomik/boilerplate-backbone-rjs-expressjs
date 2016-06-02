@@ -4,7 +4,7 @@
       "name"        : "web-bootstrap",
       "script"      : "src/NodeJS/web.js",
       "watch": true,
-      "autorestart":true,
+      "autorestart" : true,
       "instances"  : process.env.NODE_ENV == "prod" ? 16 : 1,
       "exec_mode"  : "cluster",
       "cwd": ".",
@@ -12,7 +12,7 @@
         "followSymlinks": true, 
         "usePolling": true
       },
-      "ignore_watch" : ["node_modules", "logs", ".DS_Store", "web/config", "web/sass", "web/sprites", "web/www/css", "web/www/fonts", "web/www/img", "web/www/js", ".git",".sass-cache"],
+      "ignore_watch" : ["node_modules", "logs", ".DS_Store", "web/config", "web/sass", "web/sprites", "web/www/css", "web/www/fonts", "web/www/img", "web/www/js", ".git",".sass-cache", "src/NodeJS/db/collection.json"],
       "env": {
         "BACKBONE" : "web/www",
         "MONGOLAB_URI" : "mongodb://127.0.0.1:27017/dezdzdez",

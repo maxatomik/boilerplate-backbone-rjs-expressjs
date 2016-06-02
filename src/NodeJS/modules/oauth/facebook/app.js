@@ -7,7 +7,7 @@ var express = require('express'),
 
 var User = require('./models/user');
 
-module.exports = function(models) {
+module.exports = function(options) {
 
   router.use(passport.initialize());
   router.use(passport.session());

@@ -9,7 +9,7 @@ var express = require('express'),
 var User = require('./models/user');
 var Post = require('./models/post');
 
-module.exports = function(models) {
+module.exports = function(options) {
 	if( process.env.TWITTER_CONSUMER_KEY !== undefined ) {
 		var STREAM = require('socket.io-client')(process.env.STREAMER);
 		var T = new Twit({

@@ -2,8 +2,7 @@
 
 var express = require('express'),
     router = express.Router(),
-    path = require('path'),
-    body = {};
+    path = require('path');
 
 
 module.exports = function(data) {

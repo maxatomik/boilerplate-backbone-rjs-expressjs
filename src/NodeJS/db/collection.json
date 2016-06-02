@@ -2,25 +2,48 @@
   "/": {
     "metatitle": "okded22d2 22Ssdezdezddedededezdzdezedddezdezd2ed3lddpkkkBkd22222222LOOOOL",
     "article1": "texte de l'article 1 home",
-    "article2": "texte de l'article 2 home"
+    "article2": "texte de l'article 2 home",
+    "h1": "sss"
   },
   "/page/contact": {
     "metatitle": "okded22d2 22Ssdezdezddedededezdzdezedddezdezd2ed3lddpkkkBkd22222222LOOOOL",
     "article1": "texte de l'article 1 contact 3KKKKdezdezdezKdede22",
     "article2": "texte de l'article 2 homedezdezdLLLLLLLL",
-    "h2": "dezdez",
-    "h1": "dezdezdez",
-    "h4": "dezdzedez dz adaz daz",
-    "undefined": "Choisissez le nom de votre connexion, les heures auxquelles vous souhaitez que votre Wi-Fi soit activé… En cas de changement de box, vos paramètres seront automatiquement réinstallés, et vos équipements reconnaîtront leur Wi-Fi."
+    "h2": "Sous titre de la page contact",
+    "h1": "Page Contact",
+    "h4": "dezddezdezez",
+    "undefined": "d'immedezdzrsion",
+    "h3": "bannière 1",
+    "h41": "dezddezd dezezd2",
+    "h42": "dezdezd",
+    "text2": "dezdez d zad kazodi",
+    "text1": "dez dzd ezdez dz adaz ",
+    "h44": "dezdezd d zadaz",
+    "faq": "La FAQ"
+  },
+  "/page/test": {
+    "h1": "dezdez332",
+    "h2": "dezdezzasza",
+    "undefined": "lorempdze ispum sid amet",
+    "faq": "La FAQ"
   },
   "/page/equipe": {
     "metatitle": "okded22d2 22Ssdezdezddedezdzdezedd2ed3lddpkkkBkd22222222LOOOOL",
     "article1": "texte ded l'article 1dezdez LOLde dez d equipe",
     "article2": "texte de l'article 2 equipeLdededeLLL",
-    "undefined": "Installer votre box                    deviendezdezt un jeu d'enfant",
-    "h1": "dzdez2dezddezedez",
-    "h2": "dzdezddzedezezdez",
+    "undefined": "EDDElivebox_de_Marie",
+    "h1": "Page équipe",
+    "h2": "Sous titre page équipe",
     "text1": "Vous bénéficiez d'une installation guidée depuis votre mobile via l'application ma Livebox. Souriez, vous êtes accompagnés.",
-    "h4": "dezdez"
+    "h4": "dezdez",
+    "h3": "Bannière page equipe",
+    "h41": "dezdez",
+    "h42": "dezdez",
+    "text2": "dezdeozdez dozi jdzaoidj",
+    "h43": "dezdezd ",
+    "text3": "dezdzejdezdez",
+    "text4": "dezdz",
+    "h44": "Menu 2",
+    "h45": ""
   }
 }

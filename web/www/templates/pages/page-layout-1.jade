@@ -9,14 +9,14 @@ block pageContent
           .bar
       .l-wrapper-1024
         .c-section-titles
-          h1(data-name="h1") #{h1}
+          h1(data-name="h1" style="white-space:pre;") #{h1}
           h2(data-name="h2") #{h2}
         section(data-section='1')
           .c-section-banner
             h3(data-name="h3") #{h3}
           .c-section-content(data-element='1')
             .txt
-              h4(data-name="h4") #{h4}
+              h4(data-name="h41") #{h41}
               p(data-name="text1") #{text1}
             .meta.abs(data-meta='1')
               img(src='/img/pillier1/section1-a.png', alt='')
@@ -24,8 +24,8 @@ block pageContent
               img(src='/img/pillier1/section1-b.jpg', alt='')
           .c-section-content(data-element='2')
             .txt
-              h4(data-name="h4") #{h4}
-              p(data-name="h4") #{h4}
+              h4(data-name="h42") #{h42}
+              p(data-name="text2") #{text2}
             .col
               .meta(data-meta='1')
                 img(src='/img/pillier1/section1-c.png', alt='')
@@ -33,31 +33,31 @@ block pageContent
                 img(src='/img/pillier1/section1-d.jpg', alt='')
           .c-section-content(data-element='3')
             .txt
-              h4(data-name="h4") #{h4}
-              p(data-name="h4") #{h4}
+              h4(data-name="h43") #{h43}
+              p(data-name="text3") #{text3}
             .meta.abs(data-meta='1')
               p livebox_de_Marie
-              p.active(data-name="h4") #{h4}
+              p.active(data-name="text4") #{text4}
                 img(src='/img/icons/lock.png', alt='')
               p livebox_salle_de_sport
               p.less livebox_des_Durand
         section(data-section='2')
           .c-section-banner
-            h3(data-name="h4") #{h4}
+            h3(data-name="h44") #{h44}
           .c-section-content(data-element='1')
             .meta.abs(data-meta='1')
               img(src='/img/pillier1/section2-a.png', alt='')
             .table
               .txt
-                h4(data-name="h4") #{h4}
+                h4(data-name="h45") #{h45}
                 p
-                  span(data-name="h4") #{h4}
+                  span(data-name="text5") #{text5}
                 p
-                  span(data-name="h4") #{h4}
+                  span(data-name="text6") #{text6}
                 p
-                  span(data-name="h4") #{h4}
+                  span(data-name="text7") #{text7}
                 p
-                  span(data-name="h4") #{h4}
+                  span(data-name="text8") #{text8}
               .col
                 .meta.abs(data-meta='2')
                   img(src='/img/pillier1/section2-b.jpg', alt='')
@@ -65,12 +65,12 @@ block pageContent
             .meta.abs(data-meta='1')
               img(src='/img/pillier1/section2-a.png', alt='')
             .txt
-              h4(data-name="h4") #{h4}
-              p(data-name="h4") #{h4}
+              h4(data-name="h45") #{h45}
+              p(data-name="text9") #{text9}
             .table
               .txt
-                h4(data-name="h4") #{h4}
-                p(data-name="h4") #{h4}
+                h4(data-name="h46") #{h46}
+                p(data-name="text10") #{text10}
               .col
                 .meta.abs.number(data-meta='1')
                   span
@@ -83,8 +83,8 @@ block pageContent
               .meta.abs.video(data-meta='1')
                 p video
               .txt
-                h4(data-name="h4") #{h4}
-                p(data-name="h4") #{h4}
+                h4(data-name="h47") #{h47}
+                p(data-name="text11") #{text11}
             .meta.abs(data-meta='2')
               img(src='/img/pillier1/section2-e.png', alt='')
         section(data-section='3')
@@ -116,4 +116,4 @@ block pageContent
               a.btn-plus(href='') d'immersion
             .faq
               p(data-name="h4") #{h4}
-              a(href='#') La FAQ
+              a(data-name="faq" href='#') #{faq}

@@ -7,7 +7,7 @@ var express = require('express'),
 
 var User = require('./models/user');
 
-module.exports = function(models) {
+module.exports = function(options) {
   if(process.env.TWITTER_CONSUMER_KEY !== undefined && process.env.TWITTER_CONSUMER_SECRET !== undefined) {
     router.use(passport.initialize());
     router.use(passport.session());

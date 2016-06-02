@@ -3,8 +3,7 @@
 var express = require('express'),
     router = express.Router(),
     path = require('path'),
-    jade = require('jade'),
-    body = {};
+    jade = require('jade');
 
 module.exports = function(data) {
     var sitemap_urls = new Array();
