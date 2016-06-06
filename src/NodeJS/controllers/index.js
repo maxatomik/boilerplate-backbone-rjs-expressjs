@@ -2,7 +2,9 @@
 
 var express = require('express'),
     router = express.Router(),
-    path = require('path');
+    path = require('path'),
+    fs = require('fs'),
+    content = {};
 
 
 module.exports = function(data) {
@@ -15,7 +17,8 @@ module.exports = function(data) {
        res.redirect('/');
     });
 	router.get('/', function(req, res) {
-	  res.render('pages/page-layout-1.jade', data[req.path]); 
+	  content = JSON.parse(fs.readFileSync(path.join(__dirname, "/../db/collection.json"), 'utf8'));
+	  res.render('pages/page-layout-1.jade', content[req.path]); 
 	});
 	router.get('/home', function(req, res) {
 	 res.redirect('/'); 
