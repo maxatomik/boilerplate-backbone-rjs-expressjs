@@ -31,7 +31,7 @@
         "PORT" : 5123,
         "BACKBONE" : "web/www",
         "MONGOLAB_URI" : "mongodb://127.0.0.1:27017/"+process.cwd().split('/')[process.cwd().split('/').length-1],
-        "DOMAIN" : "http://127.0.0.1:5000",
+        "DOMAIN" : "http://marceldev.fr:5123",
         "MONGODB_SESSION_STORE" : "social_sessions",
         "FACEBOOK_APP_ID" : "1013775561987535",
         "FACEBOOK_APP_SECRET" : "84bcd72b4ea57b8a3e6ebbc1721b346d",
