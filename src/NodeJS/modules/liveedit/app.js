@@ -5,7 +5,7 @@ var express = require('express'),
     router = express.Router(),
     jsonfile = require('jsonfile'),
     multer  = require('multer'),
-    upload = multer({ dest: __dirname, '/../../../../web/www/img/uploads/' })
+    upload = multer({ dest: '/web/www/img/uploads/' })
 
  
 
