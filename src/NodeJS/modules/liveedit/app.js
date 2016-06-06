@@ -6,7 +6,7 @@ var express = require('express'),
     jsonfile = require('jsonfile'),
     multer  = require('multer'),
     upload = multer({ dest: path.join(__dirname, '../../web/www/img/uploads/') })
-
+    console.log(path.join(__dirname, '../../web/www/img/uploads/'));
  
 
 module.exports = function(models) {
