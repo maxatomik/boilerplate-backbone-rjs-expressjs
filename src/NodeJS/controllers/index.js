@@ -18,6 +18,7 @@ module.exports = function(data) {
     });
 	router.get('/', function(req, res) {
 	  content = JSON.parse(fs.readFileSync(path.join(__dirname, "/../db/collection.json"), 'utf8'));
+	  content[req.path].domainUrl = req.get('host');
 	  res.render('pages/page-layout-1.jade', content[req.path]); 
 	});
 	router.get('/home', function(req, res) {
