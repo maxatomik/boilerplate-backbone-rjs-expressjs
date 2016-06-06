@@ -17,6 +17,7 @@
     "mongodb": "latest",
     "mongodb-rest": "^0.10.14",
     "mongoose": "latest",
+    "multer": "^1.1.0",
     "node-metainspector": "^1.2.0",
     "passport": "^0.3.2",
     "passport-facebook": "^2.0.0",

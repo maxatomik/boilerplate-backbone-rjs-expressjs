@@ -59,16 +59,39 @@ define([
                     this.history.shift();
                 }
             }, this));
-
-            $.getJSON("/edit/is_authorized", function(data) {
-                // Make sure the data contains the username as expected before using it
-                if (data){
-                    if(window.ENV_CONFIG.env.indexOf('dev') > -1 && data._id !== undefined) {
-                        $('body').find('p, span, a, h1, h2, h3, h4').attr('contenteditable','true')
-                         $(document).on('blur','[contenteditable="true"]', function( event ) {
-                            serverHandler['edit']({"path":window.location.pathname, "id" : $(this).data("name"), "value": $(this).text()});
-                        });
-                    }
+            //to simpligy
+            $.getJSON("/live-edit/is_authorized", function(data) {
+                if(window.ENV_CONFIG.env.indexOf('dev') > -1 && data._id !== undefined) {
+                    $(document).find('p, span, h1, h2, h3, h4, a:not(#tools > a)').attr('contenteditable','true');
+                    $(document).find('img').each(function(i) {
+                        $(this).append($('<form name="uploader" enctype="multipart/form-data"><input type="file" name="avatar"'+i+'/></form><progress></progress>', this));
+                    });
+                    $(document).on('change','input[type="file"]', function(){
+                        var data = new FormData();
+                        data.append("avatar", this.files[0]);
+                        data.append("path", window.location.pathname);
+                        var $input = $(this);
+                        var $img = $input.parents('img');
+                        var request = new XMLHttpRequest();
+                        request.open("POST", "/live-edit/fileupload");
+                        request.send(data);
+                        request.onreadystatechange = function() {
+                            if (request.readyState == 4 && request.status == 200) {
+                                var r = JSON.parse(request.responseText);
+                                serverHandler['edit']({"path":window.location.pathname, "id" : $img.data('name'), "value": '/img/uploads/'+r.file.filename});
+                                $img.attr('src', '/img/uploads/'+r.file.filename);
+                            }
+                        };
+                    });
+                    $(document).on('click','img', function( event ) {
+                      $('input[type="file"]', this).click();
+                    });
+                    $(document).on('click','input[type="file"]', function(e){
+                        e.stopImmediatePropagation();
+                    });
+                    $(document).on('blur','[contenteditable="true"]', function( event ) {
+                        serverHandler['edit']({"path":window.location.pathname, "id" : $(this).data("name"), "value": $(this).text()});
+                    });
                 }
             });
             
@@ -76,8 +99,6 @@ define([
 
 
         onHomepage: function (html, page) {
-
-
             viewsHandler.getTransition(html, views, 'homepage', false, true);
         },
 

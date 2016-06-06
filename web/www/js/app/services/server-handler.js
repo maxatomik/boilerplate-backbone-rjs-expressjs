@@ -8,7 +8,7 @@ define([
         initialize: function() {},
         edit: function(data) {
             $.ajax({
-                url: '/edit',
+                url: '/live-edit',
                 type: 'POST',
                 data: data
             })
