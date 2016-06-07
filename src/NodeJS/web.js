@@ -9,12 +9,6 @@ var path = require('path'),
     mongoose = require('mongoose'),
     app = express();
 
-var router = express.Router({
-    caseSensitive: app.get('case sensitive routing'),
-    strict       : app.get('strict routing')
-});
-
-
 var BACKBONE_PATH = path.join(__dirname, '/../../', process.env.BACKBONE),
     EXPRESS_PORT = process.env.PORT ===  undefined ? 5000 : process.env.PORT,
     DATA = JSON.parse(fs.readFileSync(path.join(__dirname, "db/collection.json"), 'utf8'));
@@ -41,13 +35,11 @@ app.use(cors({
 // Because you're the type of developer who cares about this sort of thing!
 app.enable('strict routing');
 
-// Create the router using the same routing options as the app.
-app.use(router);
 app.use('/ressources', express.static(path.join(__dirname, '/public')));
 
-router.use(require('./controllers')(DATA))
-router.use(require('./modules/oauth/twitter/app')());
-router.use(require('./modules/oauth/facebook/app')());
+app.use(require('./controllers')(DATA))
+app.use(require('./modules/oauth/twitter/app')());
+app.use(require('./modules/oauth/facebook/app')());
 app.use(require('./modules/bots/twitter/app')());
 app.use(require('./modules/liveedit/app')());
 

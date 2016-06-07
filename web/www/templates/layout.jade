@@ -20,12 +20,7 @@ html.no-js
         script(src='//html5shiv.googlecode.com/svn/trunk/html5.js')
     body
       #wrapper
-        #tools
-         a(href="http://localhost:5000/auth/facebook/" class="btn login") se connecter pour editer
-         select(class="btn", id="tplchange", name="tplchange")
-          option(value='page-layout-1.jade') tmp1
-          option(value='page-layout-2.jade') tmp2
-          option(value='page-layout-3.jade') tmp3
+        iframe(src="/admin/tools" width="100%" style="bottom: 0; position: fixed; z-index: 9999; left:0;")
          a(href="http://localhost:5000/logout/" class="btn logout") logout
         #main
           block pageContent

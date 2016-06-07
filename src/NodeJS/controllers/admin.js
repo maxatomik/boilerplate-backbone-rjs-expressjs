@@ -5,8 +5,11 @@ var express = require('express'),
     path = require('path');
 
 module.exports = function(data) {
-	router.get('/', function(req, res) {
- 		res.render('admin/home.jade'); 
+	router.get('/tools/', function(req, res) {
+ 		res.render('admin/tools.jade'); 
 	})
+    router.get('/', function(req, res) {
+        res.render('admin/tools.jade'); 
+    })
 	return router;
 };
