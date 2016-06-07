@@ -62,6 +62,12 @@ define([
             //to simpligy
             $.getJSON("/live-edit/is_authorized", function(data) {
                 if(window.ENV_CONFIG.env.indexOf('dev') > -1 && data._id !== undefined) {
+                    $(document).on('change','#tplchange', function(){
+                        var $input = $(this);
+                        serverHandler['edit']({"path":window.location.pathname, "id" :"tpl", "value": $input.val()});
+                    });
+
+                    
                     $(document).find('p, span, h1, h2, h3, h4, a:not(#tools > a)').attr('contenteditable','true');
                     $(document).find('img').each(function(i) {
                         $(this).append($('<form name="uploader" enctype="multipart/form-data"><input type="file" name="avatar"'+i+'/></form><progress></progress>', this));

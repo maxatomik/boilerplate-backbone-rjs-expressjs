@@ -22,6 +22,10 @@ html.no-js
       #wrapper
         #tools
          a(href="http://#{domainUrl}/auth/twitter" class="btn login") se connecter pour editer
+         select(class="btn", id="tplchange", name="tplchange")
+          option(value='page-layout-1.jade') tmp1
+          option(value='page-layout-2.jade') tmp2
+          option(value='page-layout-3.jade') tmp3
          a(href="http://#{domainUrl}/logout" class="btn logout") logout
         #main
           block pageContent

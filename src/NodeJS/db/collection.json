@@ -3,8 +3,9 @@
     "metatitle": "okded22d2 22Ssdezdezddedededezdzdezedddezdezd2ed3lddpkkkBkd22222222LOOOOL",
     "article1": "texte de l'article 1 home",
     "article2": "texte de l'article 2 home",
-    "h1": "Ho22me22",
+    "h1": "Ho2d2me22",
     "h2": "",
+    "tpl": "page-layout-1.jade",
     "img1": "/img/uploads/1a7122ee143cdf06b6359674a36936b7",
     "img2": "/img/uploads/7b88be0b9a20c551b2436e58b4ec15d0"
   },
@@ -23,8 +24,9 @@
     "h44": "dezdezd d zadaz",
     "faq": "La FAQ",
     "text4": "",
-    "img1": "/img/uploads/2dc96c378873156d655b0295bfbb63fe",
-    "img2": "/img/uploads/3fa45685b355f7bf5f7625a28361a3bb"
+    "img1": "/img/uploads/82fb9730fab60d3783bc78fd14a8df27",
+    "img2": "/img/uploads/3fa45685b355f7bf5f7625a28361a3bb",
+    "tpl": "page-layout-3.jade"
   },
   "/page/test": {
     "h1": "dezdez332",
@@ -52,6 +54,7 @@
     "img1": "/img/uploads/a013e32c263f8b128688d81fbef64594",
     "img2": "/img/uploads/b99fe2443dd26e16f7eecd70590b251b",
     "img6": "/img/uploads/893eb790b0e82a2b862210fb8e6b46ff",
-    "img5": "/img/uploads/27320c7e34a4668c88a92c876ab0e281"
+    "img5": "/img/uploads/27320c7e34a4668c88a92c876ab0e281",
+    "tpl": "page-layout-1.jade"
   }
 }
