@@ -2,33 +2,33 @@
    .navbar-inner.dropup
     ul.nav
       li
-       a(href='http://localhost:5000/auth/facebook') Connexion
+       a(target='_parent', href='http://localhost:5000/auth/facebook') Connexion
       li
-       a(href='http://localhost:5000/logout/') Logout
+       a(target='_parent', href='http://localhost:5000/logout/') Logout
       li.dropdown
         a.dropdown-toggle(href='#', data-toggle='dropdown')
           | oAuth Users
           b.caret
         ul.dropdown-menu
           li
-           a(target='_blank', href='/admin/oauth/facebook/users') Facebook
+           a(target='_parent', href='/admin/oauth/facebook/users') Facebook
           li
-           a(target='_blank', href='/admin/oauth/twitter/users') Twitter
+           a(target='_parent', href='/admin/oauth/twitter/users') Twitter
       li.dropdown
         a.dropdown-toggle(href='#', data-toggle='dropdown')
           | Twitter Bot
           b.caret
         ul.dropdown-menu
           li
-           a(target='_blank', href='/admin/bots/twitter/posts') Posts
+           a(target='_parent', href='/admin/bots/twitter/posts') Posts
           li
-           a(target='_blank', href='/admin/bots/twitter/users') Users
+           a(target='_parent', href='/admin/bots/twitter/users') Users
       li.dropdown
         a.dropdown-toggle(href='#', data-toggle='dropdown')
           | Facebook Bot
           b.caret
         ul.dropdown-menu
           li
-           a(target='_blank', href='/admin/bots/facebook/posts') Posts
+           a(target='_parent', href='/admin/bots/facebook/posts') Posts
           li
-           a(target='_blank', href='/admin/bots/facebook/users') Users
+           a(target='_parent', href='/admin/bots/facebook/users') Users
