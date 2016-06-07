@@ -7,7 +7,8 @@ var path = require('path'),
     session = require('express-session'),
     MongoStore = require('connect-mongo')(session),
     mongoose = require('mongoose'),
-    app = express();
+    app = express(),
+    slash   = require('express-slash');
 
 
 var BACKBONE_PATH = path.join(__dirname, '/../../', process.env.BACKBONE),
@@ -33,13 +34,23 @@ app.use(require('body-parser').urlencoded({ extended: true }));
 app.use(cors({
     origin : '*'
 }));
+// Because you're the type of developer who cares about this sort of thing!
+app.enable('strict routing');
+
+// Create the router using the same routing options as the app.
+var router = express.Router({
+    caseSensitive: app.get('case sensitive routing'),
+    strict       : app.get('strict routing')
+});
+
+app.use(router);
 
 app.use('/ressources', express.static(path.join(__dirname, '/public')));
-app.use(require('./controllers')(DATA))
+router.use(require('./controllers')(DATA))
 
 app.use(require('./modules/oauth/twitter/app')());
 app.use(require('./modules/bots/twitter/app')());
-//app.use(require('./modules/oauth/facebook')(require('./models')));
+app.use(require('./modules/oauth/facebook/app')());
 app.use(require('./modules/liveedit/app')());
 
 

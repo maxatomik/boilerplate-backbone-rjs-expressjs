@@ -15,7 +15,7 @@ module.exports = function(options) {
   passport.use(new FacebookStrategy({
       clientID: process.env.FACEBOOK_APP_ID,
       clientSecret: process.env.FACEBOOK_APP_SECRET,
-      callbackURL: process.env.DOMAIN+"/auth/facebook/callback",
+      callbackURL: process.env.DOMAIN+"/auth/facebook/callback/",
       enableProof: false
     },
     function(accessToken, refreshToken, profile, done) {
@@ -35,11 +35,11 @@ module.exports = function(options) {
   passport.deserializeUser(function(user, done) {
     done(null, user);
   });
-  router.get('/auth/facebook',
+  router.get('/auth/facebook/',
     passport.authenticate('facebook'));
 
-  router.get('/auth/facebook/callback',
-    passport.authenticate('facebook', { failureRedirect: '/login' }),
+  router.get('/auth/facebook/callback/',
+    passport.authenticate('facebook', { failureRedirect: '/login/' }),
     function(req, res) {
       res.redirect('/');
   });

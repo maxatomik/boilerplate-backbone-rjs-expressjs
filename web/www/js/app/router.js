@@ -28,8 +28,8 @@ define([
     var Router = Backbone.Router.extend({
 
         routes: {
-            '': 'onHomepage',
-            'page/:slug': 'onPage',
+            '/': 'onHomepage',
+            'page/:slug/': 'onPage',
             '*path': 'on404'
         },
 

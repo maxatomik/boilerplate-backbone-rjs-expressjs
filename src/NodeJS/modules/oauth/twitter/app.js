@@ -33,17 +33,18 @@ module.exports = function(options) {
       done(null, user);
     });
   
-    router.get('/auth/twitter',
+    router.get('/auth/twitter/',
       passport.authenticate('twitter'));
 
-    router.get('/auth/twitter/callback', 
-      passport.authenticate('twitter', { failureRedirect: '/login' }),
+    router.get('/auth/twitter/callback/', 
+      passport.authenticate('twitter', { failureRedirect: '/login/' }),
       function(req, res) {
+        console.log(req.user)
         res.redirect('/');
       });
 
     /*Specific modules admin routes*/
-    router.get('/admin/oauth/twitter/users', function(req, res) {
+    router.get('/admin/oauth/twitter/users/', function(req, res) {
       User.find({}, function(err, users) {
         res.render('admin/oauth/twitter/users.jade', {body: users}); 
       });

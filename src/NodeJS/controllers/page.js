@@ -19,7 +19,7 @@ fs.readdir("./web/www/templates/pages", function (err, files) {
 });
     
 module.exports = function(data) {
- 	router.get('/:page', function(req, res) {
+ 	router.get('/:page/', function(req, res) {
       content = JSON.parse(fs.readFileSync(path.join(__dirname, "/../db/collection.json"), 'utf8'));
       if(content['/page'+req.path] !== undefined) {
          if(content['/page'+req.path].tpl !== undefined ) tpl = content['/page'+req.path].tpl;
