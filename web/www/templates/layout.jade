@@ -11,8 +11,8 @@ html.no-js
     head
       meta(charset='utf-8')
       meta(http-equiv='X-UA-Compatible', content='IE=edge')
-      title= metatitle
-      meta(name='description', content='#{metatitle}')
+      title(data-name="h1") #{h1}
+      meta(data-name="h2", name='description', content='#{h2}')
       meta(name='viewport', content='width=device-width, initial-scale=1')
       link(href='/css/main.css', rel='stylesheet', type='text/css')
       link(rel='shortcut icon', type='image/x-icon', href='/favicon.ico')
@@ -21,12 +21,12 @@ html.no-js
     body
       #wrapper
         #tools
-         a(href="http://#{domainUrl}/auth/facebook" class="btn login") se connecter pour editer
+         a(href="http://localhost:5000/auth/facebook/" class="btn login") se connecter pour editer
          select(class="btn", id="tplchange", name="tplchange")
           option(value='page-layout-1.jade') tmp1
           option(value='page-layout-2.jade') tmp2
           option(value='page-layout-3.jade') tmp3
-         a(href="http://#{domainUrl}/logout" class="btn logout") logout
+         a(href="http://localhost:5000/logout/" class="btn logout") logout
         #main
           block pageContent
       

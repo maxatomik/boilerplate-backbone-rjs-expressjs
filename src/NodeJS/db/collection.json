@@ -3,23 +3,24 @@
     "metatitle": "okded22d2 22Ssdezdezddedededezdzdezedddezdezd2ed3lddpkkkBkd22222222LOOOOL",
     "article1": "texte de l'article 1 home",
     "article2": "texte de l'article 2 home",
-    "h1": "Hodd\" 2d2me22",
-    "h2": "",
-    "tpl": "page-layout-1.jade",
-    "img1": "/img/uploads/923bed127dc804d78eff52a62fb43252",
-    "img2": "/img/uploads/e72d2519430c8f3461f83c07f3f1e7ac"
+    "h1": "Hoddddd\" 2d2me22",
+    "h2": "dezdez",
+    "tpl": "page-layout-2.jade",
+    "img1": "/img/uploads/68c098f145831d9d0e8f060df528ee33",
+    "img2": "/img/uploads/e72d2519430c8f3461f83c07f3f1e7ac",
+    "h3": ""
   },
-  "/page/contact2": {
+  "/page/contact2/": {
     "h1": "dezd",
     "h3": "dezded",
     "img1": "/img/uploads/c183b6bde88da35c9f88afa4beff28e2"
   },
-  "/page/contact": {
+  "/page/contact/": {
     "metatitle": "okded22d2 22Ssdezdezddedededezdzdezedddezdezd2ed3lddpkkkBkd22222222LOOOOL",
     "article1": "texte de l'article 1 contact 3KKKKdezdezdezKdede22",
     "article2": "texte de l'article 2 homedezdezdLLLLLLLL",
     "h2": "Sous titre de lade page contact",
-    "h1": "Page  Contact",
+    "h1": "Pag2e  Contact",
     "h4": "dezdde ",
     "h3": "bannièdre 1",
     "h41": "dezddezd dezezd2",
@@ -29,17 +30,17 @@
     "h44": "dezdezd d zadaz",
     "faq": "La FAQ",
     "text4": "",
-    "img1": "/img/uploads/82fb9730fab60d3783bc78fd14a8df27",
+    "img1": "/img/uploads/78d2240b3c351656095658ac9dcb46d8",
     "img2": "/img/uploads/3fa45685b355f7bf5f7625a28361a3bb",
-    "tpl": "page-layout-3.jade"
+    "tpl": "page-layout-2.jade"
   },
-  "/page/test": {
+  "/page/test/": {
     "h1": "dezdez332",
     "h2": "dezdezzasza",
     "undefined": "lorempdze ispum sid amet",
     "faq": "La FAQ"
   },
-  "/page/equipe": {
+  "/page/equipe/": {
     "metatitle": "okded22d2 22Ssdezdezddedezdzdezedd2ed3lddpkkkBkd22222222LOOOOL",
     "article1": "texte ded l'article 1dezdez LOLde dez d equipe",
     "article2": "texte de l'article 2 equipeLdededeLLL",

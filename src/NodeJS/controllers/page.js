@@ -27,7 +27,7 @@ module.exports = function(data) {
          if(availableTpl[tpl] !== undefined) {
             res.render('pages/'+tpl, content['/page'+req.path]);
          } else {
-            res.render('pages/page-layout-1.jade');
+            res.render('pages/page-layout-1.jade', content['/page'+req.path]);
          }
       } else {
         res.send('json not found, add /page'+req.path+' node into your collection.json');

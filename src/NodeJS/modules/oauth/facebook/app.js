@@ -45,6 +45,14 @@ module.exports = function(options) {
       res.redirect('/');
   });
 
+  /*Specific modules admin routes*/
+    router.get('/admin/oauth/facebook/users/', function(req, res) {
+      User.find({}, function(err, users) {
+        console.log(users)
+        res.render('admin/oauth/facebook/users.jade', {body: users}); 
+      });
+    });
+
   return router;
 };
 
