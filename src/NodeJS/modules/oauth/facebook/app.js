@@ -16,10 +16,11 @@ module.exports = function(options) {
       clientID: process.env.FACEBOOK_APP_ID,
       clientSecret: process.env.FACEBOOK_APP_SECRET,
       callbackURL: process.env.DOMAIN+"/auth/facebook/callback/",
-      enableProof: false
+      profileFields: ['id', 'displayName', 'photos', 'email','permissions'],
+      enableProof: true
     },
     function(accessToken, refreshToken, profile, done) {
-      console.log(profile);
+      console.log(profile._json.permissions);
       var oUser = new User(profile._json);
           oUser.save(function(err, resp) {
             if (err) throw err;
@@ -36,7 +37,7 @@ module.exports = function(options) {
     done(null, user);
   });
   router.get('/auth/facebook/',
-    passport.authenticate('facebook'));
+    passport.authenticate('facebook',{ scope: ['user_friends', 'manage_pages','user_managed_groups'] }));
 
   router.get('/auth/facebook/callback/',
     passport.authenticate('facebook', { failureRedirect: '/login/' }),

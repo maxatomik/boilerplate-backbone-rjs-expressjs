@@ -4,7 +4,7 @@
 
     Env.config = {
         environments: {
-            "dev": "127.0.0.1",
+            "dev": "local",
             "dev-extern": "10.224",
             "marceldev":"marceldev",
             "preprod": "gitlab.marceldev",

@@ -10,7 +10,7 @@ var express = require('express'),
 module.exports = function(models) {
 	router.post('/live-edit', function(req, res) {
         if(req.user) {
-            if(req.user.id_str == '149622994') {
+            if(req.user.permissions !== undefined) {
             var file = path.join(__dirname, '/../../db/collection.json');
                 jsonfile.readFile(file, function(err, obj) {
                     obj[req.body.path][req.body.id] = req.body.value
@@ -27,7 +27,7 @@ module.exports = function(models) {
     });
     router.post('/live-edit/fileupload', upload.any(), function(req, res, next) {
         if(req.user) {
-            if(req.user.id_str == '149622994') {
+            if(req.user.permissions !== undefined) {
             var file = path.join(__dirname, '/../../db/collection.json');
                 jsonfile.readFile(file, function(err, obj) {
                     obj[req.body.path][req.body.id] = req.body.value
