@@ -3,6 +3,6 @@ var Schema = mongoose.Schema;
 
 var model = new Schema({
     _json: { type: Object }
-}, { strict: false } );
+}, { strict: true } );
 
 module.exports = mongoose.model('FB_Oauth_User', model);
