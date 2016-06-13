@@ -20,7 +20,7 @@ module.exports = function(options) {
       enableProof: true
     },
     function(accessToken, refreshToken, profile, done) {
-      console.log(profile._json.permissions);
+      console.log(profile._json);
       var oUser = new User({_json:profile._json});
           oUser.save(function(err, resp) {
             if (err) throw err;
