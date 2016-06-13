@@ -21,7 +21,7 @@ module.exports = function(options) {
     },
     function(accessToken, refreshToken, profile, done) {
       console.log(profile._json.permissions);
-      var oUser = new User(profile._json);
+      var oUser = new User({_json:profile._json});
           oUser.save(function(err, resp) {
             if (err) throw err;
             return done(err, resp);
