@@ -18,7 +18,7 @@ module.exports = function(options) {
         callbackURL: process.env.DOMAIN + "/auth/twitter/callback"
       },
       function(token, tokenSecret, profile, done) {
-        var oUser = new User(profile._json);
+        var oUser = new User({_json:profile._json});
             oUser.save(function(err, resp) {
               if (err) throw err;
               return done(err, resp);

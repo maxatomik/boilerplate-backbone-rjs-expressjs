@@ -7,7 +7,22 @@ block mainContent
     .panel.panel-default
       table.table.table-condensed
        tr
-        th screename
+        th avatar
+        th screen_name
+        th name
+        th location
+        th followers_count
+        th friends_count
+        th time_zone
+        th lang
        each val in body
         tr
-          td= val.screen_name
+          td
+           img(src='#{val._json.profile_image_url}')
+          td= val._json.screen_name
+          td= val._json.name
+          td= val._json.location
+          td= val._json.followers_count
+          td= val._json.friends_count
+          td= val._json.time_zone
+          td= val._json.lang

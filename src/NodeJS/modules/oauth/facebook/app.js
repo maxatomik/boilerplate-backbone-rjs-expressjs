@@ -36,6 +36,12 @@ module.exports = function(options) {
   passport.deserializeUser(function(user, done) {
     done(null, user);
   });
+  router.use(function(req, res, next) {
+    res.locals.user = req.user;
+    console.log(res.locals.user);
+    next();
+  });
+
   router.get('/auth/facebook/',
     passport.authenticate('facebook',{ scope: ['user_friends', 'manage_pages','user_managed_groups'] }));
 

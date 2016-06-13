@@ -8,8 +8,13 @@ block mainContent
       table.table.table-condensed
        tr
         th id
+        th username
+        th text
         th text
        each val in body
         tr
-          td= val.id_str
-          td= val.text
+          td
+           img(src='#{val._json.user.profile_image_url}')
+          td= val._json.user.screen_name
+          td= val._json.text
+          td= val._json.created_At

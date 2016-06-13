@@ -2,7 +2,7 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var model = new Schema({
-    screen_name: { type: String }
-}, { strict: false } );
+    _json: { type: Object }
+}, { strict: true } );
 
 module.exports = mongoose.model('TW_Bot_User', model);

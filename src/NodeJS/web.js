@@ -32,6 +32,9 @@ app.use(require('body-parser').urlencoded({ extended: true }));
 app.use(cors({
     origin : '*'
 }));
+
+
+
 // Because you're the type of developer who cares about this sort of thing!
 app.enable('strict routing');
 
@@ -42,6 +45,7 @@ app.use(require('./modules/oauth/twitter/app')());
 app.use(require('./modules/oauth/facebook/app')());
 app.use(require('./modules/bots/twitter/app')());
 app.use(require('./modules/liveedit/app')());
+
 
 
 var Server = require('http').createServer(app);

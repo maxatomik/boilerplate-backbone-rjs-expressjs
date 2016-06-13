@@ -7,7 +7,10 @@ block mainContent
     .panel.panel-default
       table.table.table-condensed
        tr
+        th avatar
         th screename
        each val in body
         tr
-          td= val.screen_name
+          td
+           img(src='#{val._json.profile_image_url}')
+          td= val._json.screen_name
