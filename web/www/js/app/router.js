@@ -61,7 +61,7 @@ define([
             }, this));
             //to simpligy
             $.getJSON("/live-edit/is_authorized", function(data) {
-                if(window.ENV_CONFIG.env.indexOf('dev') > -1 && data._id !== undefined) {
+                if(data._id !== undefined) {
                     $(document).on('change','#tplchange', function(){
                         var $input = $(this);
                         serverHandler['edit']({"path":window.location.pathname, "id" :"tpl", "value": $input.val()});
