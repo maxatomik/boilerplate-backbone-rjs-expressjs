@@ -70,6 +70,12 @@ module.exports = function(options) {
 	 			res.render('admin/bots/twitter/posts.jade', {body: posts}); 
 	 		});
 		});
+
+		router.get('/twitter/posts', function(req, res) {
+			Post.find({}, function(err, posts) {
+	 			res.json(posts[0]._json); 
+	 		});
+		});
 	} else {
 		console.log('twitter bot : twitter credentials missing');
 	}
