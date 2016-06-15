@@ -11,6 +11,7 @@ pm2.connect(function() {
     // Display logs in standard output 
     pm2.launchBus(function(err, bus) {
       console.log('[PM2] Log streaming started');
+      console.log('NODE_ENV :'+ process.env.NODE_ENV);
 
       bus.on('log:out', function(packet) {
        console.log('[App:%s] %s', packet.process.name, packet.data);
