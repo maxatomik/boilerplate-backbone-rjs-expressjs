@@ -69,7 +69,7 @@
         "env"  : {
           "NODE_ENV": "prod"
         },
-        "post-deploy" : "npm install ; npm start ; pm2 logs"
+        "post-deploy" : "npm install ; NODE_ENV=prod npm start ; pm2 logs"
     }
   }
 }
