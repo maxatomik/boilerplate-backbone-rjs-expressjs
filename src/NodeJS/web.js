@@ -43,7 +43,7 @@ app.use('/ressources', express.static(path.join(__dirname, '/public')));
 app.use(require('./controllers')(DATA))
 app.use(require('./modules/oauth/twitter/app')());
 app.use(require('./modules/oauth/facebook/app')());
-app.use(require('./modules/bots/twitter/app')());
+app.use('/tw/bot', require('./modules/bots/twitter/app')());
 //app.use(require('./modules/bots/facebook/app')());
 app.use(require('./modules/liveedit/app')());
 

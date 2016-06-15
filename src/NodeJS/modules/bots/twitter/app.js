@@ -25,28 +25,6 @@ module.exports = function(options) {
 			console.log('found tweet :'+ tweet.id_str);
 			var oPost = new Post({ _json : tweet });
 			    oPost.save(function(err, p){
-			    		request({
-		        url: 'https://graph.facebook.com/v2.6/me/messages',
-		        qs: {access_token: 'CAACycZCDKLwMBAKIxWVi57ZADD1CP24aPjthDZBTNQfuM5IR93Fa9tsnN9xsETTOX9MY00yZCKGZA5hPfCH1ZCGt5FO7QZBTNIzQbL920iiYS15Sr6VYedfNpdFP2zosDciXZAsYl0Kg5HfHMDO8QqvGphsXRVRWrg5D1UoRiQVKAsdYLrWNh0kgvGTubWjwLiI4Yjpca8JZCrgZDZD'},
-		        method: 'POST',
-		        json: {
-		            recipient: { id: '1017598468328644' },
-		            message : {
-		            	text:JSON.stringify(tweet.text)
-		            }
-		        }
-		    }, function (error, response) {
-
-		        if (error) {
-		            console.log('Error sending message: ', error);
-		        } else if (response.body.error) {
-		            console.log('Error: ', response.body.error);
-		        } else {
-		            console.log('message sent',response.body)
-		        }
-
-		    });
-
 			    	console.log('post saved.');
 			    });
 			var oUser = new User({ _json : tweet.user });
@@ -54,18 +32,14 @@ module.exports = function(options) {
 			    	console.log('user saved.');
 			    });
 		});
-		/*Specific modules admin routes*/
-		router.get('/admin/bots/twitter/users', function(req, res) {
+
+		router.get('/users', function(req, res) {
 			User.find({}, function(err, users) {
 	 			res.render('admin/bots/twitter/users.jade', {body: users}); 
 	 		});
 		});
 
-		router.get('/twitter/post/new', function(req, res) {
-			console.log('new real');
-		});
-
-		router.get('/admin/bots/twitter/posts', function(req, res) {
+		router.get('/posts', function(req, res) {
 			Post.find({}, function(err, posts) {
 	 			res.render('admin/bots/twitter/posts.jade', {body: posts}); 
 	 		});
