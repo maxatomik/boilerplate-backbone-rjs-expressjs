@@ -71,4 +71,5 @@
         },
         "post-deploy" : "npm install ; npm start ; pm2 logs"
     }
+  }
 }
