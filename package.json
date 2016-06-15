@@ -8,6 +8,7 @@
     "connect-mongo": "latest",
     "cookie-parser": "^1.4.1",
     "cors": "^2.7.1",
+    "exec": "^0.2.1",
     "express": "^4.13.1",
     "express-session": "^1.13.0",
     "express-slash": "^2.0.1",
@@ -32,6 +33,7 @@
   },
   "scripts": {
     "start": "node main.js",
+    "setup": "node setup.js",
     "deploy": "pm2 deploy ecosystem.json prod"
   },
   "author": "Maximilien Borne",

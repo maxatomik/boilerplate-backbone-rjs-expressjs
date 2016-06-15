@@ -65,7 +65,7 @@
         "ref"  : "origin/master",
         "repo" : "git@gitlab.marceldev.fr:website/boilerplate-backbone-rjs-expressjs.git",
         "path" : "/home/marcel/public_html/"+process.cwd().split('/')[process.cwd().split('/').length-1], 
-        "pre-deploy-local" : "echo 'deploying on prod' ; export NODE_ENV=prod",
+        "pre-deploy-local" : "echo 'deploying on prod",
         "env"  : {
           "NODE_ENV": "prod"
         },
