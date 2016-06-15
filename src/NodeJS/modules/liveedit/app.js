@@ -10,7 +10,7 @@ var express = require('express'),
 module.exports = function(models) {
 	router.post('/live-edit', function(req, res) {
         if(req.user) {
-            if(req.user.permissions !== undefined) {
+            if(req.user._json.permissions !== undefined) {
             var file = path.join(__dirname, '/../../db/collection.json');
                 jsonfile.readFile(file, function(err, obj) {
                     obj[req.body.path][req.body.id] = req.body.value
