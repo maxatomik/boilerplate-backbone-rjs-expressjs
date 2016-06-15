@@ -4,8 +4,6 @@ var express = require('express'),
     router = express.Router(),
     request = require('request'),
     Twit = require('twit');
- 
-
 
 var User = require('./models/user');
 var Post = require('./models/post');
@@ -43,13 +41,7 @@ module.exports = function(options) {
 			Post.find({}, function(err, posts) {
 	 			res.render('admin/bots/twitter/posts.jade', {body: posts}); 
 	 		});
-		});
 
-		router.get('/twitter/posts', function(req, res) {
-			Post.find({}, function(err, posts) {
-	 			res.json(posts[0]._json); 
-	 		});
-		});
 	} else {
 		console.log('twitter bot : twitter credentials missing');
 	}

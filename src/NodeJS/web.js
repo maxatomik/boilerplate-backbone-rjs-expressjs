@@ -33,9 +33,6 @@ app.use(cors({
     origin : '*'
 }));
 
-
-
-// Because you're the type of developer who cares about this sort of thing!
 app.enable('strict routing');
 
 app.use('/ressources', express.static(path.join(__dirname, '/public')));
