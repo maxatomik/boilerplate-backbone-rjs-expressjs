@@ -63,13 +63,12 @@
         "user" : "marcel",
         "host" : "78.109.85.111",
         "ref"  : "origin/master",
-        "repo" : "YOUR REPO HERE",
+        "repo" : "git@gitlab.marceldev.fr:website/boilerplate-backbone-rjs-expressjs.git",
         "path" : "/home/marcel/public_html/"+process.cwd().split('/')[process.cwd().split('/').length-1], 
-        "pre-deploy-local" : "echo 'deploying on prod'",
-        "post-deploy" : "npm install ; pm2 startOrRestart ecosystem.json --env preprod ; pm2 logs",
+        "pre-deploy-local" : "echo 'deploying on prod' ; export NODE_ENV=prod",
         "env"  : {
           "NODE_ENV": "prod"
-        }
-      }
+        },
+        "post-deploy" : "npm install ; npm start ; pm2 logs"
     }
 }
